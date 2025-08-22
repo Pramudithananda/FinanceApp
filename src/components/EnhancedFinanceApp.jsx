@@ -899,18 +899,34 @@ const EnhancedFinanceApp = () => {
 
   return (
     <div className="app">
-      {/* Header */}
+      {/* Beautiful Animated Header */}
       <header className="app-header">
         <div className="header-content">
           <div className="header-title">
-            <Wallet size={32} color="#fff" />
-            <h1>මුදල් කළමනාකරණය</h1>
+            <div className="logo-container">
+              <Wallet size={32} color="#fff" className="logo-icon" />
+              <div className="logo-glow"></div>
+            </div>
+            <div className="title-container">
+              <h1>💰 මුදල් කළමනාකරණය</h1>
+              <p className="subtitle">ඔබේ මුදල් ස්මාර්ට් ලෙස කළමනාකරණය කරන්න</p>
+            </div>
           </div>
           <div className="header-balance">
-            <span className="header-balance-label">සම්පූර්ණ ශේෂය</span>
-            <span className="header-balance-amount">{formatCurrency(getTotalBalance())}</span>
+            <div className="balance-indicator">
+              <span className="header-balance-label">සම්පූර්ණ ශේෂය</span>
+              <span className="header-balance-amount">{formatCurrency(getTotalBalance())}</span>
+              <div className="balance-trend">
+                {getNetIncome() >= 0 ? (
+                  <><TrendingUp size={16} color="#10B981" /> <span className="trend-positive">වර්ධනය</span></>
+                ) : (
+                  <><TrendingDown size={16} color="#EF4444" /> <span className="trend-negative">අඩුවීම</span></>
+                )}
+              </div>
+            </div>
           </div>
         </div>
+        <div className="header-wave"></div>
       </header>
       
       {/* Tab Content */}
