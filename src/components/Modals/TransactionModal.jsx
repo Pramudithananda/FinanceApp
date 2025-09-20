@@ -73,7 +73,7 @@ const TransactionModal = ({
       case 'bank-deposit': 
         return 'බැංකු ශේෂය වැඩි කරන්න සඳහා මුදල් තැන්පත් කරන්න. Salary, bonus, හෝ වෙනත් ආදායම් වලට භාවිතා කරන්න.';
       case 'income': 
-        return `බැංකු ශේෂයෙන් cash වලට මුදල් transfer කරන්න. දැනට බැංකු ශේෂය: ${formatCurrency(bankBalance)}`;
+        return `බැංකු ශේෂය වැඩි කරන්න. දැනට බැංකු ශේෂය: ${formatCurrency(bankBalance)}`;
       case 'expense': 
         return `Cash ශේෂයෙන් වියදම් කරන්න. දැනට cash ශේෂය: ${formatCurrency(cashBalance)}`;
       default: return '';
