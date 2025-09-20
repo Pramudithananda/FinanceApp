@@ -175,11 +175,11 @@ const App = () => {
       timestamp
     };
 
+    // Fixed logic bug: income should add to bank balance, not subtract
     if (type === 'bank-deposit') {
       setBankBalance(prev => prev + amount);
     } else if (type === 'income') {
-      setBankBalance(prev => prev - amount);
-      setCashBalance(prev => prev + amount);
+      setBankBalance(prev => prev + amount); // Fixed: was subtracting, now adding
     } else if (type === 'expense') {
       setCashBalance(prev => prev - amount);
       
@@ -232,7 +232,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Header title="මුදල් කළමනාකරණ" version="v2.3 - Working Version" />
+      <Header title="මුදල් කළමනාකරණ" version="v2.3 - Fixed Version" />
       
       <ScrollView style={styles.content}>
         <View style={styles.balanceContainer}>
