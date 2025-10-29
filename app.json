@@ -1,0 +1,9 @@
+{
+  "name": "BudgetTrackerApp",
+  "displayName": "මුදල් කළමනාකරණ",
+  "version": "1.0.0",
+  "description": "Personal Finance Management App in Sinhala",
+  "main": "index.js",
+  "author": "Your Name",
+  "license": "MIT"
+}
