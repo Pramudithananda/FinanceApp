@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalyst_dev_menu_header">React Native Dev Menu (%1$s)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</string>
+    <string name="catalyst_dev_menu_sub_header">Running %1$s@@@@@@@@@@@@@@@@@@</string>
+    <string name="combobox_description">Combo Box @@@</string>
+    <string name="header_description">Heading @@@ @@@</string>
+    <string name="image_description">Image @@@</string>
+    <string name="imagebutton_description">Button, Image@@@@@@</string>
+    <string name="menu_description">Menu @@@</string>
+    <string name="menubar_description">Menu Bar @@@</string>
+    <string name="menuitem_description">Menu Item@@@@@@</string>
+    <string name="progressbar_description">Progress Bar@@@@@@</string>
+    <string name="radiogroup_description">Radio Group@@@@@@@@@</string>
+    <string name="scrollbar_description">Scroll Bar@@@@@@@@@</string>
+    <string name="spinbutton_description">Spin Button @@@ @@@</string>
+    <string name="state_collapsed_description">collapsed @@@ @@@ @@@</string>
+    <string name="state_expanded_description">expanded @@@ @@@</string>
+    <string name="state_mixed_description">mixed@@@</string>
+    <string name="state_off_description">off @@@</string>
+    <string name="state_unselected_description">unselected@@@</string>
+    <string name="summary_description">Summary@@@@@@</string>
+    <string name="tablist_description">Tab List@@@</string>
+    <string name="timer_description">Timer @@@</string>
+    <string name="toolbar_description">Tool Bar@@@@@@</string>
+</resources>
