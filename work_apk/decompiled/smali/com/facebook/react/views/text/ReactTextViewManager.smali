@@ -446,7 +446,7 @@
 .end method
 
 .method public updateExtraData(Lcom/facebook/react/views/text/ReactTextView;Ljava/lang/Object;)V
-    .locals 3
+    .locals 7
 
     .line 87
     check-cast p2, Lcom/facebook/react/views/text/ReactTextUpdate;
@@ -469,6 +469,60 @@
     .line 92
     :cond_0
     invoke-virtual {p1, p2}, Lcom/facebook/react/views/text/ReactTextView;->setText(Lcom/facebook/react/views/text/ReactTextUpdate;)V
+
+    # Custom: color deposits/credits green in recent transaction texts
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    if-eqz v3, :after_color
+
+    invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "deposit"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    if-nez v6, :apply_green
+
+    const-string v6, "credit"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    if-nez v6, :apply_green
+
+    const-string v6, "තැන්පතු"
+
+    invoke-virtual {v4, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    if-nez v6, :apply_green
+
+    const-string v6, "+"
+
+    invoke-virtual {v4, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    if-eqz v6, :after_color
+
+    :apply_green
+    const v6, -13730510    # 0xFF2E7D32
+
+    invoke-virtual {p1, v6}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :after_color
 
     .line 97
     invoke-virtual {p2}, Lcom/facebook/react/views/text/ReactTextUpdate;->getText()Landroid/text/Spannable;
