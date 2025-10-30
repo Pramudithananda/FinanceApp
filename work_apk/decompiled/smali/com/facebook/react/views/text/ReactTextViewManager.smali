@@ -518,7 +518,22 @@
     if-eqz v6, :after_color
 
     :apply_green
+    # Ensure green color overrides via a ForegroundColorSpan on the full text
     const v6, -13730510    # 0xFF2E7D32
+
+    new-instance v1, Landroid/text/style/ForegroundColorSpan;
+
+    invoke-direct {v1, v6}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+
+    invoke-interface {v0}, Landroid/text/Spannable;->length()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    const/16 v4, 0x21
+
+    invoke-interface {v0, v1, v3, v2, v4}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
     invoke-virtual {p1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
