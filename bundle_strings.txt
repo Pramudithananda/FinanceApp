@@ -1,0 +1,829 @@
+$	,	
+~ndx
+e=iP
+l;.]
+D)zJ
+0$<p
+H=_|
+mN1B
+6\D-cX
+R#JI\$S
+h.>7<
+wt7~E
+F7?6p[P
+-"(&$
+7ee9B
+,.DSFq
+~XM[
+O6Jn
+1nP_
+Dpej
+mNs<
+%">0
+o_Xu_R<
+&[U]
+?TE\
+j=)y1
+6K(t\
+Gi9`
+*V4Lw
+K??L#
+25s=)
+Ko9`
+5 s~
+}VBY
+ E. ]
+iye$
+(2~~n,2*p2.
++nZt
+A1*T
+mu3.
+p 71/?
+LQn[p
+PC7z^
+k2"pT
+k63<8
+fYgSt
+99wv
+m_VIJ@
+- k{
+8hwbv!
+MoMWX_^O
+1oOO
+TNpS
+I\fq
+otIj
+cP` &
+R+`$0'g	
+u(I5
+flw	[
+ZQ/g
+Pb;F
+r#$PA
+,|L_
++A nFx
+O_1l
+z,,G
+UhP_
+&;*i"E
+!<$f
+2+~cZf
+|fi_
+	[n/U
+n-Ch
+7YaC
+rHthS
+vU~y
+oD^|
+G*}oY
+0R%v	E
+#FIE)T
+iG i1
+;"P96
+?Y:DaA
+gNP\
++4	f{P*
+["xU
+REbjb
+TMLh5
+@*hwH
+X:!b
+(f5{
+3A/g
+9"G`
+3S>$n!
+.v~,)nd
+eK,|
+EVhj
++>bX
+-^I5X
+F=pq{3i'
+3U$>
+<+TB
+aFHqQ
+]baV
+e-\Y
++K]/
+i?1vqvi
+Mti	
+n\,g=;
+?6[i
+D)Jk
+>vQA
+aH\"$
+-|@/
+j]Xd
+pTA*
+yJV=d
+,/W^	
+x@ed
+Yn*a
+Gj]|B
+^dOd
+E#{[
+'8z3
+m8]=
+H{O:mHI
+AQ+Dj
+)68Vret'
+FR.1
+fJQ:
+(@3_
+(4&g
+*{ol
+>Z%l
+^Lfix\
+)mk+6
+\Ki|f
+{"w4
+kn~u
+1_D;
+?/`Y
+F-[|
+z &D\p
+AU64\
+_ o2@F
+c~EiA
+CUnM
+'$r;L
+g7X@
+D;lhC
+6B5sF
+T8sg
+9wrio@u6
+2F1g
+M)y}
+*G^%<
+?zOp8
+sBoi
+4s^e)
+x#\y~d
+ZNA=
+@h(A
+*\,3
+^@5^
+%P-|
+$AA!l
+ioJ~
+{tieP
+PE=?
+#P6_
+`pl-
+:UUg
+QN)b
++#e~
+$Am3
+,qk|
+X!wy
+_isNestedWithSameOrientationOrientationChangeCapture$$typeoffsetLeftopInlineViewLayoutcategoryButtonTarget AlertlisArrayLikeyboardDidShowritableisBooleandroid.permission.ACCESS_FINE_LOCATIONativeBlobModule is available.Invalid status codegenNativeCommandscrollResponderKeyboardWillShow</p>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </body>
+  </html>Abortedarkcyandroid.permission.ACCESS_BACKGROUND_LOCATION->JS->NOT_RESPONDER_ACTIVE_LONG_PRESS_INVALID_STATE_ERRORCTActivityIndicatorViewManagerNamestartShouldSetRespondercancelButtonKeyPressCaptureact.elementTypeError adding bank account:android.permission.USE_SIPATCHermesInternalBytecode.jsEnginetworkActivityIndicatorVisibleWebSocketEventPluginRegistry: Event plugins must implement an `extractEvents` method, but ` or state `nodeValue` is abstract and must be implemented in a subclass of `ReadOnlyNode`setTranslucent` is only available on AndroidSwipeRefreshLayoutoJSONetwork request failedarkmagentangleTransitionUpdate_exportMonthlyPdfallbackRequireResolveWeakMappStateDidChanget BackHandleremainingTextBOMathen-US</span>
+        </div>
+        <div class="account-row">
+          <span class="account-label">Account Number:</span>
+          <span class="account-value">Unexpected color given for ActionSheetIOS.showActionSheetWithOptions cancelButtonTintColorevokeObjectURL.port is not implementedashedumpReactTreeAnimatedMultiplicationAgentDrawTraceUpdateshouldUseAnimatedObjectForTransformatArrayandroid.permission.READ_EXTERNAL_STORAGExpected Function, SimpleTask, or PromiseTask, but got:
+    in and paired cash account is not configurable.getChildContext(): key " dispatchedisplayNamemoizedStatelephoneNumberotationativeFabricUIManager_isNativeReflectConstructouchExplorationDidChanget DeviceEventEmitteremoteModuleConfigetComponentNameFromFiberenderersprocessEventTypeshouldUseSetNativePropsInFabricbindianreduceMotionDidChanget DevSettings is not yet supported on this platform.#f0f9fflexDirectionPressOutoLocaleStringet PanResponderemoveEventListener_unstable_nowrap-reverselectedIndicatorisObject.values called on non-objectOfindSubviewInvalid attempt to destructure non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.\'numberOfLines' in <Text> must be a non-negative number, received: projectNormalogEverythinget TouchableOpacity__setInternalXMLHttpRequestEventTargetFabricUIManagerawToPerformanceEntryType: UNDEFINED can't be cast to PerformanceEntryTypeuiViewClassNameasureLayoutRelativeToContainingList threw an errorequestPermissions__debouncedOnEnd__BUNDLE_START_TIME__esModule name prefixes should've been stripped by the native side but wasn't for __DEV__getNativeTaget NativeModules loaded: __METRO_GLOBAL_PREFIX__getValueagerState__REACT_DEVTOOLS_GLOBAL_HOOK__isNativeFunctionPerformanceEntryCallTworkLoopConcurrent-passwordRules__proto__makeNative Component ' is present but not expected to be._allocateCallbacktx_byteLengthrowOnInvalidObjectType^assets_configureNextLayoutAnimationPostCommitFiberRoot__private_dispatchInstancesiblinget Networkinget SettingsScreenqueueRenderPhaseUpdate_timespan_start_dispatchListenersubtreeFlagscrollTopaleturquoiselectTextOnFocuseForeground_onCellFocusCaptureact.suspense_listMetricsuspendedLanescrollWidthandleChanget ColorPropType will be removed from React Native, along with all other PropTypes. We recommend that you migrate away from PropTypes and switch to a type system like TypeScript. If you need to continue using ColorPropType, migrate to the 'deprecated-react-native-prop-types' package.bank_report_listReferenceErrorglobal_perf_listenersaddlebrownativeViewConfigsInBridgelessModeEnabledrawerState__nativeTaget defaultPreventedisableQueueconsumediumaquamarinetwork_XMLHttpRequest_scrollMetricsafeThenqueueReplaceState_valueOfilteradiogroupFormathitSlopenSupportopLoadingError#1e3a8accessibilityStateSafePureComponentooltipItemarqueecreateSquareHookInputsEqualignSelfuchsiaccessibilityValueventPoolupdateErrorWithErrorDataccessiblefthandObjectDiffinalizeInitialChildrenderRootSynchronous http requests are not supportedarkorchideNativeHighlightcoralightsteelbluecommaSeparatedCall `FillRateHelper.setSampleRate` before `addListener`._alertdialogTitle_sentStartForContentLengthandleSaverageItemLengthandleTransactionModalignItemsafelyCallDestroyalblue_possibleConstructorReturn fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.</title>
+      <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .title { font-size: 24px; font-weight: bold; color: #333; }
+        .subtitle { font-size: 16px; color: #666; margin-top: 10px; }
+        .account-info { background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .account-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .account-label { font-weight: bold; }
+        .account-value { color: #4F46E5; }
+        .summary { background-color: #e8f4fd; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .summary-label { font-weight: bold; }
+        .summary-value { color: #4F46E5; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4F46E5; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .amount-positive { color: #10B981; font-weight: bold; }
+        .amount-negative { color: #EF4444; font-weight: bold; }
+        .footer { margin-top: 30px; text-align: center; color: #666; font-size: 12px; }
+        .paired-info { background-color: #fff3cd; padding: 10px; border-radius: 5px; margin-bottom: 15px; }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <div class="title">Bank Account Report</div>
+        <div class="subtitle">columnGapplyDerivedStateFromPropscheduleRoot\u001b\[\d\d?marginBottomatoAccounterEvent__callReactNativeMicrotasksPassignoreWarningshouldEmitW3CPointerEvents_asyncToGenerator is already runninget PushNotificationIOS has been extracted from react-native core and will be removed in a future release. It can now be installed and imported from '@react-native-community/push-notification-ios' instead of 'react-native'. See https://github.com/react-native-push-notification-ios/push-notification-ios_backgroundColorisError updating account balance:#d1d5dbankAccountsafelyDetachRefindCurrentHostFiberImplain-textBreakStrategy#e5e7ebaseLanestedScrollEnabled#f9fafbaseStatealastModified_receiveRootNodeIDEventPluginRegistry: Failed to publish event ` supplied to `refreshing` prop must be set as a boolean in order to use `onRefresh`, but got `textContent` is abstract and must be implemented in a subclass of `ReadOnlyNode`_findFirstChildWithMoreact.provideresource_pathslToRgborderColorganizationNameasureInWindowgetContentLengthwbToRgborderRadiuseStatechItemaroonDifferentFunctionsIgnoredandroid.permission.GET_ACCOUNTScopenGitHuborderWidthis hasn't been initialised - super() hasn't been called\(\s*(top|bottom|left|right|center|\d+(?:%|px)|0)createNodeListububbleditBtnullthrowshouldPressibilityUseW3CPointerEventsForHoverflowRelativeOffsetupGlobalEventEmitterListenersnapToIntervalidateInterpolationextLocastToNumberowheaderesponseHeaders__didReceiveIncrementalDataccessibilityServiceChangedisableHoverFullScreenqueueJobubblingEventTypesame-originalMessaget InteractionManager: Must provide a handle to clear.Ignoring recursive animation callback when running mock animationspace-arounderlayColorcreatePerformanceLoggereconcilerVersionmessaget InputAccessoryVieworkLoopSyncanonicalcBezierEasinget PlatformColors are not supportedarkolivegreenqueueUpdatecirclearCaughtError was called but no error was captured. This error is likely caused by a bug in React. Please file an issue._interopRequireWildcardimgrey_onUpdateSyncashAccountsandybrownavajowhitemMetaccumulateInto(...): Accumulated items must not be null or undefined._cellKeyToChildren should contain cellKeyRNCAsyncStoraget DrawerLayoutAndroidSwitchildLanesavingsmartInsertDeletegetTForXMLHttpRequest URL needs to be defined (%s). If you meant to render a collection of children, use an array instead.PerformanceEventTimingAnimationLoadingStarticlearTimeoutputRange must contain color or value with numeric componentProviderInstrumentationHook["this.state" should not be acceessed during state updatescrollbaria-hiddenoopenURLSearchParams.get is not implementedidSendNetworkDatabIconcategoryBalanceRowconsole.errorBoundaryandroid.permission.BLUETOOTH_ADVERTISECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIREDerived constructors may only return object or undefinedarkkhakifObject.entries called on non-objectFit_handleContentOnLayoutransactionIcontainerInfontWeighttps://github.com/Pramudithananda/FinanceApp/bank-depositAmountSafeCallback_NOT_REALLY_SAFExpected host context to exist. This error is likely caused by a bug in React. Please file an issue.
+Passed key: is greater than the node's length (Paired) but no owner was set. This could happen for one of the following reasons:
+1. You may be adding a ref to a function component
+2. You may be adding a ref to a component that was not created inside a component's render method
+3. You have multiple copies of React loaded
+See https://react.dev/link/refs-must-have-owner for more information._classCallCheck if Metro is running, stop it and restart it in the current project.
+          A frequent cause of the error is that the application entry file path is incorrect. This can also happen when the JS bundle is corrupt or there is an early initialization error when loading React Native.Clear all data must be ArrayBuffer or typed arrayToHashadowColorejectionCheck__inspectorLoget deepFreezeAndThrowOnMutationInDeviceEventManageresolveDefaultPropsizeLarget LogBox is enabled by default so there is no need to call unstable_enableLogBox() anymore. This is a no op and will be removed in the next version._definePropertygetInitialURLSearchParams.delete is not implementedidReceiveNetworkResponsectionIndexCannot have a method that is both async and a sync hookeyboardWillHidefineCustomEventTargetShadowNodeletionscaledAssetURLNearBundle_throwInvalidHookErrorowGapp_stateNodependenciescheduleContextWorkOnParentPathandleAddAccountModalManageresource identifiers work on Android_wrapNativeSuperformConcurrentWorkOnRootopLoadingFinisharedActionativeTraceBeginAsyncSectionTouchCancelCapturecursivelyUncacheFiberNodeprecatedCreateStrictShapeTypeCheckeregisterSectionreadystatechangeResponderEventPluginRegistry: Cannot inject two different event plugins using the same name, ` of type `nodeType` is abstract and must be implemented in a subclass of `ReadOnlyNode`setNetworkActivityIndicatorVisible` is only available on iOSOURCENTER_PRESS_RECThe <Image> component cannot contain children. If you want to render content on top of the image, consider using the <ImageBackground> component or absolute positioning.pairBankWithCash Accountsms-otpalevioletredirectEventTypescheduleLayoutAnimationHideUnderlayFast Refresh is disabled in JavaScript bundles built in production mode. Did you forget to run Metro?anon_0_createValueIteratoreplaceresponderTerminate_getFreeIndexecuteDispatchesAndReleaseTopLevel " not one of | parsed to null or undefinedispatchConfignoreLogs_queryCacheckIfSnapshotChangedoneResultimingetInstanceFromTaget StyleSheetoArrayandroid.permission.READ_MEDIA_AUDIOFFailed to execute 'observe' on 'PerformanceObserver': An observe() call must not include both entryTypes and durationThreshold arguments.UIBackgroundFetchResultNoDatabpanelevationPressInvalid URL: cannot be emptyFunctionThatReturnsTruebday-monthandledismissPopupMenumerablemonchiffontSizeventTarget AppRegistry.registerConfig(...): Every config is expected to set either `run` or `component`, but `%s` has neither.</td>
+        <td class=" has not been registered. This can happen if:
+This error is located at:footeremoteNotificationsRegisteredmaybeVectorAnimated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.mdpinchGestureEnabled_entriestopAnimationativeTraceEndAsyncSectionTouchMoveCapturegexportscheduleSuspenseWorkOnFiberesponseReceived#dfdfdflagscrollHeighttpServerLocationShouldBlockNativeResponderAsyncLocalStoraget DeviceInforEachAccumulatedimensionsOnActivateunstable_onChangeSynclaimNextTransitionLaneed server to load fromAccountSelectorequire.resolveWeak cannot be called dynamically.The provided value '): Global function is not registereduceAnimatedPropshowSoftInputOnFocuseImperativeHandleBLOB_URI_HOSThe 'responseText' property is only available if 'responseType' already has a constant or method called 'getConstants'. Please remove it.VirtualizedList: The "getItemCount" prop must be providediffclampolyfillGlobalPerformanceLoggeresolveLazyComponentTaget VirtualizedSectionListFooterComponentStyle_threadIDebuggerInternalTextInputogetherowReversetExtraDataccumulateTwoPhaseDispatchesSingleSkipTargetOwnPropertyDescriptorganization-title2getScaledAssetPathasOwnProperty ' methodNamegetThreadIDid you mean to put these under `headers`?anon_0_createKeyIteratoremoveExtransferunnables_heightransformOriginvertColorsChangedismissRedboxcreditCardGivenNamediumseagreendsWithorizontalscrollviewgroupEndRawPerformanceEntryTypeValuestartOperationBatcharCodeAttempt to get native tag from node not marked as "native" is not a string. This can lead to unexpected behavior/errors. Consider stringifying it.
+Passed value: values ... ]indexOfSingleActiveTouchable: Unable to find HostComponent instance. Has your Touchable component been unmounted?offset=_CGPointerleaveditablejoinRowithoutDefaultFocusAndBlurFrom BugReporting.jsxscrollLeftopPointerUpopRenderLaneshouldUseNativeDriverjustifyContent to share must be a valid objectToStringet UIManageremoveWebSocketHandler
+Valid keys: is negative.ProvideremoteNotificationRegistrationErroresponderStartconsoleAssertPolyfillanesToEventPriorityCannot load an empty urlastBaseUpdatel-deviceTokenormalizeValue_setBottomapAllSettledoLeftAndRightSwapInRTLazyViewManagersEnabled_maxArrayLimitFailed to measure updated traces. Error: " is not defined in childContextTypes...(truncated keys)...(truncated)...accountButtonTextInputCaptureact.memoizedPropscrollTextInputIntoVisibleRectopProgresscreateAnimatedPropscrollViewRefinishOperationBatcharAt least one of URL and message is requiredContextShadowRadiuseInsertionEffect_handleScrollEndDraget isTValid color formats are
+  - '#f0f' (#rgb)
+  - '#f0fc' (#rgba)
+  - '#ff00ff' (#rrggbb)
+  - '#ff00ff00' (#rrggbbaa)
+  - 'rgb(255, 255, 255)'
+  - 'rgba(255, 255, 255, 1.0)'
+  - 'hsl(360, 100%, 100%)'
+  - 'hsla(360, 100%, 100%, 1.0)'
+  - 'transparent'
+  - 'red'
+  - 0xff00ff00 (0xrrggbbaa)
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Monthly Report - but minimum is 0987654321.5isBridgeless mode: </p>
+      </div>
+    </body>
+    </html>
+        <div class="paired-info">
+          <strong>Paired Cash Account:</strong> Make sure to start component names with a capital letter.ConsumergePropsStackazuregistrationNameasure cannot find view with tag #007AFFRAMEASURESPONDER_ACTIVE_LONG_PRESS_OUThe JSC Sampling Profiler has stoppedarksalmonStopInspectingNative driven events only support animated values contained inside `nativeEvent`.This animation type cannot be offloaded to nativeIDashboardarkgreyburntsiennativeRuntimeSchedulerawToPerformanceEntryType: unexpected performance entry type received: #6366F18.2.0-next-9e3b772b8-20220608_onBlurCaptureactNativeStartupTiming native module is not available, can't set timers._onFocusCaptureact_hierarchy.txtopPointerLeave_onLayoutEmpty_sentEndForContentLengthandleResolvedismissActionSheetManager doesn't existandaloneOfTypeAnimatedDiffClampageX-Request-URL.hash is not implementedarkseagreensureRootIsScheduledidTimeoutNoOpageYou can define one of bounciness/speed, tension/friction, or stiffness/damping/mass, but not more than oneTimeCodefineIteratorMethodsetItemarkUpdateLaneFromFiberToRootopEndEditingetLayoutoLowerCasetGlobalHandler_payloadendCoordinatesRCTScrollViewebsocketOpendingLanescrollToIndex out of range: item length _onDrawerOpendingPropscrollToIndex out of range: requested index _extrasyncGeneratorStephasedRegistrationNamescrollToIndex should be used in conjunction with getItemLayout or onScrollToIndexFailed, otherwise there is no way to know the location of offscreen indices or handle failures._argMappingedLanescrollToOffset may not be called in RTL before content is laid outopScrollBeginDragetLensureArray_processUpdateQueueUse 'keyboardShouldPersistTaps="this.props" should not be accessed during state updatestOnly_pressedanimatedValueTaget timeStamprototypeButtonActive_readyStateborderStartWidthasTimespandroid.permission.ACCESS_COARSE_LOCATION/A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition.Failed to execute 'readAsDataURL' on 'FileReader': parameter 1 is not of type 'Blob' is not a valid 'responseType'. NativeModule ' could not be found. Lazy element type must resolve to a class or function.@@toPrimitive must return a primitive value.getScriptURL.password is not implementedarkturquoisectionHeaderisMoveishadowOffsetTimeoutputTypeisStartishadowOpacityahooconsoleGroupPolyfillavenderblushadowRadiuse-credentialsourceUrl&size==_slicedToArray
+Error generating stack: exceeded limit of 200]" was passed to VirtualizedList._createRenderMaskewX_startTimeStampopProvideresetWarningCacheckPermissionsRCTSafeAreaViewebsocketFailed to construct 'Response': The status provided (0) is outside the range [200, 599].Unsupported data type for key is not supported. This can lead to unexpected behavior/errors. Use string instead.
+Key passed: keys ... }' is deprecated. ,
+        </tbody>
+      </table>
+      <div class="footer">
+        <p>Generated by Personal Finance App</p>
+        <p>Report generated on : is not a valid style attributechStackprocessColorElementopMomentumScrollBeginvariantiquewhitesmokeyboardWillChangeFrametroImportAll native instances should have a tag.updateSuspenseListComponentouchBankDetailsScreenableHoverScrollModestructiveButtonKeycreateFiberFromPortallowFontScalinget target AccessibilityInfootnote#textSecondaryesqrt@@toStringTaget PermissionsAndroid is not installed correctly.pushTryEntryCatchartreuseEffectouchHistory0isFocusedReactConcurrentRootouchableDelayTimeout_binaryType must be either 'blob' or 'arraybuffer'this' is expected an Event object, but gotimestampForTouchable cannot transition from `NativeEventEmitter.removeAllListener()` requires a non-null argument._moduluseAnimatedPropsLifecycleanupdateQueueventTimes[AsyncStorage] Expected array of key-value pairs as first argument to multiSetting DrawerLayoutAndroid drawerPosition using `DrawerLayoutAndroid.positions` is deprecated. Instead pass the string value "left" or "right".  Stack:
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Bank Account Report - [Function components cannot have string refs. We recommend using useRef() instead. Learn more about using refs safely here: https://react.dev/link/strict-mode-string-referrerPolicyReactNativeElement ref was specified as a string (\S+) line (\d+)(?: > eval line \d+)* > evalidAttributestIDcommitHookEffectListMountvisibleLengthistleMinified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.#F59E0Bad window calculation 	
+      <div class="summary">
+        <div class="summary-row">
+          <span class="summary-label">Total Transactions:</span>
+          <span class="summary-value"></td>
+      </tr>
+        </div>
+      </div>
+      <div class="account-info">
+        <div class="account-row">
+          <span class="account-label">Bank Account:</span>
+          <span class="account-value"></span>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>From Account</th>
+            <th>To Account</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td>
+Asset: but minimum is 1.0.0
+Bad object: entry types, got is out of 0 to items)\s*,?\s*([+-]?\d+(\.\d+)?)([a-zA-Z]+)?anon_0_createEntriesIteratoremoveClippedSubviewsOrDefaultopPointerOver
+Possible scales are:headerValueisNaNo dimension set for key ` does not.BLOB_URI_SCHEMExpected node to be marked as "native" is not valid (list has values truncated ... extra ; filename=" failed to stringify]Invalid character in header field name: " is read-only-if-cachedroppedEntriesCountRequiring unknown module " with Running "' insteadd-accountBalanceCardarkgreenyellowgreeno-storeClientopSelectionChanget NativeAppEventEmitteremoveAnimatedEventFromViewTrying to subscribe to unknown event: "%s"PermissionsAndroid.checkPermission" is deprecated. Use "PermissionsAndroid.check" insteadd-bank-accountButtonBalanceUnsupported top level event type "PermissionsAndroid.requestPermission" is deprecated. Use "PermissionsAndroid.request" insteadd-cash-accountButtonPaired with: unstable_pauseExecutionextFocusUpdating props for Surface "event.type" should be a string.categoryTarget Animated.event now requires a second argument for optionsi-LKRCTDeviceEventEmitter.emit#000#05966900#06B6D400#0B122024#0c4a6eventTypes#0ea5e9#10b981234567890%</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 24px; color: #111827; }
+      h1 { font-size: 22px; margin: 0 0 6px; text-align: center; }
+      h2 { font-size: 14px; margin: 0 0 16px; text-align: center; color: #374151; }
+      .summary { background: #F3F4F6; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
+      .summary p { margin: 4px 0; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { border: 1px solid #E5E7EB; padding: 6px 8px; font-size: 12px; text-align: left; }
+      th { background: #EEF2FF; }
+    </style>
+  </head>
+  <body>
+    <h1>Monthly Financial Report</h1>
+    <h2>#1F293700#2196F300#3b7280%#3b82f6#6B72800#6b7280#84CC16#8B5CF6#8b5cf6#999999#9CA3AFailed to dump react tree: #A5B4FCATransform3DecayAnimationBackPressabilityDebugView#D1D5DBad output rangenMethodirxml#F8FAFCGColorArray#F97316#F9FAFBlobManageresetWorkInProgressVersionshowsVerticalScrollIndicator#FFFFFFailed to execute 'observe' on 'PerformanceObserver': An observe() call must include either entryTypes or type arguments.#a1a1a1x0#cdcdcdarkblue#dbeafeedifferences#ef44448%#f3f4f6^ {4}... skipping (\d+) frames$&/collectExtraDataccumulateDirectDispatchesSingle$1_=0^ {4}at (.+?)(?: \((native)\)?| \((address at )?(.*?):(\d+):(\d+)\))$emptyCallback^"([a-zA-Z_][a-zA-Z_0-9]*)"$footereleasePooledEventopPointerOut^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$headerSubtitle1^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$spacer-emptyFindFiberByHostInstanceCould not parse transform-origin: %snow&hash=2Accessing view manager configs directly off UIManager via UIManager[' has a view config that does not match native. Registered callable JavaScript modules (n = BugReporting.add* called multiple times for same key ' is missing.Failed to execute 'readAsArrayBuffer' on 'FileReader': parameter 1 is not of type 'Blob' is missing: Failed to execute 'readAsText' on 'FileReader': parameter 1 is not of type 'Blob' is not available in the new React Native architecture.AnimatedInterpolation property ' is not supported by native animated moduleadingItemitTimeDriftWarninget useColorSchemergency-callComponentWillReceivePropscrollIndicatorInsetsandroid.permission.BLUETOOTH_SCANativeUIManager.getConstantsForViewManager(' is the wrong value.No task canceller registered for key ' is unsupported in this environment.unstable_hasStaticViewConfigValidator: Invalid static view config for ' that calls codegenNativeComponent was not code generated at build time. Please check its definition.createAnimatedStyle property ') instead.The iterator does not provide a ') threw an exception.getCurrentTimestamparseLinextSiblinget TurboModuleRegistry.getEnforcing(...): '] Unable to define method 'getConstants()' on NativeModule 'keyboardShouldPersistTaps={ ... object with keys {[ReactNative Architecture][JS] 'listener' should be a function or an object.android.permission.RECEIVE_MMStrictModebugOverlayFrameVis no longer supported. Use UIManager.getViewManagerConfig('this' is expected an EventTarget object, but got another value._exportBankAccountReportPdfallbackRequireContext can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo(). Module exists, but the method is undefined.JSTimers.callReactNativeMicrotasks(). Module has not been registered as callable. Bridgeless Mode: clz32Fallback(\w+)\(([^)]+)\)\s*/\s*([^a-z0-9_])\s*,\s*([?&])_=[^&]* A module failed to load due to an error and `AppRegistry.registerComponent` wasn't called.updateForwardRef(^"|"$)\s*\)Unknown unit of work tag (index)(unknown)__getInternalXMLHttpRequest method needs to be defined (%s). This error is likely caused by a bug in React. Please file an issue.* Metro (the local dev server) is run from the wrong folder. The value will be set to 0.75\+94 77 545 8453, js engine: cutOffTailIfNeededrawable-footeremoteNotificationReceived-headerTitleRCTUIManager.measureLayoutRelativeToParent method is deprecated and it will not be implemented in newer versions of RN (Fabric) - T47686450%addWhitelistedTransformProparse25500animatedShouldUseSingleOparse3600MDASH_SPeople's Bank report PDF generation failed:startAnimation-draget UTFSequence</div>
+        <div class="subtitle" style="font-size: 14px; margin-top: 5px;">
+          Includes all transactions for </h2>
+    <div class="summary">
+      <p><strong>Total Transactions:</strong> </p>
+        <p>Bank Account: </span>
+        </div>
+        <div class="account-row">
+          <span class="account-label">Account Type:</span>
+          <span class="account-value"></span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Paired Transactions:</span>
+          <span class="summary-value"></td>
+        <td><<host component>>` for Touchable responder `new NativeEventEmitter()` requires a non-null argument.<InputAccessoryView> is only supported on iOS.<generated guard><unknown>Unrecognized color scheme. Did you mean 'dark' or 'light'?platform=@@asyncIteratorequestEventTimeandroid.permission.CAMERA dehydrated suspense component was completed without a hydrated node. This is probably a bug in React.Children.only expected to receive a single React element child.APIZZA function must be passed to ErrorUtils.guard, got _A promise cannot be resolved with itself.A region was not found containing cellIdx ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/AbortError adding cash account:createAbortSignal cannot be constructed directlyimportantForAccessibilityManagerequestUpdateLaneedsOffscreenAlphaCompositingetCategorycreateReactNativeComponentClassertIsMountedispatchReducerActionButtonActionFulfilledimportAll promises were rejectedarkgoldenrodropdownlistItemBorderBoxAlready readArrayBufferAsTextractAnimatedNodeOffsetPassiveListenereturnKeyLabelAn iterable object provided no iterator.An object is not an iterable. This error is likely caused by a bug in React. Please file an issue.RESPONDER_ACTIVE_PRESS_INetwork request timed outoggleDarkModebugOverlayBasendIntentAndroidDrawerLayoutitle3RippleAndroidHorizontalScrollContentView config getter callback for component `%s` must be a function (received `%s`).%suspendedStartopSubmitEditingetMaskedContextAreact-devtoolsOverlayThemeAttrAndroidHorizontalScrollViewStickyHeaderComponentouchableHandleActivePressOutReactNativeBridgeEventPluginRegistry: Cannot inject event plugins that do not exist in the plugin ordering, ` listener to be a function, instead got a value of `nodeName` is abstract and must be implemented in a subclass of `ReadOnlyNode`setBackgroundColor` is only available on AndroidProgressBareInputsEquallSettledupdateExceptionMessaget NativeDialogManagerAndroidTextInputoPropertyKeyAnimated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false` for plugin `new NativeEventEmitter()` was called with a non-null argument without the required `addListener` method.AnimatedAdditionAgentDisableTraceUpdateshouldShowRequestPermissionRationaleAnimatedColorequireModuleTOPTIONSKIPPEDetected division by zero in AnimatedDivisionClickCaptureact.cacheckTypendingChildrenderRanget LinkingManageresolveSizeInPlaceAnimatedModulocalNotificationReceived a broken ViewTokenqueueConcurrentHookUpdateaddWhitelistedInterpolationParamapAnimatedNodescribeFunctionComponentFramediumvioletreduceToSingleStringet VirtualizedListContextResetterenderSectionFooterAnimatedSubtractionButtonTextLayoutAnimatedTrackinget PixelRatioffsetTopageresetAnimationativeEventPathasListenersAnimatedTransform-origin %s can only be used for x-positionOnActivatecreateViewConfiget useAnimatedValue: Attempting to set value to undefinedarkgrayscaleChangedisconnectAnimatedNodestroyisRgbaAnimatedValueXY must be initialized with an object of numbers or AnimatedValues.AnimatedWithChildrenderDidSuspendDelayIfPossibleBudgetTrackerApp settings and informationAgentHideNativeHighlightcyandroid.permission.ACCESS_MEDIA_LOCATIONativePerformanceCxxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxxhdpingCacheckbox-none-time-codepsBOTTOManage all your bank accountsListrict-origin-when-cross-originitializeAppContainer does not support insertBefore operationCompleteRN$AppRegistry.runApplicationAgentShowNativeHighlightgoldenrodyellowercaseenativeLoggingHook_handleTouchCancellIndexitAppRegistry.setSurfacePropsilversionTextCannot use AppState when `isAvailable` is false.UIImaget AppearanceisActivationSignalwaysBounceVerticallInvokeWithMethodAndArgument appears to not be a ReactComponent. Keys: ArgumentsimpleAssertion failed: pushHostContaineresolveAssetSourceResolverifyComponentAttributeEquivalenceAttempting to run JS driven animation on animated node that has been moved to "native" earlier by starting an animation with `useNativeDriver: true` for responder `new NativeEventEmitter()` was called with a non-null argument without the required `removeListeners` method.android.permission.CALL_PHONEVER_ASK_AGAINTERNAL_BYTECODELETEXT_NODECommercial Bank AccountsizesDifferevealOrder_classPrivateFieldBaseImageLoaderesolveOnce_executeAsAnimatedBatchinatoresetTryEntryLocirculargeTitle_bodyBlob has been closed and is no longer availableadingSectionSeparatorComponentouchableHandleActivePressInvalid base URL: __platformConfiget diffAttributePayloadstartInspectingNative module BlobModule is required for blob supportsFiberconvertRequestBody not allowed for GET or HEAD requestsliderotateX_BoundingDimensionslidingdrawerlayoutHeightRESPONDER_TERMINATEDOCUMENT_POSITION_IMPLEMENTATION_SPECIFICGImagenModuleCGSizeveryandroid.permission.BLUETOOTH_CONNECTING_hasMoreact.strict_modeleteRemainingChildrenderPropalegreenqueueNativeCalling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-typesmall-capsnapToOffsetsCan't lazily create module without nativeRequireModuleConfiget PointPropType will be removed from React Native, along with all other PropTypes. We recommend that you migrate away from PropTypes and switch to a type system like TypeScript. If you need to continue using PointPropType, migrate to the 'deprecated-react-native-prop-types' package.Cannot call `callTimers` with an empty list of IDs.Cannot call a class as a functionThatReturnsFalsectionTitleCannot commit an incomplete root. This error is likely caused by a bug in React. Please file an issue.Cannot commit the same tree as before. This error is likely caused by a bug in React. Please file an issue.Cannot create URL for blob!Cannot flush passive effects while already rendering.Cannot have a non-function arg after a function arg.Cannot interpolate an input which is not a number.Cannot interpolation an input which is not a numbers-and-punctuationFinishRemoteNotificationUnmountWorkInProgressHookCannot open, already sendinget PressableCannot specify both value and children.CashDetailsScreencodeChunknown-eventCountsupdateLayoutEffectotalExpenses CategoriesScreenhanced_finance_dataDetectorTypes_triggerRemeasureForChildListsInCellRenderMask must contain a non-negative number os cellsAroundViewportanyInCellRenderMask.addCells called with invalid cell rangendereleasePointerCapturegisterModuleforEachInCellRendererComponentouchableGetInitialStateChanging numColumns on the fly is not supported. Change the key prop on FlatList when changing the number of columns to force a fresh render of the component.Changing onViewableItemsChanged nullability on the fly is not supportedCommandsChanging the nullability of onViewableItemsChanged is not supported. Once a function or null is supplied that cannot be changed.Changing viewabilityConfig on the fly is not supportedEntryTypesChanging viewabilityConfigCallbackPairs on the fly is not supportedOrientations_deleteChild was not found in either parent set. This indicates a bug in React related to the return pointer. Please file an issue._getOutermostParentListRefirstChildListCollectionAnimationComplete_mainRefirstElementChildReconcileresolveBoxStylecreateLaneMappStateFocusChanget BatchedBridget Clipboard has been extracted from react-native core and will be removed in a future release. It can now be installed and imported from '@react-native-clipboard/clipboard' instead of 'react-native'. See https://github.com/react-native-clipboard/clipboard-movedoubleinternal_analyticTagetCachedComponentWithDisplayNamemoryWarning: clickHintBottomapStringToNumericComponents based on VirtualizedList must be wrapped with Animated.createAnimatedComponent to support native onScroll events with useNativeDriversionCardpaperComponentNameDeprecatedStyleSheetPropTypeachpuffindCurrentFiberUsingSlowPathumbTintColorborderBottomWidthangul-wordspringDamping value must be greater than 0isDehydratedFragmentangleTransitionsetOnPerformanceEntryCallbackandroid.permission.READ_MEDIA_VISUAL_USER_SELECTEDetected potential division by zero in AnimatedDivisionCommitRootopLoadEnd__attachToDevtoolsOverlayoutMeasurementCLOSEDon't know which android drawable suffix to use for scale: _handleScrollBeginDragginget ProgressBarAndroid has been extracted from react-native core and will be removed in a future release. It can now be installed and imported from '@react-native-community/progress-bar-android' instead of 'react-native'. See https://github.com/react-native-progress-view/progress-bar-android-movedRNC_AsyncSQLiteDBStoraget DynamicColorIOS is not available on this platform._onKeyboardChanget EdgeInsetsPropType will be removed from React Native, along with all other PropTypes. We recommend that you migrate away from PropTypes and switch to a type system like TypeScript. If you need to continue using EdgeInsetsPropType, migrate to the 'deprecated-react-native-prop-types' package.ReadOnlyElement type is invalid. Received a promise that resolves to: addLoget srcElement type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: _parentElementBoxconsoleGroupEndPolyfillastElementChildistanceFromEndHeadlessJsTaskError adding transaction:_readOnlyError initializing app:__reactInternalMemoizedMaskedChildContextTransformatError loading enhanced data:getElementSiblingetAggregateError measuring text field.getTouchFromPressEventoUTCStringetLanesToRetrySynchronouslyOnError occurred when restarting Sampling Profiler: _headerLengthandleError saving enhanced data:invokeGuardedCallbackAndCatchFirstError showing rationalertBodyWeakSettlinget ReactFiberErrorDialogCapturedError updating app data:_iterableToArrayLimitalicebluevioletterSpacingetCachedEventCountsetSyntheticEventborderEndWidthardwareBackPressabilityPerformanceEventEmitter.addListener(...): 2nd argument must be a function._fileSourcestopReportingetFontScalendarEventPluginRegistry: More than one plugin attempted to publish the same event name, ` to `scrollResponderZoomTo` `animated` argument is deprecated. Use `options.animated` insteaddEventListener_unstable eventType must be a stringifyValidationResultconvertPointerEventToMouseEventPluginRegistry: More than one plugin attempted to publish the same registration name, ` type.createOrGetPooledEventPolyfillegal catch attemptEarlyBailoutIfNoScheduledUpdatel-nationalaccessibilityLanguaget ExceptionsManageremoveAllDeliveredNotificationsisRegExpect to have a valid rootTag, instead got MIDDOT_KATAKANATIVExpected 'this' to be an 'AbortController' object, but got __getNativeConfiget currentTarget AT_TARGETRACExpected 'this' to be an 'AbortSignal' object, but got android.permission.READ_PHONE_STATExpected ReactFiberErrorDialog.showErrorDialog to be a function.android.permission.WRITE_EXTERNAL_STORAGExpected ` was not specified in `scrollTo(y, x, animated)` is deprecated. Use `scrollTo({x: 5, y: 5, animated: true})` instead._bodyFormDataccessibilityServiceDidChanget BUBBLING_PHASExpected a work-in-progress root. This is a bug in React. Please file an issue.bezier x values must be in [0, 1] ranget CAPTURING_PHASExpected array of items with numColumns > 1HIDDENIEDOCUMENT_FRAGMENT_NODExpected ref to be a function, a string, an object returned by React.createRef(), or null.@@iterator result is not an objectopContentSizeChanget ModallowRTLONG_PRESS_DETECTEDOCUMENT_POSITION_DISCONNECTEDOCUMENT_NODExpected to find a host parent. This error is likely caused by a bug in React. Please file an issue._DOCUMENT_TYPE_NODExpected to find at least one React Native renderer on DevTools hook._responderIDONExpected to have an instance by this point. This error is likely caused by a bug in React. Please file an issue._overshootClampingSuspendedRootopMessaget NONEWLINEVENTITY_NODELEMENT_NODExport Data:RCTTextInlineImagenerateRequestIdisableFullscreenUIBackgroundFetchResultFailed to call into JavaScript module method uploadingFailed to construct `File`: Must pass both `parts` and `name` arguments.Failed to execute 'observe' on 'PerformanceObserver': An observe() call must not include both entryTypes and type arguments.Failed to execute 'observe' on 'PerformanceObserver': This PerformanceObserver has performed observe({type:...}, therefore it cannot perform observe({entryTypes:...})Failed to execute 'observe' on 'PerformanceObserver': This observer has performed observe({entryTypes:...}, therefore it cannot perform observe({type:...})Failed to execute 'substringData' on 'CharacterData': The offset cancelBubbleFailed to find native component for either Failed to get size for image: Failed to print error: Failed to set polyfill. Failed to set the 'responseType' property on 'XMLHttpRequest': The response type cannot be set after the request has been sent.FallbackNativeComponentangledLanesisEqualightsalmonCommitFiberRootNodecimal-paddingBlockEndFileReaderModuleFiles must have a name set.updateSyncExternalStoreact.portalanguaget FlatList does not support custom data formats.FlatList does not support setting both onViewableItemsChanged and viewabilityConfigCallbackPairs.FlatList: Encountered internal consistency error, expected each item to consist of an array with 1-%s columns; instead, received a single item.Trying to debug FrameRateLogger without the native module!isGeneratorFunctionPrototypeButtonTextActiveandroid.permission.READ_CALL_LOGot unexpected HMRClientanglementscreateHTMLCollectionProgressUnspecified errorMessageForMethodiffClamparseHeaders constructor: expected name/value pair to be length 2, founderline line-throughostwhitemInformatPropertyHeadlessJsTaskSupport1framesToPoparseJSCHeapCapture.captureHeap error: isContextProvidereportFatalExceptionativeCaptureHeapCapture.captureHeap succeeded: HomeScreenqueueCapturedUpdatepaddingVerticallIdleCallbacksandroid.permission.READ_CALENDARCTImageSourceil_delayHoverInvalid URL: should be a string. Was: createAnimatedNodelayPressInvalid argument passed as callback. Expected a function. Instead received: unionHoverInvalid attempt to spread non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.Invalid cells around viewport "[ ... array with Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.Invalid host parent fiber. This error is likely caused by a bug in React. Please file an issue.Invalid props.Invalid render range computing viewability Invalid response for blob: Invalid string. Length must be a multiple of 4Invalid title: title should be a string.Invalid value in color array:Invariant ViolationLoadingErrorequestSent_warnedAboutDivideByZerosybrownamedItemWithSeparatoresolveRelativeSizesizeSmallocateTaget RootTagContextAlignVerticallNativeSyncHookJSCSamplingProfileresolveRetryWakeablepostMessaget KeyboardAvoidingViewarnNoNativePerformanceObserverCxxupdateFromMappearanceChangedismissKeyboardObserverUrlprefetchImaget LayoutAnimation.checkConfig(...) has been disabled.__getListMetricsAggregator must be notified of list content layout before resolving offsetspace-evenly_startNativeLoops run using the native driver cannot contain Animated.loop animationspecialastIndexOfindShadowNodeByTag_DEPRECATEDinvokeGuardedCallbackImplumailto:ranjithpalugolla@gmail.com.android.voicemail.permission.ADD_VOICEMAILoops run using the native driver cannot contain Animated.parallel animationspinbuttonDisabledcom.android.voicemail.permission.READ_VOICEMAILoops run using the native driver cannot contain Animated.sequence animationsplitLayoutPropsnapToStartManage all your cash accountstylistic-sixteeno-cacheckShouldComponentUpdateManage categories used in expensestylistic-teno-hide-descendantshouldNotifyLoadEventsMass value must be greater than 0Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.getSimpleMemoryInforestgreenableAccessToHostTreeInFabriconBtnumColumns does not support horizontal.unmountApplicationComponentAtRootTagetMessageQueueMissing index!Missing native implementation of PerformanceObserverEntryListretcharset=([A-Za-z0-9_-]+)Missing node in parent's child node listenerFnWrappersistentScrollbaria-valuetextMissing owner for string ref RCTModalHostVieweb-searchboxMust provide a valid callbackNodefaultAssetMinSampleCountopScrollEndDragetListenersetValueMust provide a valid failureCallbackwardscrollEnabledMust provide a valid successCallbackfaceVisibilityMust set exactly one of itemVisiblePercentThreshold or viewAreaCoveragePercentThresholdlacemockAnimationStartInspectingNative animated module is not available_getKeyAndValueFromCSSTransform-origin %s can only be used for y-positionNativeAnimatedModuleAnimationFinishedropAnimatedNodelegateYield_eventListenerstopInspectingNativeAnimatedTurboModule interop: RCTNativeAppEventEmitterestoreDeletedValuesInNestedArray__callListenerstartTimespandroid.permission.ACTIVITY_RECOGNITIONativeTiming is availableRCTNetworkinget RawEventEmitteremoveSubviewsFromContainerWithIDRESPONDER_INACTIVE_PRESS_INo callback found for timerID No pairingInforwardsetRefreshHandlerNo scrollTo method provided. This may be because you have two nested VirtualizedLists with the same orientation, or because you are using a custom component that does not implement scrollTo.No task registered for key Not implemented.Not yet implemented.android.permission.READ_MEDIA_VIDEOKisPlainObjects are not valid as a React child (found: createFiberFromOffscreenReaderChangedmarkPointerfaceOnly native driven events need to be attached.android.permission.RECORD_AUDIOnly native driven events need to be detached._validateObserveOptions must be a valid objectogglebuttonNegativeandroid.permission.POST_NOTIFICATIONShould have a queue. This is likely a bug in React. Please file an issue.BULLET_SPUTODO: not yet implemented. This method is also deprecated._selectLengthandlePairing failed:_isLoggingForWebPerformance.getEntriesByName: Only valid for MIDDOT_SPerformance.getEntriesByType: Only valid for NBSPerformance.measure: Can't have both options and endMarkeyboardWillShowritingDirectionormalizeColorObjectandroid.permission.BODY_SENSORS_BACKGROUNDASH_SPerformance.measure: Can't have both start/end and duration explicitly in optionstylistic-thirteeno-referrer-when-downgradefineEventAttributeDescriptoregisterEventHandlerPerformance.measure: Must have at least one of start/end specified in optionstylistic-threeArgumentPoolerPersonal Finance Management App with Sinhala Language Support2Pinged unknown suspense boundary type. This is probably a bug in React.cloneElement(...): The argument must be a React element, but you passed PlatformConstantstylistic-twelvePlease use the "new" operator, this DOM object constructor cannot be called as a function.borderBottomStartRadiusePressability: Invalid signal `%s` for state `%s` on responder: %stylistic-twentyRNPrinted successfully_cancelHoverOutDelayTimeoutrackColorForFalsetIntervaluePromise constructor's argument is not a functionThatReturnsTrue_genPromises must be constructed via newPasswordrawerStatusBaria-valueminHeightPullToRefreshView config not found for name %suspendedYieldPushNotificationIOS only supports `notification`, `register`, `registrationError`, and `localNotification` eventstylistic-twoArgumentPoolerPushNotificationManager is not available.Qandroid.permission.WRITE_CALENDARCTImageViewarnForStylePropspliceCDATA_SECTION_NODEFAULT_BACKGROUND_COLORCTInputAccessoryViewarnOnceRCTLoget RCTEventEmitteremoveRootViewRCTMultilineTextInputViewebsocketClosedRCTRawText strings must be rendered within a <Text> component.RCTRefreshControleRCTScrollContentViewebsocketMessageChannelastickyHeaderHiddenOnScrollRCTSinglelineTextInputViewebviewIsDescendantOfinishedLanesRCTSwitchainedCheckTypending_js_to_native_queueStackRCTViewheattachDefaultEventTypeschedulingetContentAvailableRCTVirtualTextractSingleTouch object is missing identifier.MARKReact tree dumps have been temporarily disabled while React is upgraded to Fiber.content-typeViewFocusedReactFabricHostComponenterKeyHinteractionStartReachedThresholdOrDefaultReactNativeFiberHostComponentoolbaria-livegetReactNativeStartupTimingetAlertoByteArray_callIDOMRectReadOnlyCharacterDatabbaria-labelledbyteOffsetInstanceHandleReadOnlyTextraDataccumulateDirectionalDispatches$1collectRedBoxExtraDatabBarrayOfulfilledirectionalLockEnabledRendered fewer hooks than expected. This may be caused by an accidental early return statement.Rendered more hooks than during the previous render._contentLengthandleDownloadReport download failed:__didCreateRequest has already been sentencesnapToEndabortRequest has not been openedarkorangereduceTransparencyChangedisRequired object `, expected `object`._validateURL.protocol is not implementedidCompleteNetworkResponse Resuming work not yet implemented.createStackEntry statement without catch or finallyLocaptureCommitPhaseErrorOnRoot did not complete. This is a bug in React._getDistanceBetweenPointstopTimespandroid.permission.ANSWER_PHONE_CALLSavingstylizeNoColorotateZ_dispatchPressedStateChanget Easinget SectionListEmptyComponentouchableGetPressRectOffsetDurationThreshold__fetchSegmentFetchermes_allocatedBytes_isAnimatinget isTestinget ShareModule should be registered on Android.android.permission.NEARBY_WIFI_DEVICEShould have a current fiber. This is a bug in React.android.permission.PROCESS_OUTGOING_CALLShould not already be working.getSoundManageretrySuspenseComponentWithoutHydratinget YellowBoxandroid.permission.READ_CONTACTSpecifying `origin` as a WebSocket connection option is deprecated. Include it under `headers` instead.android.permission.READ_MEDIA_IMAGESpringAnimationLoadingFinishallowEqualastEffect__source.uri should not be an empty stringifyViewConfigetHostSiblinget StatusBarManageretryTimedOutBoundaryandroid.permission.READ_PHONE_NUMBERStiffness value must be greater than 0_becameResponderWhileAnimatinget flattenStyleConstantsubheadlineBreakStrategyIOS_callSuper expression must either be null or a functionNameprocessTransformOriginitSuspenseListRenderStateborderTopWidtheadinget SystraceUpdateOverlaycancelHeadlessTaskQueue: Error resolving Promise in task RN$BridgelesstartHeadlessTaskQueue: Error with task HEIGHThe <Image> component cannot have defaultSource and loadingIndicatorSource at the same time. Please use either defaultSource or loadingIndicatorSource.VISIBLEAVE_PRESS_RECThe JSC Sampling Profiler has startedarkreduceMotionChangedRESPONDER_ACTIVE_PRESS_OUThe argument to queueMicrotask must be a function.RESPONDER_INACTIVE_PRESS_OUThe current renderer does not support hydration. This error is likely caused by a bug in React. Please file an issue.android.permission.RECEIVE_WAP_PUSHORThe current renderer does not support mutation. This error is likely caused by a bug in React. Please file an issue.TRIANGLE_LEFThe experimental Metro feature `require.context` is not enabled in your project.TRIANGLE_RIGHThe first argument to setImmediate must be a function.The provided format for scale is not supported yet. Please use scales like 1x, 2x, etc.The provided value for srcSet is not valid.The title prop of a Button must be a stringifySafeatureItemptyFunctionWithReset returnValueTheme toggle (persisted)There was an error while hydrating this Suspense boundary. Switched to client rendering.globalThis JS animated node type cannot be used as native animated nodeTagetChildElementsetTextAndSelectionativeTimestampolitemNameThis Suspense boundary received an update before it finished hydrating. This caused the boundary to switch to client rendering. The usual way to fix this is to wrap the original update in startTransition.This node cannot be made a "native" animated nodeeppinkThis should have a text node initialized. This error is likely caused by a bug in React. Please file an issue.This unit of work tag should not have side-effects. This error is likely caused by a bug in React. Please file an issue.This was already found earliereturnsFalselectedBankAccountThrew in newly mounted dehydrated component. This is likely a bug in React. Please file an issue.jpeget ToastAndroidisableIntervalMomentumarkRootEntangledocumentquaddEventPoolingToo many re-renders. React limits the number of renders to prevent an infinite loop.clientTopenSettingsjpget TouchableHighlightblueisActiveSignalazifyViewManagerConfiget TouchableNativeFeedbackunstable_nextElementSiblinget TouchableWithoutFeedbackTraceUpdateOverlay_failureCallbackstopPropagationativeTraceIsTracingMarkereturnsTruegetTranslateTransform-origin value %s cannot be used for z-positionNativeAnimatedModuleGetValueTried to call a callback with invalid type: Tried to call timer with ID %s but no such timer exists.Tried to get frame for out of range index Tried to get metrics for out of range cell index Tried to register two views with the same name %sublocalityTrying to add already present child listitemActionsTrying to release an event instance into a pool of a different type.Trying to release an instance into a pool of a different type.Trying to remove a child that doesn't existandardReleaserotateYTrying to remove non-present child listCardUIBackgroundFetchResultNewDatablistenerCountUIColorArrayUIEdgeInsetsubtractionButtonsUIViewhile-editinget constantsetSendIdleEvents_coerceLocalScriptURL.host is not implementedarkslatebluecreateObjectURL.hostname is not implementedarkslategray_setNativeRefreshingetDevServerURL.origin is not implementedarkslategreygetSourceCodeScriptURL.pathname not implementedarkvioletimeRemainingetInspectorDataForViewTag() is not available in productionAccessibilityEscapeisInternalBytecodeSourceUrlightseagreendExtrassetServerURL.search is not implementedidReceiveNetworkDataProgressetLayoutAnimationEnabledExperimentalcanOpenURL.username is not implementedidReceiveNetworkIncrementalDatabButtonativeValue_scheduleUpdateOnFiberesponseURLSearchParams.getAll is not implementedidUpdateDimensionsetNativePropsattachSuspenseRetryListenerscriptURLSearchParams.has is not implementediffNestedArrayPropertyURLSearchParams.set is not implementediffNestedPropertyURLSearchParams.sort is not implementediffPropertiesetNativeValue_updatePropsMapplication/x-www-form-urlencoded;charset=UTF-8Unable to find node on an unmounted component.Unable to locate attached view in the native treegridUnable to preventDefault inside passive event listener invocation.Unexpected color given for ActionSheetIOS.showActionSheetWithOptions tintColorgba(0, 0, 0, 0.5)Unexpected color given for Ripple colorPropTypendingContextUnexpected color given for StatusBar.setBackgroundColorgba(0,0,0,0.5)Unexpected color given in StatusBar._updatePropsStackeyboardkeyboardDidHidefineCallDescriptoregisterBundleUnexpected context found on stack. This error is likely caused by a bug in React. Please file an issue.Unexpected invocation!Unknown root exit status.Unpairing failed:Unrecognized WebSocket connection option(s) `StatusBar._updatePropsStack`: Color Unrecognized color scheme. Did you mean 'dark', 'light' or null?Unrecognized signal `StatusBar.setBackgroundColor`: Color Use hasViewManagerConfig instead. viewManagerName: ATTRIBUTE_NODE_ENVerify that a module by this name is registered in the native binary.NativeVerticalScrollViewTuplepreviousElementSiblinget Vibration pattern should be a number or arrayContainsertOrAppendPlacementNodeIntoContainereportErrorsAsExceptionspreviousSiblinget ViewPropTypes will be removed from React Native, along with all other PropTypes. We recommend that you migrate away from PropTypes and switch to a type system like TypeScript. If you need to continue using ViewPropTypes, migrate to the 'deprecated-react-native-prop-types' package._startPositionPointerCancelCapturecomputePluginOrderinget ViewabilityHelperformanceEntryTypeToRaw: unexpected performance entry type received: _offsetFromParentVirtualizedList: Both ListItemComponent and renderItem props are present. ListItemComponent will take precedence over renderItem.isInvertedVirtualizedList: Either ListItemComponent or renderItem props are required but none were found.VirtualizedList: Encountered an error while measuring a list's offset from its containing VirtualizedList.VirtualizedList: The windowSize prop must be present and set to a value greater than 0.VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.VirtualizedList: missing keys for items, make sure to specify a key or id property on each item or provide a custom keyExtractor.We just came from a parent so we must have had a parent. This is a bug in React.We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.WebSocketModulecolumnWrapperStyle not supported for single column listscrollResponderScrollNativeHandleToKeyboard[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?[-+]?\d*\.?\d+%[=:][AsyncStorage] Expected function as second argument to multiSet. Did you forget to wrap key-value pairs in an array for the first argument?[AsyncStorage] Passing null/undefined as value is not supported. If you want to remove value, Use .removeItem method instead.
+Passed value: [AsyncStorage] The value for key "[AsyncStorage] Using [Circular][Getter/Setter][Getter][Object][Setter][TOO BIG formatValueCalls [^a-z0-9\-#$%&'*+.^_`|~!]^\s*at (.*?) ?\(((?:file|https?|blob|chrome-extension|native|eval|webpack|rsc|<anonymous>|\/|[a-z]:\\|\\\\).*?)(?::(\d+))?(?::(\d+))?\)?\s*$[function unknown][native code][object Date][object Error][object Float32Array][object Float64Array][object Generator][object Int16Array][object Int32Array][object Int8Array][object Object][object RegExp][object Uint16Array][object Uint32Array][object Uint8Array][object Uint8ClampedArray][xy]\((\S*)(?::(\d+))(?::(\d+))\)\.\.\/+\?\\"\namePrefix\r?\n[\t ]+\s+^#([0-9a-fA-F]{6})$^#([0-9a-fA-F]{8})$^(?:(?:(?:https?|ftp):)?\/\/)(?:(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)*(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$^\d+$^\s*(.*?)(?:\((.*?)\))?(?:^|@)((?:file|https?|blob|chrome|webpack|rsc|resource|\[native).*?|[^@]*bundle)(?::(\d+))?(?::(\d+))?\s*$^\s*(?:([^@]*)(?:\((.*?)\))?@)?(\S.*?):(\d+)(?::(\d+))?\s*$^\s*at (?:((?:\[object object\])?.+) )?\(?((?:file|ms-appx|https?|webpack|rsc|blob):.*?):(\d+)(?::(\d+))?\)?\s*$^\s*at (?:((?:\[object object\])?[^\\/]+(?: \[as \S+\])?) )?\(?(.*?):(\d+)(?::(\d+))?\)?\s*$^https?:\/\/.*?\/__fbBatchedBridgeConfig is not set, cannot invoke native modulesConstants__rctDeviceEventEmittergba(200, 230, 255, 0.8)__setPlatformConfiget ReactNativeViewConfigRegistryCallOnegativeCard_arrayLikeToArray_arrayWithHolesvget cancelable_arrayWithoutHolesample_count_assertThisInitializedimgray_callTimergeItemptyStateText_catchLocapitalize_classPrivateFieldKey_clearIndexecuteDirectDispatch(...): Invalid `event`._combineCallbacksaveEnhancedDataccumulateTwoPhaseDispatchesSingle$1_constructClassInstance_createClassErrorUpdate_definePropertiescale-downativeFlushQueueImmediate_exportMonthlyReportPdfastreetAddressLine2_freeCallbackeyIndexunstable_getBoundingClientRectopTextInputRN$LegacyInterop_UIManager_getConstantstartListeningToAnimatedNodeValue_getPixelsVisible_getPrototypeOfile://_getViewManagerConfiget RefreshControlivedrabortXhrefindFiberByHostInstance_inheritscaleXY_interopRequireDefaultralightgreendEvent_isEntirelyVisible_isPolyfilledirectory_isViewable_loopenDrawer_nonIterableRestreetAddressLine1_nonIterableSpreadBlobAsArrayBufferesponderIgnoreScroll_objectWithoutPropertiesLooseashellipsizeModeleteBankAccount_onSelectionChangeShouldSetResponderCaptureact.lazy_setPrototypeOfileReaderReadynamicTypeRamparseHermesStack_superPropBaselectableItemBackgroundBorderlessnapToAlignment_superPropGetouchmoveX_toConsumableArray_typeoffsetParentopKeyPressSyncc-middle-name-familyNamemoizeOnever_ask_againsborootListHeaderComponentStyle_unsupportedIterableToArraypressInLocationabortSignalignContent_resetDataccumulate(...): Accumulated items must not be null or undefined.gappDataccumulateDifferencescaleYqueueOperationloadEnhancedDataccumulateListenersAndInstancescheduleLocalNotificationativeForegroundAndroidupdateAppDatact(...) is not supported in production builds of React._savePressInLocationPartialLoaddEventListener_unstable listener must be a functionScrollShouldSetResponderCaptureact.forward_refreshControlpush-outopPartialLoaddNestedPropertyaddPropertiescheduleRefreshapeaddTimespanHandlersaccessibilityCollectionItemail-addressCityAndStatechTitle_headerLayoutYstreet-addressStatel-country-codeadjustableisStoppedispatchCommandroid.permission.ACCEPT_HANDOVERTICALOADINGandroid.permission.READ_SMSUSPENDEDOCUMENT_POSITION_PRECEDINGandroid.permission.RECEIVE_SMSyntheticErrorandroid.permission.SEND_SMSandroid.permission.UWB_RANGINGandroid.permission.WRITE_CALL_LOGandroid.permission.WRITE_CONTACTSannouncementFinishedisableTraceUpdatesetNativeView_updateHighlightMappendAllChildrenToContainergba(255, 132, 0, 0.3)inputModependencyMapplyDurationThresholdstyle-numshouldRasterizeIOSgetRootNodefaultExtrascii-capable-number-padStart_animationClassertive__packager_assets://parseFloattachPingListenergba(255, 255, 255, 0.1)attempted to use private field on non-instanceOfindHostInstancesForRefreshowNativeHighlightgrayb3Friction1b3Friction2b3Friction3bailoutOnAlreadyFinishedWorkeyboardAppearancebalancedispatchSetStatebannergba(255,255,255,0.2)baselinearInterpolationCommitFiberUnmountSuspensePrimaryChildrenderDebugViewbasicStateReducergba(77, 255, 0, 0.3)computeComponentStackForErrorReportinget unstable_batchedUpdatesImplaceChildbeginWork$1beiget ButtonSubmitEditingCaptureact.legacy_hiddenOnScrollbinarySubdividentitybinaryToBase64birthdate-daybirthdate-fullScreenableArchitectureIndicatorbirthdate-monthNamebirthdate-yeargsbirthdateDaybirthdateMonthemebirthdateYearia-busymbolbisqueueMicrotask must be called with at least one argument (a function to call)blackeyboardDismissModepositButtonRejectedblanchedalmondispatchViewManagerCommand: found null reactTaget SafeAreaViewatchKeysblurAndSubmitouchstartAnimatingNodecolumn-reversemiboldTextChangedoResolvecombobox-onlybubblePropertiescrollEventThrottlebufferCloneArgumentPoolerburlywoododgerblueafterLocadetbluebaseVerticallWithSlashSeparatoroutermarginVerticalloutraverseTwoPhase$1clearButtonModefaultSrcaption1forwardRefabricaption2_receiveSignaloadingIndicatorSrcash-depositBtnText_jsHeapSizeLimitrimperativeHandleEffectopChangeSyncc-exp-dayborderRightWidthasNativeViewConfiget SwitcharacterscrollPerfTagetDatabIndexWHATWGFetchildElementCountreeitemIndexabortPrefetchildNodescribeComponentFramediumturquoisegmentIdclearWatchocolateunstable_onChangeTextSynclearCompletedottedangerTextunstable_onKeyPressSynclearMarkscrollResponderKeyboardDidHidevCardandroid_rippleRadiuseFabriclearMeasuresetContextDependencieshowsHorizontalScrollIndicatorclearNestedPropertyclearPropertiescrollResponderKeyboardDidShowclientHeighttps://wa.me/94775458453clientLeftripletToBase64clientWidthread-idcloneHiddenInstancecloneUpdateQueuecloseAllModalscrollResponderKeyboardWillHidevDescriptionResponderGrantcoerceReferrer-PolicycollapsedrawTraceUpdatesetNextHeaderYcollectBugExtraDatabular-numsomecolumnheaderandomarkRootUpdatedrawerBackgroundColorcom.android.voicemail.permission.WRITE_VOICEMAILN2commitBeforeMutationEffectscrollShouldSetRespondercommitDeletionEffectsOnFiberawStackcommitHookEffectListUnmountClassInstancecommitLayoutEffectscrollToEndcommitMutationEffectsOnFibereactDevtoolsAgentcommitReconciliationEffectscrollToItemptyTextcommitRootImplaceSingleChildcommitUpdateQueuecomplementarycompleteUnitOfWorkeyboardTypecompleteWorkeyboardVerticalOffsetActiveScenewRangeCountcomposeIndexerscrollToLocationativeInstancecomputeExpirationTimediumbluecomputeWindowedRenderLimits() should return range in-boundscrollToOverflowEnabledcondensedBoldpickScaleconsoleGroupCollapsedPolyfillastChildisposendMomentumEventsconsoleTablePolyfillawngreencodeURIComponentcontainsetsDiffereportExceptionativeCallSyncHookcontentinfoLoget TextInputPropTypesetSelectionativeQPLTimestampointerTypecontinuouseAndroidRippleForViewconvertHeadersMapToArrayconvertHermesStackcornflowerbluecornsilkcould not read FormData body as blobIdcould not read FormData body as text/plain;charset=UTF-8could not read as ArrayBuffereadContextawrapEventouchableGetHitSlopostal-address-countryNamediumorchidesWhenStoppedReactCurrentBatchConfiget createAttributePayloadModuleImplementationDepositcreateBlobCollectoreceiveEventcreateCapturedValueAtFibereceiveTouchescreateChildSetcreateCursortIndexcreateDebugLookupdateCallbackcreateFiberFromFragmentwittercreateFiberFromTextraStylescreateFiberFromTypeAndPropscrollsToTopopHostContextDecorationColorcreateNumericInterpolationSelectCaptureact.fragmentopPointerEnter_createPressabilityConfiget getNativeTagFromPublicInstancecreateProxyWithCachedPropertiesetIsBufferedcreateRefForwarderecordInteractionprogressbaria-disabledcreateRootErrorUpdatecreateStringInterpolationSettledFulfillightyellowerHeaderNamecreateTextInstancecreateUpdatecreateWorkInProgressetIsJSRespondercreditCardExpirationMonthumbColorcreditCardExpirationYearia-checkedcreditCardFamilyNamediumpurplecreditCardMiddleNamediumslatebluecreditCardNamediumspringgreenqueueForceUpdatecreditCardNumberecordTouchTrackcreditCardSecurityCodeepskybluecreditCardTypendingScrollUpdateCountcrimsonSettledRejectopLoadStart_dampingFromOrigamiValue_subscriptionKeyboardDidHidecodeURIComponentUNSAFE_componentWillReceivePropstartReportingetFiberCurrentPropsFromNodefaultDifferegisterAssetChildrenderScrollComponentisSupportedColorStyleProparseNodefineLazyObjectPropertypostal-address-extended-postal-codefineLazyTimeregisterLazyCallableModulepostalCodefineRedirectDescriptoregisterRunnable__onEndEditingCaptureact.debug_trace_modefineWrapperformSyncWorkOnRootopLoadingStartaccessibilityElementsHiddeniedangerButtonRecoverableErrorborderLeftWidthasChildNodescribeFiberejectResponderTerminationtimeoutgetChildNodestructiveButtonIndexpenseAmountState__detachFiberAfterEffectsetJSResponder_handleLongPresstoresetSuspendedCurrentOnMountInLegacyModevToolsInspectorOverlay__disconnectAnimatedView_handleResponderReleaseInOutipTextaddMenuItemailAddressetOffsetComponentProviderInstrumentationHookunescape_getKeyForIndexecutinget ScrollViewindowPhysicalPixels_hasTriggeredInitialScrollToIndexportThisMonthPdfinalertWithArgsgetForwardingRefadeDurationResponderStartcolorCheckmarkRefindAnimatedStylesetPointerCapturegistryEntriesupdateRefindFirstSuspendedigestylistic-eleventNameimageRefindHostInstanceByFiber__selfindRangeError_captureRefinishClassComponentipsCard_captureScrollRefirebrick_nativeReflex-endAsyncEvent_scrollReflex-startDetectinget cancelBubble_setStickyHeaderRefloralwhiteratorForeportStackTraces_stringReflushPassiveEffectsetPressed_viewReflushSyncCallbacksetReactNativeMicrotasksCallbackanimatedShouldDebounceQueueFlushouldReportDebugInforce-cachePoolaccountInforceStoreRerenderApplication_React_renderDebugOverlayincludeTransform-data; name="validateTransformatPrimitive_wrapperListRefromRectipsTitlecurrentDispatcherRefullStreetAddressetRequestHeaderqueueReactNativeMicrotaskipBubblingetEventTarget ActionSheetIOS_preventNegativeScrollOffsetCurrentTarget ActivityIndicatoreloadingContainer_scrollToParamsFromOffsetEventPhaselectedCategoryTarget AppStateisSupportedStyleProparsePercentaget CustomEventitleColorPlatformLocalStoraget DimensionsetResponseHeadersinputRanget FillRateHelperformUnitOfWorkmultiMerget I18nManageremoveAllListenerspreprocessExceptionGestureHandlerStateChanget ImageBackgroundToNearestPixelpresentLocalNotificationValueChanget ImagePropTypesetRuntimeConfigProviderborderStartStartRadiuseAsyncStoraget NativeEventEmitteremoveDeliveredNotificationsisFabricReactTaget TextInputStateisStringet TextPropTypesetSelfHighlightCallbackmostRecentTimeStampnget VersionAccessibilityActionInfoPropType_prevParentOffsetCancelFlaget bubblesetSelfUpdatePropsCallbackunless-editinget composedPathighQuality__RCTProfileIsProfilinget createPublicInstance__getNativeAnimationConfiget createPublicTextInstance__getPlatformConfiget deepDifferenderSectionHeader__shouldUpdateListenersForNewNativeTaget eventPhasections_animationConfiget findNodeHandle_currentlyShowinget getNodeFromPublicInstance_easinget isDisableAnimationsetStringetDifferForType_isTouchinget legacySendAccessibilityEventTypestackReturnAddresses_lastNativeRefreshinget nativeEventEmitterenderSurface_onScrollBeginDraget processColorArray_onScrollEndDraget requireNativeComponent: "%s" was not found in the UIManager._viewConfiget returnValueanimatinget typeSelectorcreateRootTaget unstable_enableLogBoxgenerateNewNodeTaget useWindowDimensionsetStyleAttributePreprocessorgetStringetAndroidAssetSuffixincludeFontPaddingetAssetPathInDrawableFolderenderToHardwareTextureAndroidinlineImagePaddingetBadgeCountoLocaleDateStringetIteratorFnameSuffixisInputPendingetCachedConstantsetSuspenseHandlerfromCharCodeleteBtnormalizeNametroRequireact-native-rendererConfigetComponentNameFromTypendingSuspenseBoundaries_getScrollMetricstopTrackingetHighestPriorityLanesetUrlCacheBreaker_nestedChildListsuppressHighlightingetInspectorDataForViewAtPoint() is not available in production._targetInstanceFromInstance_bodyTextouchedViewTagetMatchersetWarningHandlerunstable_ProfilingetNativeComponentAttributesetWrapperComponentProviderupdateAnimatedNodeConfigetNativeLogFunctionAccessibilityTappKeygetNearestMountedFiberenderingStartTimegetNextLanesettingButtonSubtextgetNodeFromInstancegetNodeSiblingsAndPositionAddAccountgetParentNodeleteCashAccountgetPixelSizeForLayoutSizegetProcessorForTypegetReactTreegetResponseHeadereplaceExistingNonRootViewgetScrollingThresholdisableScrollViewPanRespondergetShimagebuttonClickedgetSignalwaysBounceHorizontalocaleIdentifiergetSlopenModalimegreendFillColorgetStackByFiberInDevAndProdisableVirtualizationResponderMoverscanFirstylistic-fivegetThemeStylesettingButtonTextgetThenablesReturnKeyAutomaticallygetTouchIdentifiereplaceStackEntrygetWrapperunAfterInteractionscc-additional-name-givenNamenuitemCountmoccasindigooglegrantedisconnectAnimatedNodeFromView__guardedLoadModulecc-cscaledAssetPathadNoMutationsEffectsex__getInternalWidthandleClearDatabLabel__setInternalWidthandleClosecureTextEntry_averageCellLengthandleDeleteAccountoUpperCasetGlobalOptions_footerLengthandleEditopAccessibilityActionavigator_measuredCellsLengthandleExportDatagName_widthandleSubmitopBlurcc-exp-montheavy_onContentSizeChangeCaptureact.contextMenuHiddenormalizeMethodrawerWidthoneydewindowSizeOrDefaultgetInnerViewRefadingEdgeLengthost component`getAverageCellLengthotpinkgetBasePathue2rgba(0, 0, 0, 0.251)cubiconmenubarStyleincomeAmountSuspenseOffscreenStatecc-family-name-middle-initialScrollIndex "MixinitializeCore_endHighlightgrey_handleMomentumScrollBeginitializeCore_startHighlightpink_onMomentumScrollBeginitializeUpdateQueue__internalInstanceHandlecrossOriginvalidateContextProvidereportFatalErrorflexBasis set to '' or 'text', but it is 'isClosedismissedActionResponderRejectisDataViewithCredentialsisDateisFabricInstanceisFunctionClosendRequestylistic-onerrorisHostParentopClickisLegacyFabricInstanceisNullightskyblueisNumbereportSoftExceptionativeColorisPressInSignalightslategrayisRenderConsistentWithExternalStoresetFormakeInvokeMethodistanceFromStartisRenderPhaseUpdateisRgbaValueisTerminalSignalightslategreyisTurboModuleInteropEnabledispatchEventisUndefinedispatchExceptionResponderReleaseOutisVisibleivoryjobTitlejointCallbackvisible-password-newlinendScrollgetScrollPositionScrollToToponyfillining-numshouldFallbackToLegacyNativeModulemodulogErrorequestAnimationFramebouncesZoomapRemainingChildrenderWithHookshowWithGravityAndOffsetCustomSourceTransformerisSupportedInterpolationParamarkRootFinishedrawableFolderInBundlepaddingBottomarkRootSuspended$1_cancelPressOutDelayTimeoutrailingItematricesDifferequestMultiplePermissions_handleQueryLayoutransactionItemaybeInvokeDelegatemiddleNametroImportDefaultopErrormidnightblue_mintcreamdmockCompositeAnimationDismissing-native-performance-observersionSubtextmistyroselectNodevTitlemixedrawerLockModelayPressOut_onCellUnmountDebugValuebalanceAmountEffectImplaceholderTextColorcomponentWillUnmountReactDevToolsOverlayshouldForceUnflattenForElevationativeTraceBeginSectionTouchEndCapturegeneratorRuntime = responderReleasetErrorHandlermousemoveShouldSetRespondermultiplicationEndReachedThresholdOrDefaultcc-given-name-phone-paddingBlockStartcc-name-prefixmainSubviewPositionickname-suffixaddExceptionPointerLeaveCaptureconcileChildrenIteratoresponderMoverscanLastylistic-fourteenavigationFastRefreshutdownavyborderStartEndRadiusername-newtonRaphsonIterate_memoizedRendererenderReduceresponderTerminationRequestylistic-nineteeno renderItem!_attachedEventouchableHandleResponderTerminationRequestylistic-seventeeno such scale _createViewTokenonPromiseMethodWrapperspectivecaretHiddenormalizeDelaycloseBtnormalizeKeywordrawerSubviewOffsetEnabledisHiddenumColumnsOrDefaultopFocuseLayoutEffect_bottomitopLayout__onAnimatedValueUpdateReceivedRN$TurboInteropapayawhipalegoldenrodtaddWhitelistedStyleProparse1_eventSubscriptionMagicTappOwnershiparseChromemoizedValuecurrentTimeStamparseErrorStackcurrentTimestamparseGeckoffsetHeightisSupportedTransformProparseWinjsbundleUrlmarginTopdx_pointsDifferesetBeforeIterationativeExtensionspaddingTopopContextContentTypepreviousTimeStampopHostContaineresetViewableIndices_onRefreshouldConstructopScrollToTopopTreeContextDecorationLinextAccountIdpostal-address-localitypostal-address-regionGestureHandlerEventpowderblueprepareFreshStackprepareToReadContextDecorationStylepresentationStyleprintedprocessAspectRatioffsetWidthasNativeConstructorprocessChildContextDisabledprocessDecelerationRateprocessEventQueue(): Additional events were enqueued while processing an event queue. Support for this has not yet been implemented.processFontVariantopMomentumScrollEndpromiseAnypromiseMethodWrapperesizeMethodproportional-numshowAlertpublishRegistrationNamepushConcurrentUpdateQueuepushContextProvideresizeModetailModepushDispatchermes_heapSizepushEffectopPointerCancelpushHostContextShadowColorpushHostRootContextShadowOffsetDeadlineHeightpushNotificationIOS-movedpushStoreConsistencyCheckpushTopLevelContextObjectopPointerDownextCategoryIdqueueRecoverableErrorshowArchitectureIndicatorunsubscribeToStoreact.offscreenPhysicalPixelsPerformanceMeasureact.profileresourceIdentifierWithoutScale_handleStartShouldSetResponderCaptureact.scoped_performanceMeasureact.tracing_markeresponderEnd_handleTouchMoverrideHookStateDeletePathasPointerCaptureactConsoleErrorHandleresponderGrant_initialRenderRegionMoveShouldSetPanResponderCaptureadBlobAsTextractOffsetPerformanceLoggereturnKeyType_interpolationMoveShouldSetResponderCapturebeccapurple_touchActivatePositionPointerDownCaptureconcileChildFibershowHideTransitionativeTraceCounteraccessibilityLiveRegionPointerEnterCaptureconcileChildrenArrayaddTransactionPointerMoveCapturecordTouchEnd_initialFrameHeightranslucentroidDimensionPointerOutCapturecordTouchMoverlayColorcompareDocumentPositionPointerOverCapturecordTouchStartopPointerMovecompletionPointerUpCapturecoverFromConcurrentErroresponderRejectjsonStartShouldSetPanResponderCapturecursivelyTraverseDeletionEffectshowPopupMenumerateRegionsmaintainVisibleContentPositionStartShouldSetResponderCapturecursivelyTraverseMutationEffectshowShareActionSheetWithOptions_eventHandlerstopImmediatePropagationativeTraceEndSectionTouchStartCapturegisterHeadlessTask or registerCancellableHeadlessTask called multiple times for same key '__registerSegmentouchableHandleResponderMoveuseSyncExternalStoregularia-expanded_relativeKeyboardHeightvibrateByPattern:__shouldPauseOnThrow-reverselectedCashAccountflexGrowgroupCollapsedunstable_scheduleCallback$1_separators_additionalScrollOffsetBarStyle_selectOffsetImmediate must be called with at least one argument (a function to call)cartesianOffsetInterceptoretryLanew-passwordcontentOffsetLongPressDeactivationDistanceflattenAnimatedNodeOffsetState(...): takes an object of state variables to update or a function which returns an object of state variables.flattenOffsetTrackingName_lastFlushim$1_deactivateAndFlushouldUseTurboAnimatedModule__spy_stiffnessFromOrigamiValueupdateTextNodebugOverlayFrameLastylistic-eighteenqueueSetState_responderRegionPanResponderTerminationRequestylistic-fifteenqueueTasks_incrementalEventsubmitBehavior_trackingName_styleAttranslate3dunequalsunknownModuleErrorunsafe-urlastRenderedReducerunspecifiedunstable_hasComponent('unwindWorkinputGroupdateClassComponentopTextLayoutupdateContainerupdateDeferredValueImplayTouchSoundupdateDehydratedSuspenseComponentopTouchCancelupdateEffectImplastRenderedStateupdateElementopTouchEndupdateFragmentopTouchMoveupdateFunctionComponentopTouchStartupdateHostComponent$1updateHostContainerupdateHostText$1updateIdupdateImperativeHandleupdateInsertionEffectotalBalanceupdateMemoComponentotalIncomeupdateMutableSourceupdateOffscreenComponentotalTimeupdatePortalazilyLoadViewupdateReducerupdateSimpleMemoComponentotalTransfersupdateSlototal_time_spentupdateStoreInstanceupdateSuspenseComponentouchActiveupdateWorkInProgressHookuppercaselectedCategoryTextblurRadiuseFiberborderBottomEndRadiuseLazyInitializationHoverOutborderBottomLeftRadiuseMergeRefspellCheckborderBottomRightRadiusePressStateborderEndEndRadiuseRefEffectouchSoundDisabledborderEndStartRadiusedReactProfileruuidv4v3.0 - EnhancedclearIntervalidateBaseUrlineNumbervibrateSchedulervisitouchableGetHighlightDelayMS_zoomToRect is not implementedHORIZONTALWAYS_LOGGED_ENTRY_TYPESAccess-Control-Allow-CredentialstackElementsAccessibilityRolePropTypeAccessibilityStatePropTypeAccessibilityValuePropTypeaddAnimatedEventToViewAsyncIteratorCLOSINGCOMMENT_NODELAYConditionallyIgnoredEventHandlerstackSymbolsRESPONDER_GRANTEDOCUMENT_POSITION_CONTAINED_BYHEADERS_RECEIVEDOCUMENT_POSITION_CONTAINSOPENEDOCUMENT_POSITION_FOLLOWING__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIREDOMExceptionInlineViewLayout_innerViewRefindHostInstance_DEPRECATEDynamicallyInjectedByGestureHandlerUNSENTITY_REFERENCE_NODEMPTYNOTATION_NODExponentConstantstaggerinjectGlobalResponderHandlerInfinityuserInterfaceStyle_renderItemSeparatorComponentouchableGetLongPressDelayMSforceRTLeadingSeparatorComponentouchableGetPressOutDelayMSNativeHorizontalScrollViewTupleNativeTextrapolateLeftNativeUnimoduleProxyNativeVirtualTextrapolateRightNotFounderlineColorAndroidPERMISSIONSPOSITIVE_INFINITYPROCESSING_INSTRUCTION_NODEPerformanceMarkPresetstartExtrasRESPONDER_RELEASERESULTSRN$SurfaceRegistryRN$registerCallableModuleRN$stopSurfaceReactCurrentDispatcherReactCurrentOwneruserSelectableBackgroundBorderlesstartPageXTurboModulestartPageYUNSAFE_componentWillMountouchableHandleBlurUNSAFE_componentWillUpdateVirtualizedListCellContextProviderVirtualizedListContextProvider__INTERNAL_VIEW_CONFIG__activeOpacity__addChild__addListener__awaitForInteractionoCentroid__blobCollectorProvider__callFunctionReturnFlushedQueue__collector__connectAnimatedView__constantstartsWithex3__didCompleteResponselectedText__didReceiveDataProgresstatLabel__didReceiveResponselectionChangeShouldSetResponder__didUploadProgresstatRow__fbDisableExceptionsManager__fbGenNativeModule__findAnimatedPropsNodescriptionResponderEnd__getAnimatedValue__getChildrenderMask__getHandler__getInternalHeightouchableHandleFocuseMutableSource__getInternalY__invokeCallbackAndReturnFlushedQueue__isInteractionLoadEnd__isMounted__iterationstatValue__nativeAnimatedValueListener__nativeComponentRegistry__hasComponentouchableHandleLongPress__nativeId__reactInternalMemoizedMergedChildContextouchableHandlePress__reactInternalMemoizedUnmaskedChildContextouchableHandleResponderGrant__reactInternalSnapshotBeforeUpdate__removeChild__removeListener__restoreDefaultValuestateID__setInternalHeightouchableHandleResponderReleasetHiddenativePerformanceNow__setInternalY__startNativeAnimationLoadStart__turboModuleProxy_aborted_accountsForMovesUpTounstable_activate_addSource_adjustCellsAroundViewportouchableHandleResponderTerminate_animatedView_animationFrame_anyBlankStartTime_badgeCountouchableHandleStartShouldSetResponder_bodyArrayBuffer_bodyInitouchableLongPressCancelsPress_cachedResponselectionColor_callbackPriority_cancelHoverInDelayTimeoutouches_cancelLongPressDelayTimeoutrackColorForTrue_cancelPressDelayTimeoutrackTintColor_categoryActions_cellMetricstaticValue_cellRefstatisticsCard_checkPropstatisticsTitle_childrenToCellKey_clearSubscriptionstatsCard_closed_computeBlanknesstatusBarTranslucenterContent_constrainToItemCountrailingSectionextFocusDownativeBackgroundAndroid_contentAvailable_contextTypes_convertParentScrollMetricstatusText_convertViewable_createEventHandlerstep0_createExtraStylestep1_createOnViewableItemsChanged_currentValue2_currentValuestickyHeaderIndices_decelerationRate_defaultPropstickySectionHeadersEnabled_defaultRenderScrollComponentransactionAccount_defaultValue_dispatchHotspotUpdate_durationLongPressShouldCancelPress_DEPRECATED_emitter_enabled_endTime_ensureClosestStickyHeader_errorOriginaloadingFinished_eventEmitter_eventLoopStartTime_executeJavaScriptBundleEntryPointEnd_executeJavaScriptBundleEntryPointStartransactionAmount_extraSourcestopListeningToAnimatedNodeValue_fillRateHelper_findItemIndexWithKey_findRegionMouseEnter_frameTime_fromValue_getCellKey_getChildStyleOpacityWithDefaultransactionDate_getCurrentQueue_getFooterCellKey_getInterpolationMouseLeave_getItemCountransactionDescriptionextFocusForward_getItemKey_getNonViewportRenderRegionstopTogether_getResponder_getSeparatorComponentransactionDetails_getSpacerKey_globalName_handleDelay_handleLayoutransactionInfocusField_handleLongDelay_handleMomentumScrollEnd_handleResponderGrantransactionType_handleResponderRejectransactionsSectionextFocusLeft_handleResponderTerminationRequestCloseparatorProps_handleScrollShouldSetResponder_handleTouchEnd_handleTouchStartransformDataType_hasError_hasInteracted_hasPressHandler_hasWarned_headerstrictMode_hiPriInProgresstyles_hideTimeoutransitions_hideUnderlay_highestMeasuredCellIndexcludedPlatforms_hoverInDelayTimeoutranslateX_hoverOutDelayTimeoutranslateY_identifierPrefix_inAsyncStateUpdate_indicesToKeysubmitButtonText_infoBox_initBody_initialVelocity_initializeGestureState_initializeRuntimeEnd_initializeRuntimeStartreeContext_inputMeasureAndScrollToKeyboard_inputStyle_installSetStateHooksummaryCard_interceptor_invalidateIfOrientationChanged_isGlobalLogger_isGlobalWebPerformanceLoggerEnabled_isHighlighted_isHovered_isRemote_isTouchWithinResponderRegionPanResponderEnd_isUsingNativeDriverticalAlignoreAllLogs_keyExtractor_keyboardEventsAreUnreliable_keyboardIsDismissible_keyboardMetricsummaryContainer_lastFocusedCellKey_lastMomentumScrollBeginTime_lastMomentumScrollEndTime_lastPositionPanResponderGrant_lastTime_lastValue_lastVelocity_lazyCallableModulesummarySubtext_lengthComputable_longPressDelayTimeout_lowerCaseResponseHeadersummaryTitle_massertNativeAnimatedModule_maybeCallOnEdgeReached_maybeInit_maybeScrollToInitialScrollIndexecutionEnvironment_measureCallback_measureResponderRegionPanResponderMoverridePropsDeletePathasTVPreferredFocuseEngineQueue_measuredCellsCount_method_mostlyBlankStartTime_nativeModuleProxy_noBody_notificationId_numCellswapLeftAndRightInRTL_observedScrollSinceBecomingResponder_offsetFromScrollEvent_onCellLayout_onDrawerClosendAccessibilityEvent_onDrawerSlidecay_onDrawerStateChanged_onLayoutFooter_onLayoutHeader_onMomentumScrollEnd_onMoreTasks_onStickyHeaderLayout_onUpdateSeparators_onViewableItemsChanged_opacityActive_opacityInactiveTabText_orientationPanResponderReject_owner_parts_pendingViewabilityUpdate_perfKey_performSideEffectsForTransitionPanResponderReleaseInEaseOut_performTransitionSideEffects_performanceLogger_performanceMark_pointExtraspectRatiounstable_pressDelayTimeout_pressOutDelayTimeout_propsStack_pushCells_pushMultiColumnViewable_reactDevToolsAgentListener_reactInternals_reactNativeMicrotasksCallback_redboxSubscriptionPanResponderStart_regions_registerAsNestedChild_registerEvents_remeasureMetricsOnActivationPanResponderTerminate_remoteNotificationCompleteCallbackCalled_renderElement_rendererPackageName_requestIdleCallback_responseType_restDisplacementThreshold_restSpeedThreshold_resultName_samplesStartTime_scheduleCellsToRenderUpdate_scrollAnimatedValueAttachment_scrollViewHeight_searchParamsInstance_setOpacityTo_setReadyState_setUpdateHighlightFor_setUpdatePropsFor_shouldLongPressCancelPress_shouldRenderWithPriority_shouldSetResponder_showUnderlay_socketId_softKeyboardIsDetached_soundName_stackEntry_startListeningToNativeValueUpdates_startingValue_statusBarBackgroundColor_stickyHeaderRefs_stopListeningForNativeValueUpdates_subExtractor_subscriptionKeyboardDidShow_subscriptionKeyboardWillHidecoratedExtraDataKey_subscriptionKeyboardWillShow_subscriptions_successCallbacks_suspendCallbacks_syntheticEvent_taskHandle_textInputFocusError_threadCount_timedOut_timeoutHandle_timers_timespans_toValue_totalJSHeapSize_touchActivateTime_touchState_transforms_unregisterAsNestedChild_unregisterEvents_updateAnimatedNodeAttachment_updateBottomIfNecessary_updateCellsToRenderBatcher_updateGestureStateOnMoverrideHookStateRenamePathasPromisendOverSocket_updateHighlightFor_updateImmediate_updatePropsFor_updateValue_updateViewableItems_urloadingText_useNativeDriverticallyInverted_usedJSHeapSize_velocity_viewabilityTuples_viewableIndices_viewableItems_virtualizedListPairs_withSuspendedCallbacks_workInProgressVersionPrimary_workInProgressVersionSecondary_x_yabandonPermissionsabruptabsoluteFillObjectaccentTextaccessibilityActionsaccessibilityHinteractionCompleteaccessibilityIgnoresInvertColorsaccessibilityLabelledByaccessibilityRoleaccessibilityViewIsModalocalIdaccountCardaccountColorBaria-modalBodyaccountHeaderaccountNameaccountNumberaccountSelectoraccountTypeactivityTypeaddAccountCardaddAccountLabelementsThatOverlapOffsetsaddAccountTextaddActiveSceneChangedListeneraddBankAccountaddButtonTextaddCashAccountaddCategoryaddChangeListeneraddFileSourceaddNetworkingHandleraddPoolingToaddWebSocketHandleraddress-line1Basedaddress-line2adjustsFontSizeToFitandroid_disableSoundandroid_hyphenationFrequencyanimationIdanimationTypeannounceForAccessibilityWithOptionsany_blank_countany_blank_msany_blank_speed_summaryAmountflexWrappContainerappendChildToSetapplicationIconBadgeNumberapplyWithGuardIfNeededbday-yearia-selectedAccountcc-exp-yearia-valuemaxDepthardwareAcceleratedgetFullYearia-valuenowprogressBarrayBufferattachNativeEventautoCapitalizeautoCompleteautoCorrectautoFocustomBubblingEventTypesautomaticallyAdjustContentInsetsautomaticallyAdjustKeyboardInsetsautomaticallyAdjustsScrollIndicatorInsetsbalanceCardbalanceContainerbalanceLabelocationXbankCardbase64baseHorizontalocationYbaseModuleNamebaseQueuebday-daybeginAsyncEventbeginEventbeginScrollogIfNoNativeHookbiginteractionIdblockNativeResponderblurFieldblurInputblurOnSubmitblurTextInputbodyUsedborderBlockColorborderBlockEndColorborderBlockStartColorborderBottomColorborderCurveborderEndColorborderLeftColorborderRightColorborderStartColorborderStyleborderTopColorborderTopEndRadiuseCallbackborderTopLeftRadiuseConcurrentRootborderTopRightRadiuseContextborderTopStartRadiuseDebugValueborderlessbtnGhostTextbtnPrimaryTextbundleTypebuttonNeutralogToConsolebuttonPositivebuttonscanCancelContentTouchescanUseNativeForegroundcancelAllLocalNotificationscancelAnimationFramecancelButtonTextcancelIdleCallbackcancelLocalNotificationscancelTaskscanceledcapInsetscaptureCompletecashCardcategoryButtonTextcategoryCardcategoryFootercategoryHeadercategoryNamecategoryOptionSelectedcategoryOptionSubtextcategorySelectorcategorySpentcc-numberActiveTouchescc-typeViewClickedcomponentDidCatchangedTouchescheckValidArgscheckValidInputclearAllLogsclearCookiesclearEntriesclearImmediateclearInteractionHandleclearJSResponderclearReactNativeMicrotaskewYclearTextOnFocustomDirectEventTypesclickHintTextclientXclientYcloneNodeWithNewChildrenAndPropscloneNodeWithNewPropscloseButtonTextcloseDrawerclosestInstancecoerceDisplayModelayHoverOutcollapsablecolorButtonActivecolorSchemecolorSelectorcolumn1BasedcolumnReversendBinarycompleteRootcomponentDidMountcomponentStackcomputeViewableItemsconcurrentRootconnectAnimatedNodeToViewcontent-availablecontent-dispositionPressMoverridePropsRenamePathasTasksToProcesscontentContainerHorizontalcontentContainerStylecontentInsetAdjustmentBehaviorcontentSizeconvertErrorsconvertObjectFitToResizeModelayLongPresscoscreateContextcreateElementcreateFactorycreateFromOptionscreateFromPartscreateInteractionHandlecreatePortalcreateStringifySafeWithLimitscreateTimercurrencycurrentCentroidXOfTouchesChangedAftercurrentCentroidYOfTouchesChangedAftercurrentHeightcurrentPageXcurrentPageYcurrentPropscurrentStatecurrentlyFocusedFieldcurrentlyFocusedInputcursorColorprefetchWithMetadataReceivedgetInnerViewNodeleteButtonTextgetScrollableNodeleteCategorymaxLengthasAnimatedNodeleteTimerincludestructiveButtonIndicesparentNodestructorisLoadedFromFileSystemitEventisPrototypeOfindIndexperimental_layoutConformancegetHighestMeasuredCellIndexpirationTimeshighestMeasuredFrameIndexpiredLanesforwardedRefactorygetListRefatalgetNativeRefeaturesTitlegetNativeScrollRefieldNamegetScrollRefileNamehostRefilesfinishedWorkfirstBaseUpdatefirstContextfirstVisibleItemKeyflashScrollIndicatorsflexShrinkfloorflushGetRequestsflushQueueflushValueflushedQueueuserInfocusInputfocusTextInputfocusablefontFamilyfontScalefontStylefontVariantforceUpdateforegroundunforkEventformCardformRowformTitleformatCurrencyfourArgumentPoolerfreezefromBouncinessAndSpeedfromByteArrayfromOrigamiTensionAndFrictionResponderTerminatefromSourcegenerateBankAccountReportgenerateNewAnimationIdgenericBubblingEventTypesgenericDirectEventTypesgetActiveScenetBalancegetAllKeysgetAllResponseHeadersgetAndroidResourceFolderNamegetAndroidResourceIdentifiergetAppKeysgetApplicationIconBadgeNumbergetAssetByIDgetAuthorizationStatuseDeferredValuegetBankAccountTransactionsgetBorderSizegetCallableModulegetCellMetricsApproxgetCellOffsetApproxgetColorSchemegetConfigWithoutViewPropsgetCurrentAppStategetCurrentBoldTextStategetCurrentFibergetCurrentGrayscaleStategetCurrentInvertColorsStategetCurrentPrefersCrossFadeTransitionsStategetCurrentReduceMotionStategetCurrentReduceTransparencyStategetCurrentVoiceOverStategetDefaultEventTypesgetDeliveredNotificationsgetDerivedStateFromErrorgetEventCountsgetEventHandlersgetEventLoopRunningTimegetExtrasgetGlobalHandlergetHeightgetImageSourcesFromImagePropsgetInitialNotificationResponderTerminationRequest_DEPRECATEDgetInnerSizegetInspectorDataForInstancegetInstanceHandlegetInteractionHandlegetInternalStategetMonthairlineWidthandleEventgetNodeFromInternalInstanceHandlegetOffsetAccessibilityFocuseIdgetOwnPropertyNamesgetOwnPropertySymbolsgetPairedBankAccountgetPairedCashAccountgetPartsgetPointExtrasgetPointsgetPooledFromElementgetPublicInstanceFromInternalInstanceHandlegetRecommendedTimeoutMillistenerTypegetRegistrygetRunnablegetScheduledLocalNotificationsgetScrollRespondergetScrollSizegetSectionKeysgetSectionsgetSizeWithHeadersgetSnapshotBeforeUpdategetTagNamegetTextContentgetTimespansgetTotalBalancegetUrlCacheBreakergetWithFallback_DEPRECATEDmaxWidthasContentLengthandleExceptionSelectAccountminWidthasEagerStatehex4hex6hex8unhighlightedhonorific-prefixhonorific-suffixhorizontalOrDefaulthorizontallyInvertedhotspotUpdatehypotimageStyleimmediateStoppedimportDefaultimportantForAutofillimportedAllimportedDefaultinGuardinOutindeterminateindicatorStyleinfoCardinfoLabelinfoRowinfoValueinitEventinitialAppStateinitialNumToRenderOrDefaultinitialPropsinjectionShowUnderlayinlineImageLeftinputAccessoryViewIDinputLabelinsetBlockEndinsetBlockStartinsetInlineEndinsetInlineStartinspectedViewuninstallConsoleErrorReporterinstancePoolinstrumentunstable_requestPaintermediatePropsForRefreshControlintermediatePropsForScrollViewinternal_excludeLogBoxinvalidatedinversionStyleinvertStickyHeadersinvertedinvokeDefaultBackPressHandlerisAccessibilityServiceEnabledisBackwardsisBoldTextEnabledisColorisComponentErrorisConnectedisDefaultPreventedisDisabledisEnabledisFatalisFinitemRowisGrayscaleEnabledisHoverEnabledisIgnoredisInAParentTextisInstalledisIntegerisInvertColorsEnabledisLayoutAnimationEnabledisLoadedFromServerisPersistentisPreferredisPressableisProfilingRendererisPropagationStoppedisPublicInstanceisPureReactComponentisRTLisReactComponentisReduceMotionEnabledisReduceTransparencyEnabledisScreenReaderEnabledisSpacerisTextInputisTouchExplorationEnabledisTrustedisValidElementmainKeymanageChildrenderNavigationViewmarginBlockEndmarginBlockStartmarginEndmarginHorizontalmarginInlineEndmarginInlineStartmarginLeftmarginRightmarginStartmatrixmaxFontSizeMultipliermaxHeightmaxObjectKeysLimitmaxStringLimitmaxToRenderPerBatchOrDefaultmaximumZoomScaleminIndexForVisibleminPressDurationStartShouldSetResponder_DEPRECATEDminimumFontScaleminimumViewTimeminimumZoomScalemodalContentmodalFootermodalHeadermodalOverlaymodalTitlemostRecentEventCountmostly_blank_countmostly_blank_msmultiRemoveYmultiGetmultilineInputmultiplymutableReadLanesunstable_continueExecutionextFocusRightuseTransitionextHeaderLayoutYnormalizeRectnotifyCellLayoutnotifyCellUnmountednotifyListContentLayoutnotifyTaskFinishednotifyTaskRetryprimaryButtonceunpackModuleIdpaddingEndpaddingHorizontalpaddingInlineEndpaddingInlineStartpaddingLeftpaddingRightpaddingStartpagingEnabledpairedBankAccountIdpairedCashAccountIdpairingLabelparseIntpassiveListenerpassthroughAnimatedPropExplicitValuespixels_blankpixels_sampledpixels_scrolledpointerEventspokeSamplingProfilerpolyfillObjectPropertypoolSizepopPendingEntriespopStackEntrypopablepreferredButtonKeyprefersCrossFadeTransitionspressRectOffsetAnimatedNodeOffsetColorSchemepressRetentionOffsetAnimatedNodeValuepressabilityprevCellKeyprevDtpreviousCentroidXOfTouchesChangedAfterpreviousCentroidYOfTouchesChangedAfterpreviousPageXpreviousPageYpriorityLevelprocessCallbacksprocessColorObjectprocessNextprocessingEndprocessingStartprofileEndprogressFillprogressOverflowprogressTextprogressViewOffsetApplicationIconBadgeNumberprogressiveRenderingEnabledpromptpropTypespropertyIsEnumerablepublicInstancepublicModulepushStackEntryqueueAndExecuteBatchedOperationsunregisterInputunstable_OffscreenYunsetWaitingForIdentifierunshiftuiModeunitPriceunmountComponentAtNodeAndRemoveContainerunpairBankAccountunsafelyIgnoreFunctionsunstable_DiscreteEventPriorityunstable_IdlePriorityunstable_ImmediatePriorityunstable_LowPriorityunstable_Modalunstable_NormalPriorityunstable_UserBlockingPriorityunstable_cancelCallbackunstable_createImageComponentunstable_forceFrameRateunstable_getCurrentEventPriorityunstable_getCurrentPriorityLevelunstable_getFirstCallbackNodeunstable_isNewReconcilerunstable_runWithPriorityunstable_setExceptionDecoratorunstable_setLogListenersunstable_shouldYieldunstable_wrapCallbackupdateAccountBalanceupdateBankAccountupdateCashAccountupdateCategoryupdateCellsBatchingPeriodupdateSeparatorPropsupdaterupperHeaderNameusePerformanceLoggervalidateStylesviewPropsviewabilityHelpervirtualOffset0BasedvxzIndexzoomScale<
+'(' 
+R{	{	R
+bLM^
+aVQ:
+aLXv
+Qr	aQ
+S8	;	
+a QN
+Zn	I
+o	p	q	
+C	*	\
+:	yd
+bklQ
+aPQS
+bNLZ
+axS+
+aKS.
+aHQ6
+bmrS
+aDS;
+Hd^fUR!
+bUfQR
+af]7
+ahVk
+aRY/
+bhjS
+a QU
+a!T/
+iTQY
+brmQ
+aTSR
+a W/
+ahVX
+dklijX.
+djTeh Uf
+dklij^fUYR
+ckil^fUY!
+djkli^UfY
+dijkld^UfR
+iUf^Yhe!
+afRG
+bijQ
+c^Uf^fT
+a^Q-
+aeU/
+aVQ9
+afV5
+hil^fT
+bilbk^!RUfY
+ckeh^ehfUYV
+beNU"
+f UfheR/
+a!QZ
+afQ3
+bhe Uf^R>
+diklj^U!
+bijT
+eikl
+^he^fUYR
+a^TE
+aQR#
+b ^b!^T
+b RQ%
+b^fQ
+R^bRYQ
+^fQZ
+aVQ6
+eil^UfhefUY
+bVYa!R
+a^Q:
+cfUTQ
+b^eT
+fheR3
+R^dT
+c^fTQ
+ghefU
+Yb!US
+Rhe^fURYb
+aYc^fYQZ
+V aUQ
+i^fUY
+h^fU
+e^fU
+YfhefU^Vb!
+d^fU
+bijQ
+bklq
+C	*	
+w	v	u	#
+Clamped
+Array
+Capture
+FILE
+MS-APPX
+HTTP
+WEBPACK
+BLOB
+FILE
+HTTP
+BLOB
+CHROME
+WEBPACK
+RESOURCE
+[NATIVE
+BUNDLE
+ LINE 
+ > EVAL LINE 
+ > EVAL
+ skipping 
+ frames
+charset=
+http
+BOTTOM
+LEFT
+RIGHT
+CENTER
+http
+assets_
+d		&
+\	.	
+	\	9	
+	\	I
+oT		
+%7%%
+%7%%
+7%%	o
+S%)*%*
+%Q%(
+)@%)
+02x%y+v*y)M10/.
+)6N-10/.
+,-642
+S442,
+4I42,653
+S553,
+5I53,
+54I53,
+5J3,4x+
+,,*s*
+**,S*+
+)Q((
+S()*(*
+S()*(*
+S()*(*
+S()*(*
+S()*(*
+ (9*
+S()*(*
+!(9*
+S()*(*
+"(9*
+s(i	S()*(*
+#(9*
+S()*(*
+$(9*
+S()*(*
+%(9*
+S()*(*
+&(9*
+s(L	S()*(*
+'(9*
+S()*(9*
+S()*(9*
+S()*(*
+((9*
+	S()*(9*
+S()*(9*
+S()*(9(
+(@(%7
+1	9(
+8(7(
+9(7(
+:(7(
+;(7(
+<(7(
+=(7(
+>(7(
+?(7(
+@(7(
+A)7)
+B)7)
+C)7)
+D)7)
+P(S(
+7'(,
+]	7'
+^'S'
+7&&.
+j''&
+9'P&&
+k&'&7&&/
+@&'C
+@&'(
+@&'Q
+f&S%
+j%S%
+q7		
+		p?
+cz	v
+#6#"
+oU%#"
+#U $
+#6#"
+oU #"
+`"6"
+#6"#
+]S""#
+%		6
+		x	,
+ST		
+L	7	
+?"		
+6			
+v\	/
+y	T	
+&Q		
+6			
+w$		
+?"		
+6  	
+	_	/
+\	n	
+x w#
+	xv$
+	xv$
+	xv$
+"	w!
+v$w#
+v$w#
+v$w#
+v$w#
+v$w#
+v$w#
+x w#
+oT		
+n		I
+%	6	
+n	?"
+7			w
+	y	;
+oT		
+	6		
+UUUUUU
+UUUUUU
+UUUUUU
+UUUUUU
+iii\
+iii\
+OO/\
+OO/\
+/kU\
+'7''
+'7''
+7''	o
+S'+,'*
+'Q'*
++@'+
+24x'y-v,y+M3210
++8N/3210
+./664
+S664.
+6I64.675
+S775.
+7I75.
+76I75.
+7J5.6x-
+..,s,
+,,.S,-
++Q**
+j++*
+;+P**
+k*+**
+j++*
+;+P**
+k*+**
+ *I*
+*7,*
+@*-=
+@*->
+S*+,*d*
+		d*
+S*+,**
+!*9,
+S*+,**
+"*9,
+S*+,**
+#*9,
+S*+,**
+$*9,
+S*+,**
+%*9,
+S*+,**
+&*9,
+S*+,**
+'*9,
+s*i	S*+,**
+(*9,
+S*+,**
+)*9,
+S*+,**
+**9,
+S*+,**
++*9,
+s*L	S*+,**
+,*9,
+S*+,*9,
+S*+,*9,
+S*+,**
+-*9,
+	S*+,*9,
+S*+,*9,
+S*+,*9*
+*@*'7
+2*d*
+E*S*
+S)S)
+7(( 
+j))(
+;)P((
+k()(7((!
+@()C
+@()(
+@()Q
+[(S'
+_'S'
+	7		2
+7		3c
+q7		
+cz	v
+#6#"
+oU%#"
+#U $
+#6#"
+oU #"
+`"6"
+#6"#
+]S""#
+%		6
+		x	,
+HT		
+L	7	
+v\	/
+y	T	
+&Q		
+	/7	
+Es	*
+	6		
+&Q		
+w$		
+?"		
+6  	
+	_	/
+\	n	
+x w#
+	xv$
+	xv$
+	xv$
+"	w!
+v$w#
+v$w#
+v$w#
+v$w#
+v$w#
+v$w#
+x w#
+	&7%
+	%7$
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6			d@
+6 !	
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6			
+	6			
+	6			
+	6			
+	6			
+	6			
+	6			
+	6			
+	6			
+	6			
+	6			
+	6			
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+	6		
+y"S	
+~"S	
+	6		
+	6		
+	6		
+ #S	
+MbP?,
+zS		
+MbP?
+333333
+	z	6
+	u7	
+MbP?
+7		;[
+v v"w
+#!I##$J%$#
+#!I##$J%$#
+	6		
+	6		
+	^6	
+	'7&
+	&7$
+#	7#
+%N7% 2
+%	7% 3
+	s	,
+ x7 
+	6		
+333333
+%		6
+#Q" "
+$D "
+	W7	
+>	#	@
+& 6#
+!a6"#"Jd
+S#"#
+6"##
+S!"#
+$t6"#"Jd!
+S#"#!6"##
+S!"#!D
+&!6#
+!a6"#"Jd
+S#"#
+6"##
+S!"#
+& 6#
+$t6"#"Jd!
+S#"#!6"##
+S "#!D
+	s	+
+pT		
+gs%6
+7 ! V
+7#"!
+7#%"
+7!" V
+6" 	
+7&#!
+7$%"
+? #xT "
+		Q6
+	V?	
+	7		
+.			7
+vGO	
+7(		
+zsG(
+ +X9
+t6"#"
+t6!""
+	7		
+.			7
+	zs 
