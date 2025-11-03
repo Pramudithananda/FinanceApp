@@ -1864,7 +1864,11 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_deposit_done
+    const v2, -0xe2b128
+
+    invoke-virtual {p0, v2}, Lcom/facebook/react/views/text/ReactTextView;->setTextColor(I)V
+
+    if-eqz v1, :cond_colors_done
 
     const-string v2, "Deposit"
 
@@ -1872,7 +1876,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_deposit_apply
+    if-nez v2, :cond_set_green
 
     const-string v2, "deposit"
 
@@ -1880,7 +1884,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_deposit_apply
+    if-nez v2, :cond_set_green
 
     const-string v2, "\u0dad\u0dd0\u0db1\u0dca\u0db4\u0dad\u0dd4"
 
@@ -1888,28 +1892,39 @@
 
     move-result v2
 
-    if-eqz v2, :cond_deposit_done
+    if-nez v2, :cond_set_green
 
-    :cond_deposit_apply
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+    const-string v2, "Withdraw"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-lez v2, :cond_deposit_done
+    if-nez v2, :cond_set_red
 
-    new-instance v3, Landroid/text/style/ForegroundColorSpan;
+    const-string v2, "withdraw"
 
-    const v4, -0xe95cb6
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-direct {v3, v4}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+    move-result v2
 
-    const/4 v4, 0x0
+    if-nez v2, :cond_set_red
 
-    const/16 v5, 0x21
+    goto :cond_colors_done
 
-    invoke-interface {v0, v3, v4, v2, v5}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
+    :cond_set_green
+    const v2, -0xe95cb6
 
-    :cond_deposit_done
+    invoke-virtual {p0, v2}, Lcom/facebook/react/views/text/ReactTextView;->setTextColor(I)V
+
+    goto :cond_colors_done
+
+    :cond_set_red
+    const v2, -0x23d9da
+
+    invoke-virtual {p0, v2}, Lcom/facebook/react/views/text/ReactTextView;->setTextColor(I)V
+
+    :cond_colors_done
     invoke-virtual {p0, v0}, Lcom/facebook/react/views/text/ReactTextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 378

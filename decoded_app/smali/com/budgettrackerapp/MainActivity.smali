@@ -14,6 +14,27 @@
 .end method
 
 
+.method protected onCreate(Landroid/os/Bundle;)V
+    .locals 2
+
+    invoke-super {p0, p1}, Lcom/facebook/react/ReactActivity;->onCreate(Landroid/os/Bundle;)V
+
+    invoke-virtual {p0}, Lcom/budgettrackerapp/MainActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    const v1, -0x1f0d02
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    return-void
+.end method
+
+
 # virtual methods
 .method protected createReactActivityDelegate()Lcom/facebook/react/ReactActivityDelegate;
     .locals 3

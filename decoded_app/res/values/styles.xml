@@ -13,7 +13,15 @@
         <item name="android:windowEnterAnimation">@anim/catalyst_push_up_in</item>
         <item name="android:windowExitAnimation">@anim/catalyst_push_up_out</item>
     </style>
-    <style name="AppTheme" parent="@style/Theme.AppCompat.DayNight.NoActionBar" />
+    <style name="AppTheme" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/app_background_light_blue</item>
+        <item name="android:colorBackground">@color/app_background_light_blue</item>
+        <item name="android:textColorPrimary">@color/app_primary_blue</item>
+        <item name="android:textColorSecondary">@color/app_success_green</item>
+        <item name="colorPrimary">@color/app_primary_blue</item>
+        <item name="colorPrimaryDark">@color/app_primary_blue</item>
+        <item name="colorAccent">@color/app_accent_red</item>
+    </style>
     <style name="Base.AlertDialog.AppCompat" parent="@android:style/Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
         <item name="buttonIconDimen">@dimen/abc_alert_dialog_button_dimen</item>

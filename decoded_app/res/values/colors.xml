@@ -67,4 +67,8 @@
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6ffffff</color>
+    <color name="app_background_light_blue">#FFE0F2FE</color>
+    <color name="app_primary_blue">#FF1D4ED8</color>
+    <color name="app_accent_red">#FFDC2626</color>
+    <color name="app_success_green">#FF16A34A</color>
 </resources>
