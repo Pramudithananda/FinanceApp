@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final APPLICATION_ID:Ljava/lang/String; = "com.budgettrackerapp.greenv3"
+.field public static final APPLICATION_ID:Ljava/lang/String; = "com.budget.new"
 
 .field public static final BUILD_TYPE:Ljava/lang/String; = "release"
 
