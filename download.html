@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>????? ???????? App - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .app-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .version {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .info-box {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .info-box h3 {
+            color: #0c4a6e;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .info-box li {
+            color: #0c4a6e;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .info-box li:before {
+            content: "?";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .download-section {
+            margin-top: 30px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5);
+        }
+        
+        .download-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .file-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 10px;
+        }
+        
+        .file-info p {
+            color: #6b7280;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        .file-info strong {
+            color: #374151;
+        }
+        
+        .instructions {
+            margin-top: 30px;
+            text-align: left;
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .instructions h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            color: #92400e;
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .download-btn {
+                padding: 15px 40px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-icon">??</div>
+        <h1>????? ???????? App</h1>
+        <p class="version">Version 2.3 - Working Version</p>
+        
+        <div class="info-box">
+            <h3>?? App ????????</h3>
+            <ul>
+                <li>????? ?? ????? ??? ?????????</li>
+                <li>?????? ????? tracking</li>
+                <li>??????? ???????</li>
+                <li>???????? ????? interface</li>
+                <li>Offline data storage</li>
+            </ul>
+        </div>
+        
+        <div class="download-section">
+            <a href="????? ????????_v2.3_NEW.apk" class="download-btn" download>
+                ?? APK Download ?????
+            </a>
+            
+            <div class="file-info">
+                <p><strong>File ??:</strong> ????? ????????_v2.3_NEW.apk</p>
+                <p><strong>File ????????:</strong> 51 MB</p>
+                <p><strong>Platform:</strong> Android</p>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>?? Install ??? ??????:</h3>
+            <ol>
+                <li>??? button ?? click ?? APK file ?? download ?????</li>
+                <li>Settings > Security > "Unknown Sources" enable ?????</li>
+                <li>Download ?? APK file ?? open ?????</li>
+                <li>Install button ?? press ?????</li>
+                <li>App ?? open ?? ?????? ?????! ??</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
