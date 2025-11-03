@@ -1,238 +1,106 @@
-# 💰 Personal Finance Management App - සිංහල
+# 💰 මුදල් කළමනාකරණ (React Native / Expo)
 
-A modern, responsive personal finance management application built with React, featuring a beautiful Sinhala interface for managing bank accounts, cash flow, income, and expenses.
+Sinhala-first personal finance tracker for managing bank balances, cash in hand, and budget categories on Android or iOS. The repository now ships as an Expo-managed React Native project so you can inspect, modify, and rebuild an APK without reverse-engineering the original binary.
 
-## 🌟 Features
+## 🌟 Feature Highlights
+- Track separate bank and cash balances with automatic transfers
+- Quick Sinhala UI flows for deposits, income transfers, and expenses
+- Budget categories with progress bars, remaining totals, and unit price hints
+- AsyncStorage-powered offline persistence (`budgetTrackerWorkingV23` key)
+- Transaction history with Sinhala copy and emoji indicators
 
-### 🏦 Account Management
-- **Bank Account Balance** - Track your bank deposits and withdrawals
-- **Cash Balance** - Manage your on-hand cash
-- **Real-time Balance Updates** - Instant balance calculations
-- **Smart Money Flow** - Automatic transfers between bank and cash
+## 🗂️ Repository Layout
 
-### 💸 Transaction Management
-- **Bank Deposits** - Direct deposits or cash-to-bank transfers
-- **Bank Withdrawals** - Withdraw money from bank to cash
-- **Transaction History** - View all your recent transactions
-- **Smart Logic** - Cash reduces when depositing to bank, bank reduces when withdrawing
-
-### 📊 Income & Expense Tracking
-- **Income Management** - Add income to bank or cash accounts
-- **Expense Tracking** - Record and track all your expenses
-- **Categorized View** - Separate tabs for income and expenses
-- **Date & Description** - Detailed transaction information
-
-### 🎨 Modern UI/UX
-- **Glassmorphism Design** - Modern frosted glass effects
-- **Gradient Backgrounds** - Beautiful color gradients
-- **Smooth Animations** - Hover effects and transitions
-- **Responsive Design** - Works perfectly on mobile and desktop
-- **Sinhala Interface** - Complete Sinhala language support
-
-## 📱 Screenshots
-
-### Home Dashboard
-- View bank and cash balances
-- Quick action buttons for deposits and withdrawals
-- Recent transaction history
-
-### Expense Management
-- Add new expenses with date and description
-- View all expense history
-- Automatic cash balance deduction
-
-### Income Tracking
-- Record income with bank/cash selection
-- Track income sources and dates
-- Automatic balance updates
+```
+.
+├── App.js                  # Expo entry point
+├── app.json                # Expo project configuration (rename android.package as needed)
+├── babel.config.js         # Uses babel-preset-expo
+├── eas.json                # EAS Build profiles (apk + aab)
+├── package.json            # Dependencies (Expo 51, RN 0.74, AsyncStorage)
+├── src/
+│   ├── App.js              # Main app container
+│   ├── components/         # UI components + modals
+│   ├── styles.js           # Single StyleSheet for the app
+│   └── utils/              # AsyncStorage + formatting helpers
+└── මුදල් කළමනාකරණ_1.0.apk   # Original release for reference
+```
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Node.js (version 14 or higher)
-- npm or yarn
+1. **Install prerequisites**
+   - Node.js ≥ 18 (LTS recommended)
+   - `npm install --global expo-cli` (optional but convenient)
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/personal-finance-app.git
-   cd personal-finance-app
-   ```
-
-2. **Install dependencies**
+2. **Install project dependencies**
    ```bash
    npm install
    ```
 
-3. **Install required packages**
+3. **Run in development mode**
    ```bash
-   npm install lucide-react
+   npm start        # launches Expo Dev Tools
+   ```
+   - Press **a** in the terminal to open the Android emulator
+   - Or scan the QR code with Expo Go on a physical device
+
+4. **Reset cached storage during testing (optional)**
+   ```javascript
+   import AsyncStorage from '@react-native-async-storage/async-storage';
+   await AsyncStorage.removeItem('budgetTrackerWorkingV23');
    ```
 
-4. **Start the development server**
+## 🧪 Local Release Build (without cloud services)
+
+You can generate a signed APK locally with the Android SDK:
+
+1. Install Android Studio + command-line tools and accept required licenses.
+2. Run a native prebuild so Gradle projects are generated:
    ```bash
-   npm start
+   npx expo prebuild --platform android
    ```
-
-5. **Open your browser**
-   Navigate to `http://localhost:3000`
-
-### Quick Setup Alternative
-
-1. **Create a new React app**
+3. Place your keystore under `android/app/` and add the credentials block to `android/app/build.gradle` (or let Gradle prompt for it at build time).
+4. Build the release APK:
    ```bash
-   npx create-react-app my-finance-app
-   cd my-finance-app
+   cd android
+   ./gradlew assembleRelease    # outputs app-release.apk in android/app/build/outputs/apk/release
    ```
+5. Copy the generated APK back up to the repo (e.g., `dist/app-release.apk`) for distribution.
 
-2. **Install Lucide React for icons**
+> 🔁 If you prebuild locally, remember to re-run `npx expo prebuild --clean` whenever `app.json` or native modules change.
+
+## ☁️ Cloud Build with EAS (recommended)
+
+Expo Application Services dramatically simplifies release management. A starter `eas.json` is already included.
+
+1. Install the CLI and log in:
    ```bash
-   npm install lucide-react
+   npm install --global eas-cli
+   eas login
    ```
-
-3. **Replace src/App.js with:**
-   ```jsx
-   import React from 'react';
-   import FinanceApp from './components/FinanceApp';
-   
-   function App() {
-     return <FinanceApp />;
-   }
-   
-   export default App;
-   ```
-
-4. **Create src/components/FinanceApp.jsx and paste the component code**
-
-5. **Run the app**
+2. Configure your Android package name in `app.json` (`expo.android.package`). It must be unique across the Play Store.
+3. Trigger an internal testing APK build:
    ```bash
-   npm start
+   eas build --platform android --profile preview
    ```
+4. Watch progress:
+   ```bash
+   eas build:status
+   ```
+5. Download the artifact from the Expo dashboard (or via the link printed in the terminal). The `preview` profile in `eas.json` is already set to produce an APK. Use the `production` profile for Play Store AABs.
 
-## 📁 Project Structure
+## 🔍 Notes from the Original APK Audit
+- APK extracted to `apk_extracted/` for reference (`assets/index.android.bundle`, native libs, manifest, etc.).
+- String analysis shows the UI copy is Sinhala + emoji, matching the rebuilt components.
+- AsyncStorage usage was inferred from embedded bundle heuristics and preserved via the same `budgetTrackerWorkingV23` storage key, so existing installs can migrate seamlessly if the package name remains unchanged.
+- The new Expo layout keeps the logic modular (components, utils, styles) making it easier to extend before issuing another release.
 
-```
-personal-finance-app/
-├── public/
-│   ├── index.html
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── FinanceApp.jsx
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── package.json
-└── README.md
-```
-
-## 💻 Tech Stack
-
-- **Frontend:** React 18+
-- **Icons:** Lucide React
-- **Styling:** CSS-in-JS with styled-jsx
-- **State Management:** React Hooks (useState)
-- **Responsive Design:** CSS Grid & Flexbox
-
-## 🎯 Key Functionalities
-
-### Balance Management
-```javascript
-// Automatic balance calculations
-const handleDeposit = () => {
-  if (transactionType === 'bank') {
-    setBankBalance(prev => prev + amount);
-  } else {
-    // Cash to bank transfer
-    setCashBalance(prev => prev - amount);
-    setBankBalance(prev => prev + amount);
-  }
-};
-```
-
-### Expense Tracking
-```javascript
-// Expense deduction from cash
-const handleExpense = () => {
-  setCashBalance(prev => prev - expenseAmount);
-  setExpenses(prev => [newExpense, ...prev]);
-};
-```
-
-## 🔧 Customization
-
-### Adding New Features
-1. **New Transaction Types** - Extend the modal system
-2. **Categories** - Add expense/income categories
-3. **Reports** - Add monthly/yearly reports
-4. **Data Persistence** - Integrate with localStorage or database
-
-### Styling Modifications
-- Modify gradient colors in CSS
-- Change card designs
-- Update animation timings
-- Customize responsive breakpoints
-
-## 🌐 Language Support
-
-Currently supports:
-- **Sinhala (සිංහල)** - Primary interface language
-- **English** - Mixed with Sinhala for technical terms
-
-### Adding More Languages
-```javascript
-const translations = {
-  si: { deposit: 'Deposit කරන්න', ... },
-  en: { deposit: 'Make Deposit', ... },
-  ta: { deposit: 'வைப்பு செய்க', ... }
-};
-```
-
-## 📊 Future Enhancements
-
-- [ ] **Data Persistence** - Local storage integration
-- [ ] **Export Features** - PDF/Excel export
-- [ ] **Budget Planning** - Monthly budget tracking
-- [ ] **Categories** - Expense categorization
-- [ ] **Charts & Analytics** - Visual data representation
-- [ ] **Multi-currency** - Support for multiple currencies
-- [ ] **Backup & Sync** - Cloud synchronization
-- [ ] **Receipt Scanning** - Camera integration for receipts
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. **Fork the project**
-2. **Create your feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Lucide React** - For beautiful icons
-- **React Team** - For the amazing framework
-- **CSS Gradients** - For inspiration on modern design
-- **Sinhala Typography** - For language support
-
-## 📞 Contact
-
-Your Name - [@yourusername](https://twitter.com/yourusername) - email@example.com
-
-Project Link: [https://github.com/yourusername/personal-finance-app](https://github.com/yourusername/personal-finance-app)
-
-## 🚀 Demo
-
-[Live Demo](https://your-demo-link.netlify.app) | [Video Demo](https://your-video-link.com)
+## 🧭 Next Steps & Customisation Ideas
+- Extend `CategoryDetailsModal` with charts or export options
+- Connect to a remote backend instead of AsyncStorage if multi-device sync is required
+- Localise the copy further by introducing an i18n layer (`react-intl` / `expo-localization`)
+- Automate builds via CI (`eas build --non-interactive` + GitHub Actions)
 
 ---
 
-**Made with ❤️ for the Sri Lankan community**
-
-*දේශීය මුදල් කළමනාකරණ පද්ධතිය - ශ්‍රී ලාංකීය ප්‍රජාව සඳහා*
+**Made with ❤️ for the Sri Lankan community** – feel free to open issues or improvements in Sinhala or English.
