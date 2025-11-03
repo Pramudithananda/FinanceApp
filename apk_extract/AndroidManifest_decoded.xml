@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" package="com.budgettrackerapp" platformBuildVersionCode="34" platformBuildVersionName="14">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <permission android:name="com.budgettrackerapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="0x00000002"/>
+  <uses-permission android:name="com.budgettrackerapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+  <application android:theme="@7F0E0007" android:label="මුදල් කළමනාකරණ" android:icon="@7F0C0000" android:name="com.budgettrackerapp.MainApplication" android:allowBackup="true" android:extractNativeLibs="true" android:roundIcon="@7F0C0001" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+    <activity android:label="@7F0D001D" android:name="com.budgettrackerapp.MainActivity" android:exported="true" android:launchMode="2" android:configChanges="0x00000FB0" android:windowSoftInputMode="0x00000010">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <provider android:name="cl.json.RNShareFileProvider" android:exported="false" android:authorities="com.budgettrackerapp.rnshare.fileprovider" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@7F100001"/>
+    </provider>
+    <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.budgettrackerapp.androidx-startup">
+      <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+      <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+    </provider>
+    <meta-data android:name="com.facebook.soloader.enabled" android:value="false"/>
+  </application>
+</manifest>
