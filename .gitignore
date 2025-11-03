@@ -1,0 +1,12 @@
+node_modules/
+.expo/
+.expo-shared/
+android/
+ios/
+dist/
+*.log
+package-lock.json
+*.iml
+.idea/
+.DS_Store
+Thumbs.db

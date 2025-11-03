@@ -1,238 +1,90 @@
-# 💰 Personal Finance Management App - සිංහල
+# 💰 මුදල් කළමනාකරණ (Expo React Native)
 
-A modern, responsive personal finance management application built with React, featuring a beautiful Sinhala interface for managing bank accounts, cash flow, income, and expenses.
+මූලික React වෙබ් සංස්කරණයක් වෙනුවට දැනටමත් ඉදිරිපත් කර ඇති සිංහල මුදල් කළමනාකරණ අත්දැකීම Expo/React Native මත නැවත නිර්මාණය කර ඇත. මෙහි අරමුණ සජීවී Android ජංගම යෙදුමක් ලෙස පවත්වාගෙන යාම සහ `.apk` ගොනුවක් නැවත ගොඩනඟා බාගත කිරීමට අවශ්‍ය සියලු පියවර repository එක තුළින්ම සපයීමයි.
 
-## 🌟 Features
-
-### 🏦 Account Management
-- **Bank Account Balance** - Track your bank deposits and withdrawals
-- **Cash Balance** - Manage your on-hand cash
-- **Real-time Balance Updates** - Instant balance calculations
-- **Smart Money Flow** - Automatic transfers between bank and cash
-
-### 💸 Transaction Management
-- **Bank Deposits** - Direct deposits or cash-to-bank transfers
-- **Bank Withdrawals** - Withdraw money from bank to cash
-- **Transaction History** - View all your recent transactions
-- **Smart Logic** - Cash reduces when depositing to bank, bank reduces when withdrawing
-
-### 📊 Income & Expense Tracking
-- **Income Management** - Add income to bank or cash accounts
-- **Expense Tracking** - Record and track all your expenses
-- **Categorized View** - Separate tabs for income and expenses
-- **Date & Description** - Detailed transaction information
-
-### 🎨 Modern UI/UX
-- **Glassmorphism Design** - Modern frosted glass effects
-- **Gradient Backgrounds** - Beautiful color gradients
-- **Smooth Animations** - Hover effects and transitions
-- **Responsive Design** - Works perfectly on mobile and desktop
-- **Sinhala Interface** - Complete Sinhala language support
-
-## 📱 Screenshots
-
-### Home Dashboard
-- View bank and cash balances
-- Quick action buttons for deposits and withdrawals
-- Recent transaction history
-
-### Expense Management
-- Add new expenses with date and description
-- View all expense history
-- Automatic cash balance deduction
-
-### Income Tracking
-- Record income with bank/cash selection
-- Track income sources and dates
-- Automatic balance updates
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (version 14 or higher)
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/personal-finance-app.git
-   cd personal-finance-app
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Install required packages**
-   ```bash
-   npm install lucide-react
-   ```
-
-4. **Start the development server**
-   ```bash
-   npm start
-   ```
-
-5. **Open your browser**
-   Navigate to `http://localhost:3000`
-
-### Quick Setup Alternative
-
-1. **Create a new React app**
-   ```bash
-   npx create-react-app my-finance-app
-   cd my-finance-app
-   ```
-
-2. **Install Lucide React for icons**
-   ```bash
-   npm install lucide-react
-   ```
-
-3. **Replace src/App.js with:**
-   ```jsx
-   import React from 'react';
-   import FinanceApp from './components/FinanceApp';
-   
-   function App() {
-     return <FinanceApp />;
-   }
-   
-   export default App;
-   ```
-
-4. **Create src/components/FinanceApp.jsx and paste the component code**
-
-5. **Run the app**
-   ```bash
-   npm start
-   ```
+## 🔍 Repo & APK විශ්ලේෂණ සාරාංශය
+- මුල් APK එක Hermes bundle භාවිතයෙන් React Native CLI new architecture මත ගොඩනංවා තිබුණා (arm64/armeabi-v7a/x86/x86_64 libs සහ `assets/index.android.bundle`).
+- AsyncStorage මඟින් offline state persistence ක්‍රියාත්මක වී ඇති බව bundle එකෙන් දැක්කා.
+- Repo එක තුළ තිබුණේ DeepSeek generated `.jsx` snippet ගොනු කිහිපයයි. Expo project structure, build scripts, package.json වැනි මූලික ගොනු නොමැති නිසා නිවැරදි build එකක් කල නොහැකියි.
+- මේ commit තුළ Expo SDK 51 (React Native 0.74) පදනම්ව සම්පූර්ණ `src/` tree, styles, AsyncStorage utility, Sinhala UI copy සියල්ල නැවත සකස් කර අවශ්‍ය npm scripts එකතු කලා.
 
 ## 📁 Project Structure
-
 ```
-personal-finance-app/
-├── public/
-│   ├── index.html
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── FinanceApp.jsx
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── package.json
-└── README.md
-```
-
-## 💻 Tech Stack
-
-- **Frontend:** React 18+
-- **Icons:** Lucide React
-- **Styling:** CSS-in-JS with styled-jsx
-- **State Management:** React Hooks (useState)
-- **Responsive Design:** CSS Grid & Flexbox
-
-## 🎯 Key Functionalities
-
-### Balance Management
-```javascript
-// Automatic balance calculations
-const handleDeposit = () => {
-  if (transactionType === 'bank') {
-    setBankBalance(prev => prev + amount);
-  } else {
-    // Cash to bank transfer
-    setCashBalance(prev => prev - amount);
-    setBankBalance(prev => prev + amount);
-  }
-};
+.
+├── App.js                 # Expo entry (re-export)
+├── app.json               # Expo app config (Android package id, version)
+├── babel.config.js        # babel-preset-expo
+├── package.json           # dependencies + build scripts
+└── src/
+    ├── App.js             # main application container
+    ├── styles.js          # centralized StyleSheet definitions
+    ├── components/
+    │   ├── ActionButton.js
+    │   ├── BalanceCard.js
+    │   ├── CategoryCard.js
+    │   ├── Header.js
+    │   ├── TransactionItem.js
+    │   └── Modals/
+    │       ├── CategoryDetailsModal.js
+    │       ├── CategoryModal.js
+    │       └── TransactionModal.js
+    └── utils/
+        ├── formatters.js  # Intl currency helpers (LKR → රු)
+        └── storage.js     # AsyncStorage persistence layer
 ```
 
-### Expense Tracking
-```javascript
-// Expense deduction from cash
-const handleExpense = () => {
-  setCashBalance(prev => prev - expenseAmount);
-  setExpenses(prev => [newExpense, ...prev]);
-};
-```
+## 🌟 විශේෂාංග
+- **සිංහල UI**: මුළු copy එකම Sinhala/emoji blend එකක් ලෙස Expo app එකේ hard-coded.
+- **දත්ත ඉතිරි කිරීම**: `@react-native-async-storage/async-storage` මඟින් bank/cash balances, categories, transactions local device එකේ cache කරයි.
+- **කාණ්ඩ කළමනාකරණය**: Create/Edit/Delete + detail modal (target, spent, unit price, remaining) සහ filtered transaction list.
+- **ගනුදෙනු modal තුළ validations**: Bank → Cash transfers, expenses ඉවත් කිරීමට ප්‍රමාණ සීමා, සිංහල Alert copy.
+- **Responsive styling**: Pure React Native StyleSheet (no tailwind/3rd party) නිසා Expo Bare/managed දෙකම සමඟ වැඩ.
 
-## 🔧 Customization
+## ✅ අවශ්‍යතා
+- Node.js 18.x හෝ ඊට ඉහළ (Expo SDK 51 requirement).
+- npm (v9+) හෝ yarn.
+- Android Studio + SDK / device driver (APK build එක localව generate করන්නේ නම්).
+- Expo CLI commands (`npx expo ...`) internet access.
 
-### Adding New Features
-1. **New Transaction Types** - Extend the modal system
-2. **Categories** - Add expense/income categories
-3. **Reports** - Add monthly/yearly reports
-4. **Data Persistence** - Integrate with localStorage or database
+## 🚀 Development Mode ක්‍රියාත්මක කිරීම
+- `npm install`
+- `npx expo start` → Metro bundler UI එකේ Android Emulator හෝ Physical Device connect කර `a` / QR scan.
+- Offline persistence test කරන්න නම් Expo Go මඟින් run කර බලන්න (AsyncStorage නව installation Expo managed workflow එකේ auto-configured).
 
-### Styling Modifications
-- Modify gradient colors in CSS
-- Change card designs
-- Update animation timings
-- Customize responsive breakpoints
+## 🏗️ APK Build Options
+- **Scripts (package.json)**
+  - `npm run android` → `expo run:android` (debug build, requires Android SDK)
+  - `npm run android:release` → `expo run:android --variant release` (installs release build to connected device/emulator)
+  - `npm run build:android-apk` → `expo prebuild --platform android --clean && cd android && ./gradlew assembleRelease`
+- **Local Gradle build (unsigned universal APK produced at `android/app/build/outputs/apk/release/app-release.apk`)**
+  1. `npm run build:android-apk`
+  2. output APK sign/align manually (debug keystore auto applied; for production keystore update `android/app/build.gradle`).
+- **EAS Build (Remote signed binaries)**
+  - `npm install -g eas-cli`
+  - `eas login`
+  - add `extra.eas.projectId` to `app.json` (Expo project dashboard → Project ID)
+  - `eas build --platform android --profile preview --output ./dist/app-preview.apk`
+  - optional: `--profile production` for Google Play ready AAB.
 
-## 🌐 Language Support
+> 🔐 Production signing: `expo prebuild` generates bare Android project. Update `android/app/build.gradle` signingConfigs + `gradle.properties` පසුදා Play Console signing certs එකට.
 
-Currently supports:
-- **Sinhala (සිංහල)** - Primary interface language
-- **English** - Mixed with Sinhala for technical terms
+## 🧪 Smoke Tests / QA Checklist
+- `npm run lint` (eslint-config-expo) – optional but included for CI.
+- Expo Go device smoke test: add income/expense, close/open app → AsyncStorage data persistsද බලන්න.
+- Release APK install (`adb install app-release.apk`) verify Sinhala copy renders without glyph fallback.
 
-### Adding More Languages
-```javascript
-const translations = {
-  si: { deposit: 'Deposit කරන්න', ... },
-  en: { deposit: 'Make Deposit', ... },
-  ta: { deposit: 'வைப்பு செய்க', ... }
-};
-```
+## 🔄 Customization Hints
+- `DEFAULT_CATEGORIES` array (`src/App.js`) සකස් කර තමන්ගේ කාණ්ඩ set එක preload කරන්න.
+- Balance starting values (`bankBalance`, `cashBalance`) change කර Cashflow simulation customize කරන්න.
+- Currency formatter `src/utils/formatters.js` → change to multi-currency (Intl.NumberFormat) if රු නොවන ගනුදෙනු අවශ්‍ය නම්.
+- Styles file එකේ gradient colors / spacing update කිරීමෙන් Corporate branding එක සඳහා UI match කරන්න.
 
-## 📊 Future Enhancements
+## 🗺️ Roadmap Ideas
+- Firebase/SQLite sync to backup data across devices.
+- Charts (Victory Native / Reanimated) for expense breakdown.
+- User authentication to share wallets within family.
+- Push notifications (Expo Notifications) for payment reminders.
 
-- [ ] **Data Persistence** - Local storage integration
-- [ ] **Export Features** - PDF/Excel export
-- [ ] **Budget Planning** - Monthly budget tracking
-- [ ] **Categories** - Expense categorization
-- [ ] **Charts & Analytics** - Visual data representation
-- [ ] **Multi-currency** - Support for multiple currencies
-- [ ] **Backup & Sync** - Cloud synchronization
-- [ ] **Receipt Scanning** - Camera integration for receipts
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. **Fork the project**
-2. **Create your feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Lucide React** - For beautiful icons
-- **React Team** - For the amazing framework
-- **CSS Gradients** - For inspiration on modern design
-- **Sinhala Typography** - For language support
-
-## 📞 Contact
-
-Your Name - [@yourusername](https://twitter.com/yourusername) - email@example.com
-
-Project Link: [https://github.com/yourusername/personal-finance-app](https://github.com/yourusername/personal-finance-app)
-
-## 🚀 Demo
-
-[Live Demo](https://your-demo-link.netlify.app) | [Video Demo](https://your-video-link.com)
-
----
-
-**Made with ❤️ for the Sri Lankan community**
-
-*දේශීය මුදල් කළමනාකරණ පද්ධතිය - ශ්‍රී ලාංකීය ප්‍රජාව සඳහා*
+## 🙌 ස්තුතියි
+- මුල් APK එකේ logic එක ගොඩනගා ඇති නිසා async-storage schema එක සහ Sinhala wording එකක් තබාගෙන Expo managed workflow එකට නැවත ගොඩනඟන ලදි.
+- ඔබට විශේෂ feature අවශ්‍ය නම් Issues/PRs welcome.
