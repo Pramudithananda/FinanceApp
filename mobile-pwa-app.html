@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="මුදල් කළමනාකරණය">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoi4K2¸4K204K2j4K2T4K22IOC2oeC2q+C2nOC2uOC2huC2oeC2gOC2u+C2pOC2ueC2gSIsInNob3J0X25hbWUiOiLgrbjirbTgrZPgrZTgrZggIOC2oeC2q+C2nOC2uOC2huC2oeC2gOC2u+C2pOC2ueC2gSIsInN0YXJ0X3VybCI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjNjY3ZWVhIiwidGhlbWVfY29sb3IiOiIjNjY3ZWVhIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU1USTRJaUJvWldsbmFIUTlJakV5T0NJZ2RtbGxkMEp2ZUQwaU1DQXdJREV5T0NBeE1qZ2lJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSEpsWTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqRXlPQ0lnYUdWcFoyaDBQU0l4TWpnaUlHWnBiR3c5SWlNMk5qZGxaV0VpTHo0OGNHRjBhQ0JrUFNKTk5qUWdOalJETWprdU5TQTJOQ0EyTkNBek1pNDFJRFkwSURZMElERXlPQ0EyTkNBeE1qZ2dNakl1TlNBeE1qZ2dNakl1TlNBeE1qZ2dOalJhSWk4K1BIQmhkR2dnWkQwaVRUazJJRFkwUXpFeU9TNDFJRFkwSURZMElERXlPUzQxSURZMElERTBOQ0F5T1NBME1pNDFJRGd3SURZMElEZzBJRGcwSURnMElEZzBJRFEySURnMElEUXlMalVnT0RBZ01qZ2dOREl1TlNBek1pQXlPQ0F6TWlBek1pQXpNaUF6TWlBMk5DQXpNaUEyTkNBMk5FcGFJaTgrUEhCaGRHZ2daRDBpVFRrMklEWTBZekV5T1M0MUlEWTBJRFkwSURFeU9TNDFJRFkwSURFME5DQXlPU0EwTWk0MUlEZ3dJRFkwSURnMElEZzBJRGcwSURnMElEZzBJRFEySURnMElEUXlMalVnT0RBZ01qZ2dOREl1TlNBek1pQXlPQ0F6TWlBek1pQXpNaUF6TWlBMk5DQXpNaUEyTkNBMk5FcGFJaTgrUEM5emRtYysifSx7InNyYyI6ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBSUFBQUFBQ0FZQUFBQUI0QjNqRUFBQUFBWE5TUjBJQXJzNGM2UUFBQUFSblFVMUJBQUN4and2OFlRVUFBQUFKY0VoWmN3QUFEc01BQUEyREFRTUJBQUFBQUJKUlU1RXJrSmdnZz09Iiwic2l6ZXMiOiIxMjh4MTI4IiwidHlwZSI6ImltYWdlL3BuZyJ9XX0=">
+    <title>💰 මුදල් කළමනාකරණය - PWA</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        .app {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            max-width: 100vw;
+        }
+        
+        /* App Header */
+        .app-header {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 20px 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .app-title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .app-subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .total-balance {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px 15px 100px;
+        }
+        
+        /* Balance Cards */
+        .balance-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .balance-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .balance-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 20px 15px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            touch-action: manipulation;
+        }
+        
+        .balance-card:active {
+            transform: scale(0.95);
+        }
+        
+        .balance-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .balance-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .balance-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .balance-amount {
+            font-size: 24px;
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Quick Actions */
+        .actions-section {
+            margin-bottom: 30px;
+        }
+        
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .action-btn {
+            padding: 25px 15px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 800;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .deposit { background: linear-gradient(135deg, #10B981, #059669); }
+        .withdraw { background: linear-gradient(135deg, #EF4444, #DC2626); }
+        .income { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
+        .expense { background: linear-gradient(135deg, #F59E0B, #D97706); }
+        
+        /* Transactions */
+        .transactions-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 25px;
+            color: #1F2937;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .transactions-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            touch-action: manipulation;
+        }
+        
+        .transaction-item:active {
+            transform: scale(0.98);
+        }
+        
+        .transaction-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .transaction-info {
+            flex: 1;
+        }
+        
+        .transaction-desc {
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+        
+        .transaction-date {
+            font-size: 11px;
+            color: #6B7280;
+            font-weight: 600;
+        }
+        
+        .transaction-amount {
+            font-weight: 900;
+            font-size: 16px;
+        }
+        
+        .positive { color: #10B981; }
+        .negative { color: #EF4444; }
+        
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal.show { 
+            display: flex; 
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlide 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @keyframes modalSlide {
+            from { opacity: 0; transform: translateY(30px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .modal-title {
+            font-size: 22px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1F2937;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #374151;
+            font-size: 14px;
+        }
+        
+        .input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        .input:focus {
+            outline: none;
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            transform: scale(1.02);
+        }
+        
+        .category-section {
+            margin-bottom: 20px;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .category-btn {
+            padding: 15px 8px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            background: #F9FAFB;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            touch-action: manipulation;
+        }
+        
+        .category-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .category-btn.active {
+            background: #3B82F6;
+            border-color: #3B82F6;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .account-toggle {
+            display: flex;
+            background: #F3F4F6;
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .toggle-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #6B7280;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            touch-action: manipulation;
+        }
+        
+        .toggle-btn.active {
+            background: #3B82F6;
+            color: white;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        .btn-cancel {
+            background: #F3F4F6;
+            color: #6B7280;
+        }
+        
+        .btn-confirm {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #9CA3AF;
+        }
+        
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* Install prompt */
+        .install-prompt {
+            position: fixed;
+            bottom: 100px;
+            left: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: none;
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .install-text {
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .install-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .install-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .install-yes {
+            background: #10B981;
+            color: white;
+        }
+        
+        .install-no {
+            background: #F3F4F6;
+            color: #6B7280;
+        }
+        
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+        }
+        
+        .nav-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .nav-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .nav-btn.active {
+            background: rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-icon {
+            font-size: 20px;
+        }
+        
+        .nav-text {
+            font-size: 10px;
+            font-weight: 700;
+            color: #6B7280;
+        }
+        
+        .nav-btn.active .nav-text {
+            color: #3B82F6;
+        }
+        
+        /* Loading State */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Success Animation */
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .success-animation {
+            animation: successPulse 0.6s ease;
+        }
+        
+        /* Responsive */
+        @media (max-width: 360px) {
+            .balance-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .balance-amount {
+                font-size: 20px;
+            }
+            
+            .app-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="app-header">
+            <h1 class="app-title">💰 මුදල් කළමනාකරණය</h1>
+            <p class="app-subtitle">ඔබේ පුද්ගලික මුදල් කළමනාකරණ ඇප්</p>
+            <div class="total-balance" id="totalBalance">රු. 150,000.00</div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Balance Section -->
+            <section class="balance-section">
+                <h2 class="section-title">💳 ගිණුම් ශේෂ</h2>
+                <div class="balance-cards">
+                    <div class="balance-card">
+                        <span class="balance-icon">🏦</span>
+                        <div class="balance-title">බැංකු ගිණුම</div>
+                        <div class="balance-amount" id="bankBalance">රු. 125,000.00</div>
+                    </div>
+                    
+                    <div class="balance-card">
+                        <span class="balance-icon">💵</span>
+                        <div class="balance-title">මාර්ගස්ථ මුදල්</div>
+                        <div class="balance-amount" id="cashBalance">රු. 25,000.00</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Quick Actions -->
+            <section class="actions-section">
+                <h2 class="section-title">🚀 ක්‍රියාවන්</h2>
+                <div class="action-grid">
+                    <button class="action-btn deposit" onclick="openModal('deposit')">
+                        <span style="font-size: 24px;">💳</span>
+                        <span>Deposit</span>
+                    </button>
+                    <button class="action-btn withdraw" onclick="openModal('withdraw')">
+                        <span style="font-size: 24px;">💸</span>
+                        <span>Withdraw</span>
+                    </button>
+                    <button class="action-btn income" onclick="openModal('income')">
+                        <span style="font-size: 24px;">💰</span>
+                        <span>ආදායම</span>
+                    </button>
+                    <button class="action-btn expense" onclick="openModal('expense')">
+                        <span style="font-size: 24px;">🛍️</span>
+                        <span>වියදම</span>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Transactions -->
+            <section class="transactions-section">
+                <h3 class="transactions-title">📋 මෑත ගනුදෙනු</h3>
+                <div id="transactionsList">
+                    <div class="empty-state">
+                        <span class="empty-icon">💼</span>
+                        <p><strong>ගනුදෙනු එක්කරන්න ආරම්භ කරන්න!</strong></p>
+                        <p style="font-size: 12px; margin-top: 5px;">ඉහත buttons වලින් transactions add කරන්න</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" onclick="switchTab('home')" id="homeTab">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">මුල් පිටුව</span>
+            </button>
+            <button class="nav-btn" onclick="switchTab('expenses')" id="expensesTab">
+                <span class="nav-icon">💸</span>
+                <span class="nav-text">වියදම්</span>
+            </button>
+            <button class="nav-btn" onclick="switchTab('income')" id="incomeTab">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">ආදායම්</span>
+            </button>
+        </nav>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modalTitle">💳 Deposit කරන්න</h2>
+            
+            <div class="form-group">
+                <label class="label">💵 මුදල</label>
+                <input type="number" class="input" id="amount" placeholder="0.00" inputmode="decimal">
+            </div>
+            
+            <div class="form-group">
+                <label class="label">📝 විස්තරය</label>
+                <input type="text" class="input" id="description" placeholder="විස්තරය ඇතුළත් කරන්න">
+            </div>
+            
+            <div class="form-group" id="categorySection" style="display: none;">
+                <label class="label">🏷️ කාණ්ඩය</label>
+                <div class="category-grid" id="categoryGrid">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="form-group" id="accountSection">
+                <label class="label">🏛️ ගිණුම</label>
+                <div class="account-toggle">
+                    <button class="toggle-btn active" id="bankToggle" onclick="selectAccount('bank')">🏦 බැංකුව</button>
+                    <button class="toggle-btn" id="cashToggle" onclick="selectAccount('cash')">💵 මාර්ගස්ථ</button>
+                </div>
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" onclick="closeModal()">❌ අවලංගු</button>
+                <button class="btn btn-confirm" onclick="confirmAction()">✅ තහවුරු</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <div class="install-text">📱 App එක Install කරන්න</div>
+        <div class="install-buttons">
+            <button class="install-btn install-yes" onclick="installApp()">✅ Install</button>
+            <button class="install-btn install-no" onclick="dismissInstall()">❌ Not Now</button>
+        </div>
+    </div>
+
+    <script>
+        // App State
+        let bankBalance = parseFloat(localStorage.getItem('bankBalance')) || 125000;
+        let cashBalance = parseFloat(localStorage.getItem('cashBalance')) || 25000;
+        let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+        let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+        let income = JSON.parse(localStorage.getItem('income')) || [];
+        let currentModalType = '';
+        let selectedAccount = 'bank';
+        let selectedCategory = 'general';
+        let currentTab = 'home';
+
+        // Categories
+        const expenseCategories = [
+            { id: 'food', name: 'ආහාර', icon: '🍽️' },
+            { id: 'transport', name: 'ප්‍රවාහනය', icon: '🚗' },
+            { id: 'housing', name: 'නිවාස', icon: '🏠' },
+            { id: 'shopping', name: 'සාප්පු', icon: '🛒' }
+        ];
+
+        const incomeCategories = [
+            { id: 'salary', name: 'වැටුප', icon: '💼' },
+            { id: 'business', name: 'ව්‍යාපාරය', icon: '💰' },
+            { id: 'freelance', name: 'ස්වාධීන', icon: '🎯' },
+            { id: 'other', name: 'වෙනත්', icon: '➕' }
+        ];
+
+        // PWA Install
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installPrompt').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    }
+                    deferredPrompt = null;
+                    document.getElementById('installPrompt').style.display = 'none';
+                });
+            }
+        }
+
+        function dismissInstall() {
+            document.getElementById('installPrompt').style.display = 'none';
+        }
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('data:text/javascript;base64,c2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgZnVuY3Rpb24oZXZlbnQpIHt9KTs=')
+                .then(function(registration) {
+                    console.log('SW registered: ', registration);
+                }, function(registrationError) {
+                    console.log('SW registration failed: ', registrationError);
+                });
+            });
+        }
+
+        // Save to localStorage
+        function saveData() {
+            localStorage.setItem('bankBalance', bankBalance);
+            localStorage.setItem('cashBalance', cashBalance);
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+            localStorage.setItem('expenses', JSON.stringify(expenses));
+            localStorage.setItem('income', JSON.stringify(income));
+        }
+
+        // Format currency
+        function formatCurrency(amount) {
+            return `රු. ${Math.round(amount).toLocaleString()}.00`;
+        }
+
+        // Update all displays
+        function updateDisplay() {
+            document.getElementById('bankBalance').textContent = formatCurrency(bankBalance);
+            document.getElementById('cashBalance').textContent = formatCurrency(cashBalance);
+            document.getElementById('totalBalance').textContent = formatCurrency(bankBalance + cashBalance);
+            updateTransactionsList();
+        }
+
+        // Update transactions list
+        function updateTransactionsList() {
+            const list = document.getElementById('transactionsList');
+            const allTransactions = [...transactions, ...expenses.map(e => ({...e, type: 'expense'})), ...income.map(i => ({...i, type: 'income'}))];
+            
+            if (allTransactions.length === 0) {
+                list.innerHTML = `
+                    <div class="empty-state">
+                        <span class="empty-icon">💼</span>
+                        <p><strong>ගනුදෙනු එක්කරන්න ආරම්භ කරන්න!</strong></p>
+                        <p style="font-size: 12px; margin-top: 5px;">ඉහත buttons වලින් transactions add කරන්න</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const sortedTransactions = allTransactions
+                .sort((a, b) => new Date(b.timestamp || b.date) - new Date(a.timestamp || a.date))
+                .slice(0, 8);
+
+            list.innerHTML = sortedTransactions.map(transaction => {
+                const isPositive = transaction.type === 'deposit' || transaction.type === 'income';
+                const icons = {
+                    'deposit': '💳',
+                    'withdraw': '💸',
+                    'income': '💰',
+                    'expense': '🛍️'
+                };
+                const icon = icons[transaction.type] || '📄';
+
+                return `
+                    <div class="transaction-item">
+                        <div class="transaction-info">
+                            <div class="transaction-desc">${icon} ${transaction.description}</div>
+                            <div class="transaction-date">${transaction.date}</div>
+                        </div>
+                        <div class="transaction-amount ${isPositive ? 'positive' : 'negative'}">
+                            ${isPositive ? '+' : '-'}${formatCurrency(transaction.amount)}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Switch tabs
+        function switchTab(tab) {
+            currentTab = tab;
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tab + 'Tab').classList.add('active');
+            
+            // Show appropriate content
+            if (tab === 'home') {
+                updateDisplay();
+            }
+        }
+
+        // Open modal
+        function openModal(type) {
+            currentModalType = type;
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modalTitle');
+            const categorySection = document.getElementById('categorySection');
+            const accountSection = document.getElementById('accountSection');
+            
+            const titles = {
+                'deposit': '💳 Deposit කරන්න',
+                'withdraw': '💸 Withdraw කරන්න',
+                'income': '💰 ආදායම එකතු කරන්න',
+                'expense': '🛍️ වියදම එකතු කරන්න'
+            };
+            
+            title.textContent = titles[type];
+            
+            // Show/hide category section
+            if (type === 'expense' || type === 'income') {
+                categorySection.style.display = 'block';
+                setupCategories(type);
+            } else {
+                categorySection.style.display = 'none';
+            }
+            
+            // Show/hide account section
+            if (type === 'withdraw') {
+                accountSection.style.display = 'none';
+            } else {
+                accountSection.style.display = 'block';
+            }
+            
+            modal.classList.add('show');
+            
+            // Clear form
+            document.getElementById('amount').value = '';
+            document.getElementById('description').value = '';
+            selectedAccount = 'bank';
+            selectedCategory = 'general';
+            updateAccountToggle();
+        }
+
+        // Setup categories
+        function setupCategories(type) {
+            const grid = document.getElementById('categoryGrid');
+            const categories = type === 'income' ? incomeCategories : expenseCategories;
+            
+            grid.innerHTML = categories.map(cat => `
+                <button class="category-btn" onclick="selectCategory('${cat.id}')" data-category="${cat.id}">
+                    <div style="font-size: 16px; margin-bottom: 4px;">${cat.icon}</div>
+                    <div>${cat.name}</div>
+                </button>
+            `).join('');
+            
+            // Select first category by default
+            selectedCategory = categories[0].id;
+            updateCategorySelection();
+        }
+
+        // Select category
+        function selectCategory(categoryId) {
+            selectedCategory = categoryId;
+            updateCategorySelection();
+        }
+
+        // Update category selection
+        function updateCategorySelection() {
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.category === selectedCategory) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Select account
+        function selectAccount(account) {
+            selectedAccount = account;
+            updateAccountToggle();
+        }
+
+        // Update account toggle
+        function updateAccountToggle() {
+            document.getElementById('bankToggle').classList.toggle('active', selectedAccount === 'bank');
+            document.getElementById('cashToggle').classList.toggle('active', selectedAccount === 'cash');
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+        }
+
+        // Confirm action
+        function confirmAction() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const description = document.getElementById('description').value || 'ගනුදෙනුව';
+            
+            if (!amount || amount <= 0) {
+                alert('කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+                return;
+            }
+
+            const transaction = {
+                id: Date.now(),
+                type: currentModalType,
+                amount: amount,
+                description: description,
+                date: new Date().toLocaleDateString('si-LK'),
+                timestamp: new Date().toISOString(),
+                account: selectedAccount,
+                category: selectedCategory
+            };
+
+            // Handle different transaction types
+            switch(currentModalType) {
+                case 'deposit':
+                    if (selectedAccount === 'bank') {
+                        bankBalance += amount;
+                    } else {
+                        // Cash to bank
+                        if (cashBalance >= amount) {
+                            cashBalance -= amount;
+                            bankBalance += amount;
+                        } else {
+                            alert('ප්‍රමාණවත් මුදල් නැත');
+                            return;
+                        }
+                    }
+                    transactions.unshift(transaction);
+                    break;
+                    
+                case 'withdraw':
+                    if (bankBalance >= amount) {
+                        bankBalance -= amount;
+                        cashBalance += amount;
+                    } else {
+                        alert('ප්‍රමාණවත් බැංකු ශේෂයක් නැත');
+                        return;
+                    }
+                    transactions.unshift(transaction);
+                    break;
+                    
+                case 'income':
+                    if (selectedAccount === 'bank') {
+                        bankBalance += amount;
+                    } else {
+                        cashBalance += amount;
+                    }
+                    income.unshift(transaction);
+                    break;
+                    
+                case 'expense':
+                    if (selectedAccount === 'cash') {
+                        if (cashBalance >= amount) {
+                            cashBalance -= amount;
+                        } else {
+                            alert('ප්‍රමාණවත් මුදල් නැත');
+                            return;
+                        }
+                    } else {
+                        if (bankBalance >= amount) {
+                            bankBalance -= amount;
+                        } else {
+                            alert('ප්‍රමාණවත් බැංකු ශේෂයක් නැත');
+                            return;
+                        }
+                    }
+                    expenses.unshift(transaction);
+                    break;
+            }
+
+            // Save and update
+            saveData();
+            updateDisplay();
+            closeModal();
+            
+            // Success feedback with haptic
+            if (navigator.vibrate) {
+                navigator.vibrate(100);
+            }
+            
+            const cards = document.querySelectorAll('.balance-card');
+            cards.forEach(card => {
+                card.classList.add('success-animation');
+                setTimeout(() => {
+                    card.classList.remove('success-animation');
+                }, 600);
+            });
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Initialize app
+        updateDisplay();
+
+        // Add sample data if empty
+        if (transactions.length === 0 && expenses.length === 0 && income.length === 0) {
+            // Add sample transactions
+            const sampleData = [
+                {
+                    id: 1,
+                    type: 'income',
+                    amount: 75000,
+                    description: '💼 මාසික වැටුප',
+                    date: new Date().toLocaleDateString('si-LK'),
+                    timestamp: new Date().toISOString(),
+                    account: 'bank',
+                    category: 'salary'
+                },
+                {
+                    id: 2,
+                    type: 'expense',
+                    amount: 5000,
+                    description: '🍽️ ආහාර සාප්පු',
+                    date: new Date().toLocaleDateString('si-LK'),
+                    timestamp: new Date().toISOString(),
+                    account: 'cash',
+                    category: 'food'
+                },
+                {
+                    id: 3,
+                    type: 'expense',
+                    amount: 2000,
+                    description: '🚗 ප්‍රවාහන වියදම්',
+                    date: new Date().toLocaleDateString('si-LK'),
+                    timestamp: new Date().toISOString(),
+                    account: 'cash',
+                    category: 'transport'
+                }
+            ];
+            
+            income.push(sampleData[0]);
+            expenses.push(sampleData[1]);
+            expenses.push(sampleData[2]);
+            
+            bankBalance += 75000;
+            cashBalance -= 7000; // 5000 + 2000
+            
+            saveData();
+            updateDisplay();
+        }
+
+        // Add to home screen prompt
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (!window.matchMedia('(display-mode: standalone)').matches) {
+                    // Show install prompt after 3 seconds if not already installed
+                    setTimeout(() => {
+                        if (!localStorage.getItem('installPromptDismissed')) {
+                            document.getElementById('installPrompt').style.display = 'block';
+                        }
+                    }, 3000);
+                }
+            }, 1000);
+        });
+
+        // Prevent zoom on double tap
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Add haptic feedback for buttons
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('.action-btn, .btn, .nav-btn, .balance-card')) {
+                if (navigator.vibrate) {
+                    navigator.vibrate(50);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

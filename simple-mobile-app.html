@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 මුදල් කළමනාකරණය</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        .app {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .balance-cards {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .balance-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .balance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .balance-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .balance-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .balance-amount {
+            font-size: 32px;
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .action-btn {
+            padding: 20px 15px;
+            border: none;
+            border-radius: 18px;
+            font-size: 16px;
+            font-weight: 800;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .action-btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+        
+        .deposit { background: linear-gradient(135deg, #10B981, #059669); }
+        .withdraw { background: linear-gradient(135deg, #EF4444, #DC2626); }
+        .income { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
+        .expense { background: linear-gradient(135deg, #F59E0B, #D97706); }
+        
+        .transactions {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            color: #1F2937;
+        }
+        
+        .transactions h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 800;
+            text-align: center;
+        }
+        
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .transaction-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .transaction-info {
+            flex: 1;
+        }
+        
+        .transaction-desc {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .transaction-date {
+            font-size: 12px;
+            color: #6B7280;
+            font-weight: 600;
+        }
+        
+        .transaction-amount {
+            font-weight: 900;
+            font-size: 16px;
+        }
+        
+        .positive { color: #10B981; }
+        .negative { color: #EF4444; }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal.show { display: flex; }
+        
+        .modal-content {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlide 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        @keyframes modalSlide {
+            from { opacity: 0; transform: translateY(30px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1F2937;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+        
+        .input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .input:focus {
+            outline: none;
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cancel {
+            background: #F3F4F6;
+            color: #6B7280;
+        }
+        
+        .btn-confirm {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #9CA3AF;
+        }
+        
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <h1>💰 මුදල් කළමනාකරණය</h1>
+            <p class="subtitle">ඔබේ මුදල් ස්මාර්ට් ලෙස කළමනාකරණය කරන්න</p>
+        </div>
+        
+        <div class="balance-cards">
+            <div class="balance-card">
+                <span class="balance-icon">🏦</span>
+                <div class="balance-title">බැංකු ගිණුම</div>
+                <div class="balance-amount" id="bankBalance">රු. 125,000.00</div>
+            </div>
+            
+            <div class="balance-card">
+                <span class="balance-icon">💵</span>
+                <div class="balance-title">මාර්ගස්ථ මුදල්</div>
+                <div class="balance-amount" id="cashBalance">රු. 25,000.00</div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button class="action-btn deposit" onclick="openModal('deposit')">
+                <span style="font-size: 24px;">💳</span>
+                <span>Deposit</span>
+            </button>
+            <button class="action-btn withdraw" onclick="openModal('withdraw')">
+                <span style="font-size: 24px;">💸</span>
+                <span>Withdraw</span>
+            </button>
+            <button class="action-btn income" onclick="openModal('income')">
+                <span style="font-size: 24px;">💰</span>
+                <span>ආදායම</span>
+            </button>
+            <button class="action-btn expense" onclick="openModal('expense')">
+                <span style="font-size: 24px;">🛍️</span>
+                <span>වියදම</span>
+            </button>
+        </div>
+        
+        <div class="transactions">
+            <h3>📋 මෑත ගනුදෙනු</h3>
+            <div id="transactionsList">
+                <div class="empty-state">
+                    <span class="empty-icon">💼</span>
+                    <p>ගනුදෙනු එක්කරන්න ආරම්භ කරන්න!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modalTitle">💳 Deposit කරන්න</h2>
+            
+            <div class="form-group">
+                <label class="label">💵 මුදල</label>
+                <input type="number" class="input" id="amount" placeholder="0.00">
+            </div>
+            
+            <div class="form-group">
+                <label class="label">📝 විස්තරය</label>
+                <input type="text" class="input" id="description" placeholder="විස්තරය ඇතුළත් කරන්න">
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" onclick="closeModal()">❌ අවලංගු</button>
+                <button class="btn btn-confirm" onclick="confirmAction()">✅ තහවුරු</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // App State
+        let bankBalance = parseFloat(localStorage.getItem('bankBalance')) || 125000;
+        let cashBalance = parseFloat(localStorage.getItem('cashBalance')) || 25000;
+        let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+        let currentModalType = '';
+
+        // Save to localStorage
+        function saveData() {
+            localStorage.setItem('bankBalance', bankBalance);
+            localStorage.setItem('cashBalance', cashBalance);
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+        }
+
+        // Format currency
+        function formatCurrency(amount) {
+            return `රු. ${amount.toLocaleString()}.00`;
+        }
+
+        // Update balance display
+        function updateBalances() {
+            document.getElementById('bankBalance').textContent = formatCurrency(bankBalance);
+            document.getElementById('cashBalance').textContent = formatCurrency(cashBalance);
+        }
+
+        // Update transactions list
+        function updateTransactionsList() {
+            const list = document.getElementById('transactionsList');
+            
+            if (transactions.length === 0) {
+                list.innerHTML = `
+                    <div class="empty-state">
+                        <span class="empty-icon">💼</span>
+                        <p>ගනුදෙනු එක්කරන්න ආරම්භ කරන්න!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            list.innerHTML = transactions.slice(0, 5).map(transaction => {
+                const isPositive = transaction.type === 'deposit' || transaction.type === 'income';
+                const icon = {
+                    'deposit': '💳',
+                    'withdraw': '💸',
+                    'income': '💰',
+                    'expense': '🛍️'
+                }[transaction.type] || '📄';
+
+                return `
+                    <div class="transaction-item">
+                        <div class="transaction-info">
+                            <div class="transaction-desc">${icon} ${transaction.description}</div>
+                            <div class="transaction-date">${transaction.date}</div>
+                        </div>
+                        <div class="transaction-amount ${isPositive ? 'positive' : 'negative'}">
+                            ${isPositive ? '+' : '-'}${formatCurrency(transaction.amount)}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Open modal
+        function openModal(type) {
+            currentModalType = type;
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modalTitle');
+            
+            const titles = {
+                'deposit': '💳 Deposit කරන්න',
+                'withdraw': '💸 Withdraw කරන්න',
+                'income': '💰 ආදායම එකතු කරන්න',
+                'expense': '🛍️ වියදම එකතු කරන්න'
+            };
+            
+            title.textContent = titles[type];
+            modal.classList.add('show');
+            
+            // Clear form
+            document.getElementById('amount').value = '';
+            document.getElementById('description').value = '';
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+        }
+
+        // Confirm action
+        function confirmAction() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const description = document.getElementById('description').value || 'ගනුදෙනුව';
+            
+            if (!amount || amount <= 0) {
+                alert('කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+                return;
+            }
+
+            const transaction = {
+                id: Date.now(),
+                type: currentModalType,
+                amount: amount,
+                description: description,
+                date: new Date().toLocaleDateString('si-LK'),
+                timestamp: new Date().toISOString()
+            };
+
+            // Handle different transaction types
+            switch(currentModalType) {
+                case 'deposit':
+                    bankBalance += amount;
+                    break;
+                case 'withdraw':
+                    if (bankBalance >= amount) {
+                        bankBalance -= amount;
+                        cashBalance += amount;
+                    } else {
+                        alert('ප්‍රමාණවත් බැංකු ශේෂයක් නැත');
+                        return;
+                    }
+                    break;
+                case 'income':
+                    cashBalance += amount;
+                    break;
+                case 'expense':
+                    if (cashBalance >= amount) {
+                        cashBalance -= amount;
+                    } else {
+                        alert('ප්‍රමාණවත් මුදල් නැත');
+                        return;
+                    }
+                    break;
+            }
+
+            // Add transaction
+            transactions.unshift(transaction);
+            
+            // Save and update
+            saveData();
+            updateBalances();
+            updateTransactionsList();
+            closeModal();
+            
+            // Success feedback
+            const card = currentModalType === 'deposit' || currentModalType === 'withdraw' ? 
+                         document.querySelector('.balance-card') : 
+                         document.querySelector('.balance-card:last-child');
+            card.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                card.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Initialize app
+        updateBalances();
+        updateTransactionsList();
+
+        // Add some sample data if empty
+        if (transactions.length === 0) {
+            const sampleTransactions = [
+                {
+                    id: 1,
+                    type: 'income',
+                    amount: 50000,
+                    description: '💼 මාසික වැටුප',
+                    date: new Date().toLocaleDateString('si-LK'),
+                    timestamp: new Date().toISOString()
+                },
+                {
+                    id: 2,
+                    type: 'expense',
+                    amount: 2500,
+                    description: '🍽️ ආහාර සාප්පු',
+                    date: new Date().toLocaleDateString('si-LK'),
+                    timestamp: new Date().toISOString()
+                }
+            ];
+            
+            transactions = sampleTransactions;
+            cashBalance += 50000 - 2500;
+            saveData();
+            updateBalances();
+            updateTransactionsList();
+        }
+    </script>
+</body>
+</html>
