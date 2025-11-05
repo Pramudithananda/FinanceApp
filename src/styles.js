@@ -380,4 +380,23 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  // Additional styles for category details modal
+  categoryDetailsSection: {
+    marginBottom: 20,
+  },
+  detailRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  detailLabel: {
+    fontSize: 14,
+    color: '#6b7280',
+  },
+  detailValue: {
+    fontSize: 14,
+    fontWeight: '500',
+    color: '#374151',
+  },
 });
