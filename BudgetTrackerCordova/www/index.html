@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>මුදල් කළමනාකරණ</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="app">
+        <div class="header">
+            <div class="header-content">
+                <div>
+                    <h1 class="header-title">මුදල් කළමනාකරණ</h1>
+                    <p class="version">v2.3 - Working Version</p>
+                </div>
+                <span class="header-icon">💰</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="balance-container">
+                <div class="balance-card bank-card">
+                    <div class="deposit-btn" onclick="openModal('bank-deposit')">+</div>
+                    <div class="balance-label">බැංකු ශේෂය</div>
+                    <div class="balance-amount" id="bankBalance">රු 50,000</div>
+                </div>
+                <div class="balance-card cash-card">
+                    <div class="balance-label">මුදල් ශේෂය</div>
+                    <div class="balance-amount" id="cashBalance">රු 0</div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-button" style="background-color: #8b5cf6;" onclick="openModal('bank-deposit')">
+                    🏦 බැංකුවට තැන්පත් කරන්න
+                </button>
+                <button class="action-button" style="background-color: #10b981;" onclick="openModal('income')">
+                    ⬇️ මුදල් ලබාගැනීම
+                </button>
+                <button class="action-button" style="background-color: #ef4444;" onclick="openModal('expense')">
+                    ⬆️ වියදම් කරන්න
+                </button>
+                <button class="action-button" style="background-color: #6b7280;" onclick="openModal('add-category')">
+                    ➕ කාණ්ඩ කළමනාකරණය
+                </button>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">වියදම් කාණ්ඩ <span class="click-hint">(Tap කරන්න)</span></h2>
+                    <button class="add-button" onclick="openModal('add-category')">
+                        ➕ කාණ්ඩයක් එකතු කරන්න
+                    </button>
+                </div>
+                <div id="categoriesList">
+                    <!-- Categories will be populated here -->
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">මෑත ගනුදෙනු</h2>
+                <div id="transactionsList">
+                    <!-- Transactions will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Transaction Modal -->
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">ගනුදෙනුව</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div id="infoBox" class="info-box"></div>
+            <label class="input-label">මුදල (රු)</label>
+            <input type="number" id="amountInput" class="input" placeholder="මුදල ඇතුළත් කරන්න">
+            <label class="input-label">විස්තරය (අමතර)</label>
+            <input type="text" id="descriptionInput" class="input" placeholder="විස්තරය ඇතුළත් කරන්න">
+            <div id="categorySelector" class="category-selector" style="display: none;">
+                <label class="input-label">කාණ්ඩය තෝරන්න:</label>
+                <div id="categoryOptions"></div>
+            </div>
+            <button class="submit-button" onclick="submitTransaction()">සේව් කරන්න</button>
+        </div>
+    </div>
+    
+    <!-- Category Modal -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="categoryModalTitle">නව කාණ්ඩය එකතු කරන්න</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <label class="input-label">කාණ්ඩයේ නම</label>
+            <input type="text" id="categoryNameInput" class="input" placeholder="කාණ්ඩයේ නම ඇතුළත් කරන්න">
+            <label class="input-label">ගෝලය (රු)</label>
+            <input type="number" id="categoryTargetInput" class="input" placeholder="ගෝලය ඇතුළත් කරන්න">
+            <label class="input-label">ඒකක මිල (රු)</label>
+            <input type="number" id="categoryUnitPriceInput" class="input" placeholder="ඒකක මිල ඇතුළත් කරන්න">
+            <button class="submit-button" onclick="submitCategory()">එකතු කරන්න</button>
+        </div>
+    </div>
+    
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
