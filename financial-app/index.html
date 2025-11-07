@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="si">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>මුදල් කළමනාකරණය | Personal Finance</title>
+    <link rel="icon" href="icons/finance-icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <img src="icons/finance-icon.svg" alt="Finance Icon" class="logo" />
+      <h1>මුදල් කළමනාකරණය</h1>
+    </header>
+
+    <main class="container">
+      <section class="balances">
+        <div class="card">
+          <h2>බැංකු ශේෂය</h2>
+          <div id="bank-balance" class="amount">0.00</div>
+        </div>
+        <div class="card">
+          <h2>මුදල් (Cash) ශේෂය</h2>
+          <div id="cash-balance" class="amount">0.00</div>
+        </div>
+        <div class="card total">
+          <h2>මුළු සම්පත්</h2>
+          <div id="net-worth" class="amount">0.00</div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <div class="card">
+          <h3>ගනුදෙනු එක් කරන්න</h3>
+          <form id="txn-form">
+            <div class="row">
+              <label>වර්ගය</label>
+              <select id="txn-kind">
+                <option value="income">ආදායම</option>
+                <option value="expense">ව්‍යායම</option>
+                <option value="transfer">මාරු කිරීම</option>
+              </select>
+            </div>
+
+            <div class="row">
+              <label>ගිණුම</label>
+              <select id="account">
+                <option value="bank">බැංකු</option>
+                <option value="cash">මුදල්</option>
+              </select>
+            </div>
+
+            <div class="row" id="transfer-to-row" style="display:none">
+              <label>වෙත මාරු</label>
+              <select id="transfer-to">
+                <option value="bank">බැංකු</option>
+                <option value="cash">මුදල්</option>
+              </select>
+            </div>
+
+            <div class="row">
+              <label>Amount (රු.)</label>
+              <input type="number" id="amount" step="0.01" min="0" required />
+            </div>
+
+            <div class="row">
+              <label>දිනය</label>
+              <input type="date" id="date" required />
+            </div>
+
+            <div class="row">
+              <label>විස්තරය</label>
+              <input type="text" id="note" placeholder="විස්තරයක්" />
+            </div>
+
+            <button type="submit" class="primary">එක් කරන්න</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>ඉක්මන් ක්‍රියා</h3>
+          <div class="quick-actions">
+            <button id="quick-deposit">Cash ➜ Bank</button>
+            <button id="quick-withdraw">Bank ➜ Cash</button>
+            <button id="reset-data" class="danger">දත්ත ඉවත් කරන්න</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="history card">
+        <h3>ගනුදෙනු ඉතිහාසය</h3>
+        <ul id="history-list"></ul>
+      </section>
+    </main>
+
+    <footer class="app-footer">Made for 🇱🇰 — Sinhala UI</footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
