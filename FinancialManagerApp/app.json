@@ -1,0 +1,22 @@
+{
+  "name": "FinancialManagerApp",
+  "displayName": "මුදල් කළමනාකරණය",
+  "description": "Modern Financial Management Application with Sinhala Interface",
+  "version": "2.0.0",
+  "orientation": "portrait",
+  "icon": "./src/assets/icons/app-icon.png",
+  "splash": {
+    "image": "./src/assets/icons/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#4F46E5"
+  },
+  "android": {
+    "package": "com.financialmanager.app",
+    "versionCode": 2,
+    "permissions": [],
+    "adaptiveIcon": {
+      "foregroundImage": "./src/assets/icons/app-icon.png",
+      "backgroundColor": "#4F46E5"
+    }
+  }
+}
