@@ -1,0 +1,42 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#1e3a8a" stroke="#0ea5e9" stroke-width="8"/>
+  
+  <!-- Inner Circle -->
+  <circle cx="256" cy="256" r="200" fill="#3b82f6" opacity="0.3"/>
+  
+  <!-- Wallet/Money Icon -->
+  <g transform="translate(256, 256)">
+    <!-- Wallet Base -->
+    <rect x="-120" y="-60" width="240" height="120" rx="15" fill="#10b981" stroke="#059669" stroke-width="4"/>
+    
+    <!-- Wallet Fold -->
+    <path d="M -120 -60 L -120 -30 Q -120 -20 -110 -20 L 0 -20 Q 10 -20 10 -10 L 10 20 L -120 20 Z" fill="#059669"/>
+    
+    <!-- Money Symbol -->
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" text-anchor="middle">රු</text>
+    
+    <!-- Decorative Lines -->
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="white" stroke-width="3" opacity="0.3"/>
+    <line x1="-100" y1="20" x2="100" y2="20" stroke="white" stroke-width="2" opacity="0.2"/>
+    
+    <!-- Coins -->
+    <circle cx="-140" cy="-80" r="25" fill="#fbbf24" stroke="#f59e0b" stroke-width="3"/>
+    <text x="-140" y="-75" font-family="Arial" font-size="20" font-weight="bold" fill="white" text-anchor="middle">රු</text>
+    
+    <circle cx="140" cy="-80" r="25" fill="#fbbf24" stroke="#f59e0b" stroke-width="3"/>
+    <text x="140" y="-75" font-family="Arial" font-size="20" font-weight="bold" fill="white" text-anchor="middle">රු</text>
+    
+    <!-- Bank Building -->
+    <rect x="-40" y="40" width="80" height="60" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <rect x="-30" y="50" width="15" height="20" fill="#a78bfa"/>
+    <rect x="15" y="50" width="15" height="20" fill="#a78bfa"/>
+    <rect x="-10" y="75" width="20" height="25" fill="#a78bfa"/>
+    <polygon points="-40,40 -20,20 20,20 40,40" fill="#7c3aed"/>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <circle cx="100" cy="100" r="15" fill="#fbbf24" opacity="0.6"/>
+  <circle cx="400" cy="120" r="12" fill="#10b981" opacity="0.6"/>
+  <circle cx="120" cy="400" r="10" fill="#8b5cf6" opacity="0.6"/>
+</svg>
