@@ -1,0 +1,27 @@
+✅ නව APK File එක සූදානම්!
+
+📱 Download Link:
+https://files.catbox.moe/hm8h04.apk
+
+📋 Details:
+- නව financial app icon එක add කරලා තියෙනවා
+- පරණ APK file එකේ icons replace කරලා නව icon එක add කරලා තියෙනවා
+- File size: ~20MB
+- APK file: new_app.apk
+
+⚠️ Note:
+මේ APK file එක unsigned වෙන්න පුළුවන්. Install කරන්න පුළුවන් වෙන්න:
+- Development mode enable කරලා
+- හෝ sign කරලා install කරන්න
+
+📁 Local File:
+/workspace/financial-app/new_app.apk
+
+🎨 Icon Details:
+- නව financial app icon (රු symbol සහිත)
+- All Android mipmap sizes included
+- Round and square versions
+
+---
+Created: $(date)
+Method: Modified existing APK with new icons
