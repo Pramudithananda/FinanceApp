@@ -1,0 +1,40 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.5/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+The org.gradle.util.GUtil type has been deprecated. This is scheduled to be removed in Gradle 9.0. Consult the upgrading guide for further information: https://docs.gradle.org/8.5/userguide/upgrading_version_7.html#org_gradle_util_reports_deprecations
+	at build_1d3oj4ofmx4lmvk3zc0q95m76.run(/workspace/FinancialManagerApp/android/app/build.gradle:1)
+	(Run with --stacktrace to get the full stack trace of this deprecation warning.)
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* Where:
+Build file '/workspace/FinancialManagerApp/android/app/build.gradle' line: 3
+
+* What went wrong:
+A problem occurred evaluating project ':app'.
+> Could not find method react() for arguments [build_1d3oj4ofmx4lmvk3zc0q95m76$_run_closure1@485117a0] on project ':app' of type org.gradle.api.Project.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+A problem occurred configuring project ':app'.
+> compileSdkVersion is not specified. Please add it to build.gradle
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+BUILD FAILED in 34s
