@@ -266,13 +266,13 @@ export const styles = StyleSheet.create({
     marginBottom: 4,
   },
   depositAmount: {
-    color: colors.success,
+    color: '#10B981', // Bright green for bank deposits (not expense, it's income)
   },
   incomeAmount: {
-    color: colors.success,
+    color: '#10B981', // Green for income
   },
   expenseAmount: {
-    color: colors.danger,
+    color: '#EF4444', // Red for expenses only
   },
   transactionActions: {
     flexDirection: 'row',
