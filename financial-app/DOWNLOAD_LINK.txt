@@ -1,0 +1,23 @@
+═══════════════════════════════════════════════════════════
+    මුදල් කළමනාකරණ APK Download Links
+═══════════════════════════════════════════════════════════
+
+📱 DIRECT APK DOWNLOAD:
+   http://172.30.0.2:8000/financial-app/app.apk
+
+🌐 DOWNLOAD PAGE (with instructions):
+   http://172.30.0.2:8000/financial-app/download.html
+
+📦 FILE INFORMATION:
+   - Name: මුදල්_කළමනාකරණ_2.0.apk
+   - Size: 21 MB
+   - Version: 2.0.0
+   - Package: com.financialapp
+
+💡 INSTRUCTIONS:
+   1. Browser එකේ ඉහත link එක open කරන්න
+   2. APK file එක download කරන්න
+   3. Android device එකේ "Unknown sources" enable කරන්න
+   4. Download කරපු file එක open කර install කරන්න
+
+═══════════════════════════════════════════════════════════
