@@ -1,0 +1,28 @@
+═══════════════════════════════════════════════════════════
+    ✅ APK File Catbox වෙත Upload කරන ලදී!
+═══════════════════════════════════════════════════════════
+
+📱 DOWNLOAD LINK:
+   https://files.catbox.moe/i0w41b.apk
+
+📦 FILE INFORMATION:
+   - Name: මුදල්_කළමනාකරණ_2.0.apk
+   - Size: 21 MB
+   - Version: 2.0.0
+   - Package: com.financialapp
+
+💡 DOWNLOAD INSTRUCTIONS:
+   1. Browser එකේ ඉහත link එක open කරන්න
+   2. APK file එක automatically download වේ
+   3. Android device එකේ "Unknown sources" enable කරන්න
+      (Settings > Security > Unknown Sources)
+   4. Download කරපු file එක open කර install කරන්න
+
+🌐 ALTERNATIVE:
+   Browser එකේ direct link copy කර paste කරන්න:
+   https://files.catbox.moe/i0w41b.apk
+
+═══════════════════════════════════════════════════════════
+   Upload Date: $(date)
+   Status: ✅ Active
+═══════════════════════════════════════════════════════════
