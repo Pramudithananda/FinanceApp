@@ -16,6 +16,7 @@ import TransactionItem from './components/TransactionItem';
 import TransactionModal from './components/TransactionModal';
 import CategoryModal from './components/CategoryModal';
 import CategoryDetailsModal from './components/CategoryDetailsModal';
+import EditTransactionModal from './components/EditTransactionModal';
 import { loadData, saveData } from './utils/storage';
 
 const App = () => {
@@ -30,9 +31,11 @@ const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [categoryModalVisible, setCategoryModalVisible] = useState(false);
   const [detailsModalVisible, setDetailsModalVisible] = useState(false);
+  const [editTransactionModalVisible, setEditTransactionModalVisible] = useState(false);
   const [currentModalType, setCurrentModalType] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [editingCategory, setEditingCategory] = useState(null);
+  const [editingTransaction, setEditingTransaction] = useState(null);
   const [viewingCategoryId, setViewingCategoryId] = useState(null);
   const [nextCategoryId, setNextCategoryId] = useState(4);
 
@@ -40,7 +43,7 @@ const App = () => {
     initializeApp();
     
     const backAction = () => {
-      if (modalVisible || categoryModalVisible || detailsModalVisible) {
+      if (modalVisible || categoryModalVisible || detailsModalVisible || editTransactionModalVisible) {
         closeAllModals();
         return true;
       }
@@ -53,7 +56,7 @@ const App = () => {
     );
 
     return () => backHandler.remove();
-  }, [modalVisible, categoryModalVisible, detailsModalVisible]);
+  }, [modalVisible, categoryModalVisible, detailsModalVisible, editTransactionModalVisible]);
 
   const initializeApp = async () => {
     try {
@@ -103,8 +106,10 @@ const App = () => {
     setModalVisible(false);
     setCategoryModalVisible(false);
     setDetailsModalVisible(false);
+    setEditTransactionModalVisible(false);
     setSelectedCategory(null);
     setEditingCategory(null);
+    setEditingTransaction(null);
   };
 
   const showCategoryDetails = (categoryId) => {
@@ -227,6 +232,120 @@ const App = () => {
     setEditingCategory(null);
   };
 
+  const handleEditTransaction = (transaction) => {
+    setEditingTransaction(transaction);
+    setEditTransactionModalVisible(true);
+  };
+
+  const updateTransaction = (updatedTransaction) => {
+    const oldTransaction = editingTransaction;
+    
+    // Reverse the old transaction effects
+    if (oldTransaction.type === 'bank-deposit') {
+      setBankBalance(prev => prev - oldTransaction.amount);
+    } else if (oldTransaction.type === 'income') {
+      setBankBalance(prev => prev + oldTransaction.amount);
+      setCashBalance(prev => prev - oldTransaction.amount);
+    } else if (oldTransaction.type === 'expense') {
+      setCashBalance(prev => prev + oldTransaction.amount);
+      
+      if (oldTransaction.category) {
+        const updatedCategories = categories.map(cat => {
+          if (cat.id === oldTransaction.category.id) {
+            return {
+              ...cat,
+              balance: cat.balance - oldTransaction.amount,
+              spent: cat.spent - oldTransaction.amount
+            };
+          }
+          return cat;
+        });
+        setCategories(updatedCategories);
+      }
+    }
+    
+    // Apply the new transaction effects
+    if (updatedTransaction.type === 'bank-deposit') {
+      setBankBalance(prev => prev + updatedTransaction.amount);
+    } else if (updatedTransaction.type === 'income') {
+      setBankBalance(prev => prev - updatedTransaction.amount);
+      setCashBalance(prev => prev + updatedTransaction.amount);
+    } else if (updatedTransaction.type === 'expense') {
+      setCashBalance(prev => prev - updatedTransaction.amount);
+      
+      if (updatedTransaction.category) {
+        const updatedCategories = categories.map(cat => {
+          if (cat.id === updatedTransaction.category.id) {
+            return {
+              ...cat,
+              balance: cat.balance + updatedTransaction.amount,
+              spent: cat.spent + updatedTransaction.amount
+            };
+          }
+          return cat;
+        });
+        setCategories(updatedCategories);
+      }
+    }
+    
+    // Update the transaction in the list
+    const updatedTransactions = transactions.map(t =>
+      t.id === updatedTransaction.id ? updatedTransaction : t
+    );
+    setTransactions(updatedTransactions);
+    
+    setEditTransactionModalVisible(false);
+    setEditingTransaction(null);
+    Alert.alert('සාර්ථකයි', 'ගනුදෙනුව සාර්ථකව යාවත්කාලීන කරන ලදී');
+  };
+
+  const confirmDeleteTransaction = (transaction) => {
+    Alert.alert(
+      'ගනුදෙනුව මකන්න',
+      'මෙම ගනුදෙනුව මකන්න අවශ්‍යද? Balance එක ස්වයංක්‍රීයව යාවත්කාලීන වේ.',
+      [
+        { text: 'අවලංගු කරන්න', style: 'cancel' },
+        { 
+          text: 'මකන්න', 
+          onPress: () => deleteTransaction(transaction),
+          style: 'destructive'
+        }
+      ]
+    );
+  };
+
+  const deleteTransaction = (transaction) => {
+    // Reverse the transaction effects
+    if (transaction.type === 'bank-deposit') {
+      setBankBalance(prev => prev - transaction.amount);
+    } else if (transaction.type === 'income') {
+      setBankBalance(prev => prev + transaction.amount);
+      setCashBalance(prev => prev - transaction.amount);
+    } else if (transaction.type === 'expense') {
+      setCashBalance(prev => prev + transaction.amount);
+      
+      if (transaction.category) {
+        const updatedCategories = categories.map(cat => {
+          if (cat.id === transaction.category.id) {
+            return {
+              ...cat,
+              balance: cat.balance - transaction.amount,
+              spent: cat.spent - transaction.amount
+            };
+          }
+          return cat;
+        });
+        setCategories(updatedCategories);
+      }
+    }
+    
+    // Remove transaction from list
+    const updatedTransactions = transactions.filter(t => t.id !== transaction.id);
+    setTransactions(updatedTransactions);
+    
+    Alert.alert('සාර්ථකයි', 'ගනුදෙනුව සාර්ථකව මකා දමන ලදී');
+  };
+
   return (
     <View style={styles.container}>
       <Header title="මුදල් කළමනාකරණය" version="v2.0 - Enhanced" />
@@ -313,6 +432,8 @@ const App = () => {
               <TransactionItem
                 key={transaction.id}
                 transaction={transaction}
+                onEdit={handleEditTransaction}
+                onDelete={confirmDeleteTransaction}
               />
             ))
           )}
@@ -344,6 +465,14 @@ const App = () => {
           t.category && t.category.id === viewingCategoryId
         )}
         onClose={closeAllModals}
+      />
+      
+      <EditTransactionModal
+        visible={editTransactionModalVisible}
+        transaction={editingTransaction}
+        categories={categories}
+        onClose={closeAllModals}
+        onSubmit={updateTransaction}
       />
     </View>
   );

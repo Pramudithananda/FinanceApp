@@ -257,9 +257,13 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.textLight,
   },
+  transactionRight: {
+    alignItems: 'flex-end',
+  },
   transactionAmount: {
     fontSize: 16,
     fontWeight: 'bold',
+    marginBottom: 4,
   },
   depositAmount: {
     color: colors.success,
@@ -269,6 +273,16 @@ export const styles = StyleSheet.create({
   },
   expenseAmount: {
     color: colors.danger,
+  },
+  transactionActions: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  transactionActionButton: {
+    padding: 4,
+  },
+  transactionActionText: {
+    fontSize: 16,
   },
   
   // Modal Styles
@@ -360,11 +374,20 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     marginTop: 8,
+    flex: 1,
   },
   submitButtonText: {
     color: colors.white,
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  modalButtonRow: {
+    flexDirection: 'row',
+    gap: 12,
+    marginTop: 8,
+  },
+  cancelButton: {
+    backgroundColor: colors.textLight,
   },
   
   // Empty State

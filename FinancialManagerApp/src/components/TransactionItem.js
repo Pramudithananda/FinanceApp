@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from '../styles';
 import { formatCurrency } from '../utils/formatters';
 
-const TransactionItem = ({ transaction }) => {
+const TransactionItem = ({ transaction, onEdit, onDelete }) => {
   let icon, amountStyle, sign;
   
   if (transaction.type === 'bank-deposit') {
     icon = '🏦';
-    amountStyle = styles.depositAmount;
+    amountStyle = styles.depositAmount; // Already green
     sign = '+';
   } else if (transaction.type === 'income') {
     icon = '⬇️';
@@ -42,9 +42,25 @@ const TransactionItem = ({ transaction }) => {
         <Text style={styles.transactionDescription}>{description}</Text>
         <Text style={styles.transactionDate}>{transaction.date}</Text>
       </View>
-      <Text style={[styles.transactionAmount, amountStyle]}>
-        {sign}{formatCurrency(transaction.amount)}
-      </Text>
+      <View style={styles.transactionRight}>
+        <Text style={[styles.transactionAmount, amountStyle]}>
+          {sign}{formatCurrency(transaction.amount)}
+        </Text>
+        <View style={styles.transactionActions}>
+          <TouchableOpacity
+            style={styles.transactionActionButton}
+            onPress={() => onEdit(transaction)}
+          >
+            <Text style={styles.transactionActionText}>✏️</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.transactionActionButton}
+            onPress={() => onDelete(transaction)}
+          >
+            <Text style={styles.transactionActionText}>🗑️</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
