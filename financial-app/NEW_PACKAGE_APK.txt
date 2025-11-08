@@ -1,0 +1,29 @@
+✅ නව Package Name සහිත APK File එක සූදානම්!
+
+📱 Download Link:
+https://files.catbox.moe/qs25wg.apk
+
+📋 Details:
+- ✅ Package Name: com.newfinancialapp (වෙනස් package name)
+- ✅ නව financial app icon එක add කරලා තියෙනවා
+- ✅ Properly signed
+- ✅ File size: ~20MB
+- ✅ පරණ app එකට conflict නොවනවා
+
+🎯 Advantages:
+1. පරණ app එක install කරලා තියෙනවා නම්ත් install කරන්න පුළුවන්
+2. වෙනම app එකක් විදිහට install වෙනවා
+3. Package name conflict නැහැ
+
+⚠️ Installation:
+1. Download the APK
+2. Enable "Install from Unknown Sources"
+3. Install - පරණ app එක uninstall කරන්න අවශ්‍ය නැහැ!
+
+📁 Files:
+- APK: /workspace/financial-app/new_package_app.apk
+- Package: com.newfinancialapp
+
+---
+
+**මේ APK file එක වෙනම package name එකකින්, පරණ app එකට conflict නැහැ!**
