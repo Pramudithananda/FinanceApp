@@ -1,139 +1,210 @@
-# 💰 Personal Finance Management App - සිංහල
+# 💰 Personal Finance Management App - මුදල් කළමනාකරණ යෙදුම
 
-A modern, responsive personal finance management application built with React, featuring a beautiful Sinhala interface for managing bank accounts, cash flow, income, and expenses.
+A modern, beautiful personal finance management mobile application built with **React Native**, featuring a complete Sinhala interface for managing bank accounts, cash flow, income, and expenses.
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![React Native](https://img.shields.io/badge/React%20Native-0.73-61dafb.svg)
+![Platform](https://img.shields.io/badge/platform-Android%20%7C%20iOS-lightgrey.svg)
 
 ## 🌟 Features
 
 ### 🏦 Account Management
-- **Bank Account Balance** - Track your bank deposits and withdrawals
-- **Cash Balance** - Manage your on-hand cash
-- **Real-time Balance Updates** - Instant balance calculations
-- **Smart Money Flow** - Automatic transfers between bank and cash
+- **Bank Account Balance** - Track multiple bank accounts with real-time balances
+- **Cash Balance** - Manage your on-hand cash with ease
+- **Real-time Balance Updates** - Instant balance calculations across all accounts
+- **Multiple Account Support** - Manage People's Bank, Commercial Bank, and more
+- **Visual Account Cards** - Beautiful, color-coded account cards with balances
 
 ### 💸 Transaction Management
 - **Bank Deposits** - Direct deposits or cash-to-bank transfers
 - **Bank Withdrawals** - Withdraw money from bank to cash
-- **Transaction History** - View all your recent transactions
-- **Smart Logic** - Cash reduces when depositing to bank, bank reduces when withdrawing
+- **Transaction History** - View all your recent transactions with dates
+- **Smart Logic** - Automatic balance updates across accounts
 
-### 📊 Income & Expense Tracking
-- **Income Management** - Add income to bank or cash accounts
-- **Expense Tracking** - Record and track all your expenses
-- **Categorized View** - Separate tabs for income and expenses
-- **Date & Description** - Detailed transaction information
+### 📊 Dashboard Features
+- **Total Balance Overview** - See your complete financial picture at a glance
+- **Bank vs Cash Split** - Separate views for bank and cash balances
+- **Quick Actions** - Fast access to common operations
+- **Account Summary** - Beautiful cards showing all your accounts
 
 ### 🎨 Modern UI/UX
-- **Glassmorphism Design** - Modern frosted glass effects
-- **Gradient Backgrounds** - Beautiful color gradients
-- **Smooth Animations** - Hover effects and transitions
-- **Responsive Design** - Works perfectly on mobile and desktop
-- **Sinhala Interface** - Complete Sinhala language support
+- **Native Mobile Design** - Optimized for mobile devices
+- **Smooth Animations** - Native animations and transitions
+- **Sinhala Interface** - Complete Sinhala language support (සිංහල)
+- **Bottom Navigation** - Easy navigation between sections
+- **Gradient Cards** - Beautiful, color-coded account cards
+- **Material Design** - Modern, clean interface following Material Design principles
+
+### 📱 Navigation Tabs
+- **Dashboard** - Main overview of all accounts and balances
+- **Bank** - Dedicated bank account management
+- **Cash** - Cash account management
+- **Categories** - Expense categorization (coming soon)
+- **Settings** - App configuration and preferences
 
 ## 📱 Screenshots
 
 ### Home Dashboard
-- View bank and cash balances
-- Quick action buttons for deposits and withdrawals
-- Recent transaction history
+- View total balance across all accounts
+- Bank account cards with individual balances
+- Cash account summary
+- Quick add buttons for new accounts
 
-### Expense Management
-- Add new expenses with date and description
-- View all expense history
-- Automatic cash balance deduction
-
-### Income Tracking
-- Record income with bank/cash selection
-- Track income sources and dates
-- Automatic balance updates
+### Account Cards
+- Color-coded cards for easy identification
+- Account name and number display
+- Current balance in Sri Lankan Rupees (රු)
+- Default account indicator
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (version 14 or higher)
-- npm or yarn
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (version 18 or higher) - [Download](https://nodejs.org/)
+- **npm** or **yarn** - Comes with Node.js
+- **React Native CLI** - Install globally:
+  ```bash
+  npm install -g react-native-cli
+  ```
+
+#### For Android Development:
+- **Android Studio** - [Download](https://developer.android.com/studio)
+- **Java Development Kit (JDK)** - Version 11 or higher
+- **Android SDK** (installed via Android Studio)
+- Set up Android environment variables (ANDROID_HOME)
+
+#### For iOS Development (Mac only):
+- **Xcode** - Install from Mac App Store
+- **CocoaPods** - Install via:
+  ```bash
+  sudo gem install cocoapods
+  ```
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/personal-finance-app.git
-   cd personal-finance-app
+   git clone <your-repo-url>
+   cd workspace
    ```
 
 2. **Install dependencies**
    ```bash
    npm install
+   # or
+   yarn install
    ```
 
-3. **Install required packages**
+3. **Install required native dependencies**
    ```bash
-   npm install lucide-react
+   # For iOS (Mac only)
+   cd ios && pod install && cd ..
    ```
 
-4. **Start the development server**
+4. **Link vector icons (if needed)**
    ```bash
-   npm start
+   npx react-native link react-native-vector-icons
    ```
 
-5. **Open your browser**
-   Navigate to `http://localhost:3000`
+### Running the App
 
-### Quick Setup Alternative
+#### For Android:
 
-1. **Create a new React app**
-   ```bash
-   npx create-react-app my-finance-app
-   cd my-finance-app
-   ```
-
-2. **Install Lucide React for icons**
-   ```bash
-   npm install lucide-react
-   ```
-
-3. **Replace src/App.js with:**
-   ```jsx
-   import React from 'react';
-   import FinanceApp from './components/FinanceApp';
-   
-   function App() {
-     return <FinanceApp />;
-   }
-   
-   export default App;
-   ```
-
-4. **Create src/components/FinanceApp.jsx and paste the component code**
-
-5. **Run the app**
+1. **Start Metro Bundler**
    ```bash
    npm start
+   # or
+   yarn start
    ```
+
+2. **Run on Android device/emulator** (in a new terminal)
+   ```bash
+   npm run android
+   # or
+   yarn android
+   ```
+
+#### For iOS (Mac only):
+
+1. **Start Metro Bundler**
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+2. **Run on iOS simulator** (in a new terminal)
+   ```bash
+   npm run ios
+   # or
+   yarn ios
+   ```
+
+### Building APK for Android
+
+To build a release APK:
+
+```bash
+npm run build:apk
+# or
+yarn build:apk
+```
+
+The APK will be generated at:
+```
+android/app/build/outputs/apk/release/app-release.apk
+```
+
+### Troubleshooting
+
+#### Metro Bundler Issues
+```bash
+# Clear cache and restart
+npm start -- --reset-cache
+```
+
+#### Android Build Issues
+```bash
+# Clean Android build
+cd android && ./gradlew clean && cd ..
+```
+
+#### iOS Build Issues (Mac only)
+```bash
+# Clean iOS build
+cd ios && xcodebuild clean && cd ..
+# Reinstall pods
+cd ios && pod deintegrate && pod install && cd ..
+```
 
 ## 📁 Project Structure
 
 ```
-personal-finance-app/
-├── public/
-│   ├── index.html
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── FinanceApp.jsx
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── package.json
-└── README.md
+workspace/
+├── android/                 # Android native code
+├── ios/                     # iOS native code (Mac only)
+├── src/                     # Source code
+│   └── App.js              # Main application component
+├── assets/                  # Images, fonts, etc.
+├── index.js                # Entry point
+├── app.json                # App configuration
+├── package.json            # Dependencies
+├── metro.config.js         # Metro bundler configuration
+├── babel.config.js         # Babel configuration
+└── README.md               # This file
 ```
 
 ## 💻 Tech Stack
 
-- **Frontend:** React 18+
-- **Icons:** Lucide React
-- **Styling:** CSS-in-JS with styled-jsx
+- **Framework:** React Native 0.73
+- **Language:** JavaScript (ES6+)
+- **Icons:** React Native Vector Icons (Feather)
+- **Storage:** AsyncStorage (for data persistence)
 - **State Management:** React Hooks (useState)
-- **Responsive Design:** CSS Grid & Flexbox
+- **Navigation:** Custom bottom tab navigation
+- **Styling:** React Native StyleSheet API
 
 ## 🎯 Key Functionalities
 
@@ -163,42 +234,72 @@ const handleExpense = () => {
 ## 🔧 Customization
 
 ### Adding New Features
-1. **New Transaction Types** - Extend the modal system
-2. **Categories** - Add expense/income categories
-3. **Reports** - Add monthly/yearly reports
-4. **Data Persistence** - Integrate with localStorage or database
+1. **New Account Types** - Add more bank or cash accounts
+2. **Transaction System** - Implement full transaction management with deposits/withdrawals
+3. **Categories** - Add expense/income categories and tracking
+4. **Reports** - Add monthly/yearly financial reports with charts
+5. **Data Persistence** - Integrate AsyncStorage for permanent data storage
+6. **Biometric Auth** - Add fingerprint/face recognition for app security
+7. **Multi-currency** - Support for multiple currencies
+8. **Budget Planning** - Monthly budget goals and tracking
 
 ### Styling Modifications
-- Modify gradient colors in CSS
-- Change card designs
-- Update animation timings
-- Customize responsive breakpoints
+- Modify colors in `src/App.js` StyleSheet
+- Change card designs and layouts
+- Update icon styles and sizes
+- Customize navigation bar appearance
+- Add custom fonts (Sinhala Unicode fonts)
+- Modify theme colors (primary: #4F46E5)
 
 ## 🌐 Language Support
 
 Currently supports:
 - **Sinhala (සිංහල)** - Primary interface language
-- **English** - Mixed with Sinhala for technical terms
+- **English** - Mixed with Sinhala for button labels and navigation
 
 ### Adding More Languages
+To add support for Tamil or other languages:
+
 ```javascript
+// Create a translations file: src/translations.js
 const translations = {
-  si: { deposit: 'Deposit කරන්න', ... },
-  en: { deposit: 'Make Deposit', ... },
-  ta: { deposit: 'வைப்பு செய்க', ... }
+  si: { 
+    dashboard: 'Dashboard',
+    totalBalance: 'සම්පූර්ණ ශේෂය',
+    bankAccounts: 'බැංකු ගිණුම්',
+    cashAccounts: 'මුදල් ගිණුම්',
+  },
+  en: { 
+    dashboard: 'Dashboard',
+    totalBalance: 'Total Balance',
+    bankAccounts: 'Bank Accounts',
+    cashAccounts: 'Cash Accounts',
+  },
+  ta: { 
+    dashboard: 'Dashboard',
+    totalBalance: 'மொத்த இருப்பு',
+    bankAccounts: 'வங்கி கணக்குகள்',
+    cashAccounts: 'பண கணக்குகள்',
+  }
 };
 ```
 
 ## 📊 Future Enhancements
 
-- [ ] **Data Persistence** - Local storage integration
-- [ ] **Export Features** - PDF/Excel export
-- [ ] **Budget Planning** - Monthly budget tracking
-- [ ] **Categories** - Expense categorization
-- [ ] **Charts & Analytics** - Visual data representation
-- [ ] **Multi-currency** - Support for multiple currencies
-- [ ] **Backup & Sync** - Cloud synchronization
-- [ ] **Receipt Scanning** - Camera integration for receipts
+- [ ] **Data Persistence** - AsyncStorage for permanent data storage
+- [ ] **Transaction System** - Full deposit/withdrawal functionality
+- [ ] **Export Features** - PDF/Excel export of transactions
+- [ ] **Budget Planning** - Monthly budget goals and tracking
+- [ ] **Categories** - Expense categorization with custom categories
+- [ ] **Charts & Analytics** - Visual data representation with React Native Charts
+- [ ] **Multi-currency** - Support for USD, EUR, GBP alongside LKR
+- [ ] **Backup & Sync** - Cloud backup to Firebase/AWS
+- [ ] **Receipt Scanning** - Camera integration for receipt capture
+- [ ] **Biometric Security** - Fingerprint/Face ID authentication
+- [ ] **Notifications** - Push notifications for bill reminders
+- [ ] **Dark Mode** - Toggle between light and dark themes
+- [ ] **Offline Mode** - Full offline functionality with sync
+- [ ] **Multi-language** - Tamil and English language support
 
 ## 🤝 Contributing
 
@@ -221,18 +322,62 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **CSS Gradients** - For inspiration on modern design
 - **Sinhala Typography** - For language support
 
-## 📞 Contact
+## 🔐 Security & Privacy
 
-Your Name - [@yourusername](https://twitter.com/yourusername) - email@example.com
+This app stores all data locally on your device. No data is sent to external servers. For production use, consider:
 
-Project Link: [https://github.com/yourusername/personal-finance-app](https://github.com/yourusername/personal-finance-app)
+- Implementing encrypted local storage
+- Adding biometric authentication
+- Secure backup solutions
+- Regular security audits
 
-## 🚀 Demo
+## 🐛 Known Issues
 
-[Live Demo](https://your-demo-link.netlify.app) | [Video Demo](https://your-video-link.com)
+- Vector icons may need manual linking on older React Native versions
+- First-time setup requires proper Android Studio/Xcode configuration
+- Some Sinhala fonts may not render correctly on all devices (install Unicode fonts)
+
+## 📝 Development Roadmap
+
+### Version 1.0 (Current) ✅
+- Basic UI with navigation
+- Multiple account display
+- Balance calculations
+- Sinhala interface
+
+### Version 1.1 (Planned)
+- Full transaction system
+- Data persistence with AsyncStorage
+- Add/Edit/Delete accounts
+- Transaction history
+
+### Version 1.2 (Planned)
+- Category management
+- Budget tracking
+- Charts and analytics
+- Export functionality
+
+### Version 2.0 (Future)
+- Cloud backup
+- Multi-user support
+- Biometric security
+- Receipt scanning
+
+## 📞 Contact & Support
+
+For issues, questions, or contributions:
+- Create an issue in the GitHub repository
+- Email: your-email@example.com
+- Twitter: [@yourusername](https://twitter.com/yourusername)
+
+## 📜 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
 **Made with ❤️ for the Sri Lankan community**
 
-*දේශීය මුදල් කළමනාකරණ පද්ධතිය - ශ්‍රී ලාංකීය ප්‍රජාව සඳහා*
+*දේශීය මුදල් කළමනාකරණ යෙදුම - ශ්‍රී ලාංකීය ප්‍රජාව සඳහා*
+
+**මෙය මුදල් කළමනාකරණය සඳහා නිර්මාණය කරන ලද ජංගම යෙදුමකි**
