@@ -1,6 +1,16 @@
-# 💰 Personal Finance Management App - සිංහල
+# 💰 මුදල් කළමනාකරණ - Personal Finance Management App
 
-A modern, responsive personal finance management application built with React, featuring a beautiful Sinhala interface for managing bank accounts, cash flow, income, and expenses.
+A modern, beautiful **React Native mobile application** for personal finance management with full Sinhala language support. Manage your bank accounts, cash, income, and expenses on your mobile device!
+
+## 📱 Mobile App (React Native)
+
+This repository contains a **React Native mobile application** converted from web React code. The app works on both **Android** and **iOS** devices.
+
+### ✨ Quick Links
+- 📱 [Complete App Documentation](./MOBILE_APP_README.md)
+- 🚀 [Setup Guide](./SETUP_GUIDE.md)
+- 🔄 [Web to Mobile Conversion Guide](./CODE_CONVERSION_GUIDE.md)
+- 📊 [Project Summary](./PROJECT_SUMMARY.md)
 
 ## 🌟 Features
 
