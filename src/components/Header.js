@@ -7,9 +7,9 @@ const Header = ({ title, version }) => {
     <View style={styles.header}>
       <View>
         <Text style={styles.headerTitle}>{title}</Text>
-        <Text style={styles.version}>{version}</Text>
+        {version ? <Text style={styles.version}>{version}</Text> : null}
       </View>
-      <Text>💰</Text>
+      <Text style={{ fontSize: 28 }}>💰</Text>
     </View>
   );
 };

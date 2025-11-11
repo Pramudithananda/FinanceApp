@@ -4,9 +4,10 @@ import { styles } from '../styles';
 
 const ActionButton = ({ text, color, onPress }) => {
   return (
-    <TouchableOpacity 
-      style={[styles.actionButton, { backgroundColor: color }]}
+    <TouchableOpacity
+      style={[styles.actionButton, color ? { backgroundColor: color } : null]}
       onPress={onPress}
+      activeOpacity={0.85}
     >
       <Text style={styles.actionButtonText}>{text}</Text>
     </TouchableOpacity>
