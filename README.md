@@ -46,7 +46,7 @@ A modern, responsive personal finance management application built with React, f
 - Track income sources and dates
 - Automatic balance updates
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Web)
 
 ### Prerequisites
 - Node.js (version 14 or higher)
@@ -110,7 +110,7 @@ A modern, responsive personal finance management application built with React, f
    npm start
    ```
 
-## 📁 Project Structure
+## 📁 Project Structure (Web)
 
 ```
 personal-finance-app/
@@ -127,7 +127,7 @@ personal-finance-app/
 └── README.md
 ```
 
-## 💻 Tech Stack
+## 💻 Tech Stack (Web)
 
 - **Frontend:** React 18+
 - **Icons:** Lucide React
@@ -160,7 +160,7 @@ const handleExpense = () => {
 };
 ```
 
-## 🔧 Customization
+## 🔧 Customization (Web)
 
 ### Adding New Features
 1. **New Transaction Types** - Extend the modal system
@@ -189,7 +189,7 @@ const translations = {
 };
 ```
 
-## 📊 Future Enhancements
+## 📊 Future Enhancements (Web)
 
 - [ ] **Data Persistence** - Local storage integration
 - [ ] **Export Features** - PDF/Excel export
@@ -236,3 +236,59 @@ Project Link: [https://github.com/yourusername/personal-finance-app](https://git
 **Made with ❤️ for the Sri Lankan community**
 
 *දේශීය මුදල් කළමනාකරණ පද්ධතිය - ශ්‍රී ලාංකීය ප්‍රජාව සඳහා*
+
+---
+
+## 📱 React Native Mobile App (Expo)
+
+We now ship a fully native-style mobile experience, built with Expo and React Native. The app mirrors the Sinhala finance dashboard with AsyncStorage persistence, Sinhala UX copy, and modal-driven flows for deposits, income transfers, expenses, and category management.
+
+### 🧭 Location
+
+```
+mobile-app/
+├── App.js
+├── app.json
+├── package.json
+├── assets/
+└── src/
+    ├── components/
+    │   ├── ActionButton.js
+    │   ├── BalanceCard.js
+    │   ├── CategoryCard.js
+    │   ├── Header.js
+    │   ├── TransactionItem.js
+    │   └── modals/
+    │       ├── CategoryDetailsModal.js
+    │       ├── CategoryModal.js
+    │       └── TransactionModal.js
+    ├── styles.js
+    └── utils/
+        ├── formatters.js
+        └── storage.js
+```
+
+### 🛠️ Setup & Run
+
+1. Install dependencies:
+   ```bash
+   cd mobile-app
+   npm install
+   ```
+2. Start the Expo dev server:
+   ```bash
+   npm start
+   ```
+3. Use the Expo Go client (Android/iOS) or run on an emulator/simulator via the on-screen prompts (`a` for Android, `i` for iOS).
+
+### ✨ Mobile Highlights
+- Sinhala-first UI with matching terminology to the web dashboard.
+- Local persistence via `AsyncStorage` (`src/utils/storage.js`).
+- Reusable UI primitives (`BalanceCard`, `CategoryCard`, `ActionButton`).
+- Modal flows for transactions and category CRUD with Sinhala validation strings.
+- Pull-to-refresh triggers storage re-hydration and combines gracefully with the modal UX.
+- Expo asset placeholders live in `mobile-app/assets/`; replace them with brand assets before release.
+
+### 🔍 Known Considerations
+- Existing root-level `deepseek_*` files are legacy prototypes and **not** wired into the new mobile stack.
+- Ensure you have the `expo` CLI installed globally if you prefer `expo start` commands outside of `npm scripts`.
