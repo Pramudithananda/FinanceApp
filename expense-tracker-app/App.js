@@ -521,6 +521,33 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
               ))}
             </View>
 
+            <Text style={styles.modalLabel}>මුදල් ගිණුම තෝරන්න (මුදල් එකතු වන්නේ)</Text>
+            <View style={styles.accountSelector}>
+              {accounts.cash.map((account) => (
+                <TouchableOpacity
+                  key={account.id}
+                  style={[
+                    styles.accountOption,
+                    selectedCashAccount?.id === account.id && styles.accountOptionSelected
+                  ]}
+                  onPress={() => setSelectedCashAccount(account)}
+                >
+                  <Text style={[
+                    styles.accountOptionText,
+                    selectedCashAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    {account.name}
+                  </Text>
+                  <Text style={[
+                    styles.accountOptionBalance,
+                    selectedCashAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    රු {account.balance.toLocaleString()}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
             <Text style={styles.modalLabel}>මුදල (රු)</Text>
             <TextInput
               style={styles.modalInput}
