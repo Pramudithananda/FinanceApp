@@ -240,6 +240,9 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
 
     setAccounts({ ...accounts, bank: updatedBankAccounts });
     
+    // Update selectedBankAccount state
+    setSelectedBankAccount(updatedBankAccounts.find(acc => acc.id === selectedBankAccount.id));
+    
     addTransaction({
       type: 'deposit',
       amount: parseFloat(amount),
@@ -257,8 +260,10 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
       return;
     }
 
-    if (selectedBankAccount.balance < parseFloat(amount)) {
-      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් ශේෂයක් නොමැත');
+    // Get current balance from accounts array
+    const currentBankAccount = accounts.bank.find(acc => acc.id === selectedBankAccount.id);
+    if (!currentBankAccount || currentBankAccount.balance < parseFloat(amount)) {
+      Alert.alert('දෝෂයකි', `ප්‍රමාණවත් ශේෂයක් නොමැත. වත්මන් ශේෂය: රු ${currentBankAccount ? currentBankAccount.balance : 0}`);
       return;
     }
 
@@ -279,6 +284,10 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
       cash: updatedCashAccounts
     });
     
+    // Update selectedBankAccount state
+    setSelectedBankAccount(updatedBankAccounts.find(acc => acc.id === selectedBankAccount.id));
+    setSelectedCashAccount(updatedCashAccounts.find(acc => acc.id === selectedCashAccount.id));
+    
     addTransaction({
       type: 'withdrawal',
       amount: parseFloat(amount),
@@ -297,8 +306,10 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
       return;
     }
 
-    if (selectedCashAccount.balance < parseFloat(amount)) {
-      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් ශේෂයක් නොමැත');
+    // Get current balance from accounts array
+    const currentCashAccount = accounts.cash.find(acc => acc.id === selectedCashAccount.id);
+    if (!currentCashAccount || currentCashAccount.balance < parseFloat(amount)) {
+      Alert.alert('දෝෂයකි', `ප්‍රමාණවත් ශේෂයක් නොමැත. වත්මන් ශේෂය: රු ${currentCashAccount ? currentCashAccount.balance : 0}`);
       return;
     }
 
@@ -309,6 +320,9 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
     );
 
     setAccounts({ ...accounts, cash: updatedCashAccounts });
+    
+    // Update selectedCashAccount state
+    setSelectedCashAccount(updatedCashAccounts.find(acc => acc.id === selectedCashAccount.id));
     
     const updatedCategories = categories.map(cat =>
       cat.id === selectedCategory.id
@@ -330,7 +344,7 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
   };
 
   return (
-    <ScrollView style={styles.screen}>
+    <ScrollView style={styles.screen} contentContainerStyle={styles.scrollContent}>
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Dashboard</Text>
@@ -919,7 +933,7 @@ function BankScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
   };
 
   return (
-    <ScrollView style={styles.screen}>
+    <ScrollView style={styles.screen} contentContainerStyle={styles.scrollContent}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Bank Accounts</Text>
       </View>
@@ -1058,7 +1072,7 @@ function CashScreen({ accounts, allAccounts, setAccounts }) {
   };
 
   return (
-    <ScrollView style={styles.screen}>
+    <ScrollView style={styles.screen} contentContainerStyle={styles.scrollContent}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Cash Accounts</Text>
       </View>
@@ -1208,7 +1222,7 @@ function CategoriesScreen({ categories, setCategories }) {
   };
 
   return (
-    <ScrollView style={styles.screen}>
+    <ScrollView style={styles.screen} contentContainerStyle={styles.scrollContent}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Expenses Categories</Text>
         <Text style={styles.headerSubtitle}>Manage categories used in expenses</Text>
@@ -1560,7 +1574,7 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
   };
 
   return (
-    <ScrollView style={styles.screen}>
+    <ScrollView style={styles.screen} contentContainerStyle={styles.scrollContent}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Settings</Text>
         <Text style={styles.headerSubtitle}>App settings and information</Text>
@@ -1628,6 +1642,9 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: '#F9FAFB',
+  },
+  scrollContent: {
+    paddingBottom: 100,
   },
   header: {
     backgroundColor: '#4F46E5',
