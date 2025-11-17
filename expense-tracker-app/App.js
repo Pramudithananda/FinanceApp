@@ -9,6 +9,7 @@ import {
   Modal,
   SafeAreaView,
   StatusBar,
+  Alert,
 } from 'react-native';
 
 // Main App Component
@@ -30,20 +31,57 @@ export default function ExpenseTrackerApp() {
     { id: 2, name: "කෑම", budget: 0, spent: 0 }
   ]);
 
+  const [transactions, setTransactions] = useState([]);
+
+  const addTransaction = (transaction) => {
+    const newTransaction = {
+      id: Date.now(),
+      date: new Date().toLocaleString('si-LK', { 
+        year: 'numeric', 
+        month: '2-digit', 
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+      }),
+      ...transaction
+    };
+    setTransactions([newTransaction, ...transactions]);
+  };
+
   const renderScreen = () => {
     switch(currentScreen) {
       case 'dashboard':
-        return <DashboardScreen />;
+        return <DashboardScreen 
+          accounts={accounts} 
+          setAccounts={setAccounts}
+          transactions={transactions}
+          addTransaction={addTransaction}
+        />;
       case 'bank':
-        return <BankScreen accounts={accounts.bank} setAccounts={setAccounts} />;
+        return <BankScreen 
+          accounts={accounts.bank} 
+          allAccounts={accounts}
+          setAccounts={setAccounts}
+          addTransaction={addTransaction}
+        />;
       case 'cash':
-        return <CashScreen accounts={accounts.cash} setAccounts={setAccounts} />;
+        return <CashScreen 
+          accounts={accounts.cash} 
+          allAccounts={accounts}
+          setAccounts={setAccounts}
+          addTransaction={addTransaction}
+        />;
       case 'categories':
         return <CategoriesScreen categories={categories} setCategories={setCategories} />;
       case 'settings':
         return <SettingsScreen />;
       default:
-        return <DashboardScreen />;
+        return <DashboardScreen 
+          accounts={accounts} 
+          setAccounts={setAccounts}
+          transactions={transactions}
+          addTransaction={addTransaction}
+        />;
     }
   };
 
@@ -109,7 +147,121 @@ function NavButton({ icon, label, active, onPress }) {
 }
 
 // Dashboard Screen
-function DashboardScreen() {
+function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }) {
+  const [depositModalVisible, setDepositModalVisible] = useState(false);
+  const [withdrawModalVisible, setWithdrawModalVisible] = useState(false);
+  const [expenseModalVisible, setExpenseModalVisible] = useState(false);
+  const [selectedBankAccount, setSelectedBankAccount] = useState(null);
+  const [amount, setAmount] = useState('');
+  const [description, setDescription] = useState('');
+
+  const totalBankBalance = accounts.bank.reduce((sum, acc) => sum + acc.balance, 0);
+  const totalCashBalance = accounts.cash.reduce((sum, acc) => sum + acc.balance, 0);
+
+  const handleDeposit = () => {
+    if (!selectedBankAccount || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+      return;
+    }
+
+    const depositAmount = parseFloat(amount);
+    
+    setAccounts(prev => ({
+      ...prev,
+      bank: prev.bank.map(acc => 
+        acc.id === selectedBankAccount.id 
+          ? { ...acc, balance: acc.balance + depositAmount }
+          : acc
+      )
+    }));
+
+    addTransaction({
+      type: 'deposit',
+      amount: depositAmount,
+      accountName: selectedBankAccount.name,
+      accountNumber: selectedBankAccount.number,
+      description: description || 'බැංකු තැන්පතු'
+    });
+
+    setAmount('');
+    setDescription('');
+    setSelectedBankAccount(null);
+    setDepositModalVisible(false);
+    Alert.alert('සාර්ථකයි!', `රු ${depositAmount.toLocaleString()} බැංකු ගිණුමට එකතු කරන ලදී`);
+  };
+
+  const handleWithdraw = () => {
+    if (!selectedBankAccount || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+      return;
+    }
+
+    const withdrawAmount = parseFloat(amount);
+
+    if (selectedBankAccount.balance < withdrawAmount) {
+      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් මුදලක් නොමැත');
+      return;
+    }
+    
+    setAccounts(prev => ({
+      ...prev,
+      bank: prev.bank.map(acc => 
+        acc.id === selectedBankAccount.id 
+          ? { ...acc, balance: acc.balance - withdrawAmount }
+          : acc
+      )
+    }));
+
+    addTransaction({
+      type: 'withdrawal',
+      amount: withdrawAmount,
+      accountName: selectedBankAccount.name,
+      accountNumber: selectedBankAccount.number,
+      description: description || 'බැංකු මුදල් ගැනීම'
+    });
+
+    setAmount('');
+    setDescription('');
+    setSelectedBankAccount(null);
+    setWithdrawModalVisible(false);
+    Alert.alert('සාර්ථකයි!', `රු ${withdrawAmount.toLocaleString()} බැංකු ගිණුමෙන් ගෙන ඇත`);
+  };
+
+  const handleExpense = () => {
+    if (!amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+      return;
+    }
+
+    const expenseAmount = parseFloat(amount);
+
+    if (accounts.cash[0].balance < expenseAmount) {
+      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් මුදලක් නොමැත');
+      return;
+    }
+    
+    setAccounts(prev => ({
+      ...prev,
+      cash: prev.cash.map((acc, index) => 
+        index === 0 
+          ? { ...acc, balance: acc.balance - expenseAmount }
+          : acc
+      )
+    }));
+
+    addTransaction({
+      type: 'expense',
+      amount: expenseAmount,
+      accountName: accounts.cash[0].name,
+      description: description || 'වියදම'
+    });
+
+    setAmount('');
+    setDescription('');
+    setExpenseModalVisible(false);
+    Alert.alert('සාර්ථකයි!', `රු ${expenseAmount.toLocaleString()} වියදම ලෙස සටහන් කරන ලදී`);
+  };
+
   return (
     <ScrollView style={styles.screenContainer}>
       <View style={styles.dashboardGradient}>
@@ -128,16 +280,20 @@ function DashboardScreen() {
             </View>
           </View>
 
-          {/* Action Buttons */}
+          {/* Bank Account Quick Access */}
           <View style={styles.actionRow}>
-            <TouchableOpacity style={[styles.actionButton, styles.actionButtonBlue]}>
-              <Text style={styles.actionButtonNumber}>1234567890</Text>
-              <Text style={styles.actionButtonAmount}>රු 0</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.actionButton, styles.actionButtonGreen]}>
-              <Text style={styles.actionButtonNumber}>0987654321</Text>
-              <Text style={styles.actionButtonAmount}>රු 0</Text>
-            </TouchableOpacity>
+            {accounts.bank.map((account, index) => (
+              <TouchableOpacity 
+                key={account.id}
+                style={[
+                  styles.actionButton, 
+                  index === 0 ? styles.actionButtonBlue : styles.actionButtonGreen
+                ]}
+              >
+                <Text style={styles.actionButtonNumber}>{account.number}</Text>
+                <Text style={styles.actionButtonAmount}>රු {account.balance.toLocaleString()}</Text>
+              </TouchableOpacity>
+            ))}
           </View>
         </View>
 
@@ -145,46 +301,435 @@ function DashboardScreen() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>මුදල් ගිනුම</Text>
           <View style={styles.cashGrid}>
-            <View style={[styles.cashCard, styles.cashCardYellow]}>
-              <View style={styles.checkMark}>
-                <Text style={styles.checkMarkText}>✓</Text>
+            {accounts.cash.map((account, index) => (
+              <View 
+                key={account.id}
+                style={[
+                  styles.cashCard, 
+                  index === 0 ? styles.cashCardYellow : styles.cashCardRed
+                ]}
+              >
+                {index === 0 && (
+                  <View style={styles.checkMark}>
+                    <Text style={styles.checkMarkText}>✓</Text>
+                  </View>
+                )}
+                <Text style={styles.cashCardTitle}>{account.name}</Text>
+                <Text style={styles.cashCardBalance}>රු {account.balance.toLocaleString()}</Text>
               </View>
-              <Text style={styles.cashCardTitle}>පුබාන මුදල්</Text>
-              <Text style={styles.cashCardBalance}>රු 0</Text>
-            </View>
-            <View style={[styles.cashCard, styles.cashCardRed]}>
-              <Text style={styles.cashCardTitle}>ඇත්නික්කා මුදල්</Text>
-              <Text style={styles.cashCardBalance}>රු 0</Text>
-            </View>
+            ))}
           </View>
         </View>
 
         {/* Main Actions */}
         <View style={styles.mainActions}>
-          <TouchableOpacity style={[styles.mainActionButton, styles.mainActionBlue]}>
+          <TouchableOpacity 
+            style={[styles.mainActionButton, styles.mainActionBlue]}
+            onPress={() => setDepositModalVisible(true)}
+          >
             <Text style={styles.mainActionIcon}>🏦</Text>
-            <Text style={styles.mainActionText}>බැංකු නාන්පතු</Text>
+            <Text style={styles.mainActionText}>බැංකු තැන්පතු</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.mainActionButton, styles.mainActionGreen]}>
+          <TouchableOpacity 
+            style={[styles.mainActionButton, styles.mainActionGreen]}
+            onPress={() => setWithdrawModalVisible(true)}
+          >
             <Text style={styles.mainActionIcon}>💰</Text>
             <Text style={styles.mainActionText}>බැංකු Withdraw</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.mainActionButton, styles.mainActionRed]}>
+          <TouchableOpacity 
+            style={[styles.mainActionButton, styles.mainActionRed]}
+            onPress={() => setExpenseModalVisible(true)}
+          >
             <Text style={styles.mainActionIcon}>📉</Text>
-            <Text style={styles.mainActionText}>විදමී කරන්න</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.mainActionButton, styles.mainActionGray]}>
-            <Text style={styles.mainActionIcon}>➕</Text>
-            <Text style={styles.mainActionText}>නව ගිනුමි එකතු කරන්න</Text>
+            <Text style={styles.mainActionText}>වියදම් කරන්න</Text>
           </TouchableOpacity>
         </View>
+
+        {/* Recent Transactions */}
+        {transactions.length > 0 && (
+          <View style={styles.transactionsSection}>
+            <Text style={styles.sectionTitle}>මෑත ගනුදෙනු</Text>
+            <View style={styles.transactionsList}>
+              {transactions.slice(0, 10).map((transaction) => (
+                <View key={transaction.id} style={styles.transactionItem}>
+                  <View style={styles.transactionLeft}>
+                    <Text style={[
+                      styles.transactionIcon,
+                      transaction.type === 'deposit' ? styles.depositIcon :
+                      transaction.type === 'withdrawal' ? styles.withdrawalIcon :
+                      styles.expenseIcon
+                    ]}>
+                      {transaction.type === 'deposit' ? '⬇️' : 
+                       transaction.type === 'withdrawal' ? '⬆️' : '💸'}
+                    </Text>
+                    <View style={styles.transactionDetails}>
+                      <Text style={styles.transactionDescription}>
+                        {transaction.description}
+                      </Text>
+                      {transaction.accountName && (
+                        <Text style={styles.transactionAccount}>
+                          {transaction.accountName}
+                          {transaction.accountNumber && ` • ${transaction.accountNumber}`}
+                        </Text>
+                      )}
+                      <Text style={styles.transactionDate}>{transaction.date}</Text>
+                    </View>
+                  </View>
+                  <Text style={[
+                    styles.transactionAmount,
+                    transaction.type === 'deposit' ? styles.depositAmount :
+                    transaction.type === 'withdrawal' ? styles.withdrawalAmount :
+                    styles.expenseAmount
+                  ]}>
+                    {transaction.type === 'deposit' ? '+' : '-'}රු {transaction.amount.toLocaleString()}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        )}
       </View>
+
+      {/* Deposit Modal */}
+      <Modal
+        visible={depositModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setDepositModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>බැංකු තැන්පතු</Text>
+            
+            <Text style={styles.modalLabel}>බැංකු ගිණුම තෝරන්න</Text>
+            <View style={styles.accountSelector}>
+              {accounts.bank.map((account) => (
+                <TouchableOpacity
+                  key={account.id}
+                  style={[
+                    styles.accountOption,
+                    selectedBankAccount?.id === account.id && styles.accountOptionSelected
+                  ]}
+                  onPress={() => setSelectedBankAccount(account)}
+                >
+                  <Text style={[
+                    styles.accountOptionText,
+                    selectedBankAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    {account.name}
+                  </Text>
+                  <Text style={[
+                    styles.accountOptionBalance,
+                    selectedBankAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    රු {account.balance.toLocaleString()}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            <Text style={styles.modalLabel}>මුදල (රු)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="0"
+              keyboardType="numeric"
+              value={amount}
+              onChangeText={setAmount}
+            />
+
+            <Text style={styles.modalLabel}>විස්තරය (විකල්ප)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="උදා: වැටුප්"
+              value={description}
+              onChangeText={setDescription}
+            />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonCancel]}
+                onPress={() => {
+                  setDepositModalVisible(false);
+                  setAmount('');
+                  setDescription('');
+                  setSelectedBankAccount(null);
+                }}
+              >
+                <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonConfirm]}
+                onPress={handleDeposit}
+              >
+                <Text style={styles.modalButtonText}>තැන්පත් කරන්න</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Withdraw Modal */}
+      <Modal
+        visible={withdrawModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setWithdrawModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>බැංකු මුදල් ගැනීම</Text>
+            
+            <Text style={styles.modalLabel}>බැංකු ගිණුම තෝරන්න</Text>
+            <View style={styles.accountSelector}>
+              {accounts.bank.map((account) => (
+                <TouchableOpacity
+                  key={account.id}
+                  style={[
+                    styles.accountOption,
+                    selectedBankAccount?.id === account.id && styles.accountOptionSelected
+                  ]}
+                  onPress={() => setSelectedBankAccount(account)}
+                >
+                  <Text style={[
+                    styles.accountOptionText,
+                    selectedBankAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    {account.name}
+                  </Text>
+                  <Text style={[
+                    styles.accountOptionBalance,
+                    selectedBankAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    රු {account.balance.toLocaleString()}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            <Text style={styles.modalLabel}>මුදල (රු)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="0"
+              keyboardType="numeric"
+              value={amount}
+              onChangeText={setAmount}
+            />
+
+            <Text style={styles.modalLabel}>විස්තරය (විකල්ප)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="උදා: මුදල් ගැනීම"
+              value={description}
+              onChangeText={setDescription}
+            />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonCancel]}
+                onPress={() => {
+                  setWithdrawModalVisible(false);
+                  setAmount('');
+                  setDescription('');
+                  setSelectedBankAccount(null);
+                }}
+              >
+                <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonConfirm]}
+                onPress={handleWithdraw}
+              >
+                <Text style={styles.modalButtonText}>ගන්න</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Expense Modal */}
+      <Modal
+        visible={expenseModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setExpenseModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>වියදම් කරන්න</Text>
+
+            <Text style={styles.modalLabel}>මුදල (රු)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="0"
+              keyboardType="numeric"
+              value={amount}
+              onChangeText={setAmount}
+            />
+
+            <Text style={styles.modalLabel}>විස්තරය</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="උදා: කෑම"
+              value={description}
+              onChangeText={setDescription}
+            />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonCancel]}
+                onPress={() => {
+                  setExpenseModalVisible(false);
+                  setAmount('');
+                  setDescription('');
+                }}
+              >
+                <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonConfirm]}
+                onPress={handleExpense}
+              >
+                <Text style={styles.modalButtonText}>එකතු කරන්න</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
 
 // Bank Screen
-function BankScreen({ accounts }) {
+function BankScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
+  const [addModalVisible, setAddModalVisible] = useState(false);
+  const [depositModalVisible, setDepositModalVisible] = useState(false);
+  const [withdrawModalVisible, setWithdrawModalVisible] = useState(false);
+  const [selectedAccount, setSelectedAccount] = useState(null);
+  const [amount, setAmount] = useState('');
+  const [description, setDescription] = useState('');
+  const [newBankName, setNewBankName] = useState('');
+  const [newBankNumber, setNewBankNumber] = useState('');
+  const [newBankType, setNewBankType] = useState('ඉතුරුම්');
+
+  const totalBalance = accounts.reduce((sum, acc) => sum + acc.balance, 0);
+
+  const handleAddBank = () => {
+    if (!newBankName || !newBankNumber) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර සියලු විස්තර පුරවන්න');
+      return;
+    }
+
+    const newBank = {
+      id: Date.now(),
+      name: newBankName,
+      number: newBankNumber,
+      type: newBankType,
+      balance: 0,
+      category: "පුබාන මුදල්"
+    };
+
+    setAccounts(prev => ({
+      ...prev,
+      bank: [...prev.bank, newBank]
+    }));
+
+    setNewBankName('');
+    setNewBankNumber('');
+    setNewBankType('ඉතුරුම්');
+    setAddModalVisible(false);
+    Alert.alert('සාර්ථකයි!', 'නව බැංකු ගිණුම එකතු කරන ලදී');
+  };
+
+  const handleDeposit = () => {
+    if (!amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+      return;
+    }
+
+    const depositAmount = parseFloat(amount);
+    
+    setAccounts(prev => ({
+      ...prev,
+      bank: prev.bank.map(acc => 
+        acc.id === selectedAccount.id 
+          ? { ...acc, balance: acc.balance + depositAmount }
+          : acc
+      )
+    }));
+
+    addTransaction({
+      type: 'deposit',
+      amount: depositAmount,
+      accountName: selectedAccount.name,
+      accountNumber: selectedAccount.number,
+      description: description || 'බැංකු තැන්පතු'
+    });
+
+    setAmount('');
+    setDescription('');
+    setSelectedAccount(null);
+    setDepositModalVisible(false);
+    Alert.alert('සාර්ථකයි!', `රු ${depositAmount.toLocaleString()} එකතු කරන ලදී`);
+  };
+
+  const handleWithdraw = () => {
+    if (!amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+      return;
+    }
+
+    const withdrawAmount = parseFloat(amount);
+
+    if (selectedAccount.balance < withdrawAmount) {
+      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් මුදලක් නොමැත');
+      return;
+    }
+    
+    setAccounts(prev => ({
+      ...prev,
+      bank: prev.bank.map(acc => 
+        acc.id === selectedAccount.id 
+          ? { ...acc, balance: acc.balance - withdrawAmount }
+          : acc
+      )
+    }));
+
+    addTransaction({
+      type: 'withdrawal',
+      amount: withdrawAmount,
+      accountName: selectedAccount.name,
+      accountNumber: selectedAccount.number,
+      description: description || 'බැංකු මුදල් ගැනීම'
+    });
+
+    setAmount('');
+    setDescription('');
+    setSelectedAccount(null);
+    setWithdrawModalVisible(false);
+    Alert.alert('සාර්ථකයි!', `රු ${withdrawAmount.toLocaleString()} ගෙන ඇත`);
+  };
+
+  const handleDeleteAccount = (accountId) => {
+    Alert.alert(
+      'තහවුරු කරන්න',
+      'මෙම බැංකු ගිණුම මකා දැමීමට අවශ්‍යද?',
+      [
+        { text: 'නැත', style: 'cancel' },
+        {
+          text: 'ඔව්',
+          style: 'destructive',
+          onPress: () => {
+            setAccounts(prev => ({
+              ...prev,
+              bank: prev.bank.filter(acc => acc.id !== accountId)
+            }));
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <ScrollView style={styles.screenContainer}>
       {/* Header */}
@@ -196,12 +741,15 @@ function BankScreen({ accounts }) {
         {/* Summary Card */}
         <View style={styles.summaryCard}>
           <Text style={styles.summaryLabel}>සම්පූර්ණ බැංකු ශේෂය</Text>
-          <Text style={styles.summaryAmount}>රු 0</Text>
-          <Text style={styles.summarySubtext}>2 ගිනුම් වලින්</Text>
+          <Text style={styles.summaryAmount}>රු {totalBalance.toLocaleString()}</Text>
+          <Text style={styles.summarySubtext}>{accounts.length} ගිනුම් වලින්</Text>
         </View>
 
         {/* Add Button */}
-        <TouchableOpacity style={[styles.addButton, styles.addButtonBlue]}>
+        <TouchableOpacity 
+          style={[styles.addButton, styles.addButtonBlue]}
+          onPress={() => setAddModalVisible(true)}
+        >
           <Text style={styles.addButtonIcon}>➕</Text>
           <Text style={styles.addButtonText}>නව බැංකු ගිනුමි එකතු කරන්න</Text>
         </TouchableOpacity>
@@ -212,33 +760,271 @@ function BankScreen({ accounts }) {
             <View style={styles.accountHeader}>
               <Text style={styles.accountName}>{account.name}</Text>
               <View style={styles.accountActions}>
-                <TouchableOpacity style={styles.iconButton}>
-                  <Text>📊</Text>
+                <TouchableOpacity 
+                  style={styles.iconButton}
+                  onPress={() => {
+                    setSelectedAccount(account);
+                    setDepositModalVisible(true);
+                  }}
+                >
+                  <Text>⬇️</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.iconButton}>
-                  <Text>🔗</Text>
+                <TouchableOpacity 
+                  style={styles.iconButton}
+                  onPress={() => {
+                    setSelectedAccount(account);
+                    setWithdrawModalVisible(true);
+                  }}
+                >
+                  <Text>⬆️</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.iconButton}>
+                <TouchableOpacity 
+                  style={styles.iconButton}
+                  onPress={() => handleDeleteAccount(account.id)}
+                >
                   <Text>🗑️</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.iconButton}>
-                  <Text>✏️</Text>
                 </TouchableOpacity>
               </View>
             </View>
             <Text style={styles.accountDetail}>ගිනුම් අංකය: {account.number}</Text>
             <Text style={styles.accountDetail}>වර්ගය: {account.type}</Text>
             <Text style={styles.accountCategory}>🔗 වර්ගීම: {account.category}</Text>
-            <Text style={styles.accountBalance}>ශේෂය: <Text style={styles.balanceAmount}>රු {account.balance}</Text></Text>
+            <Text style={styles.accountBalance}>ශේෂය: <Text style={styles.balanceAmount}>රු {account.balance.toLocaleString()}</Text></Text>
           </View>
         ))}
       </View>
+
+      {/* Add Bank Modal */}
+      <Modal
+        visible={addModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setAddModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>නව බැංකු ගිණුම</Text>
+
+            <Text style={styles.modalLabel}>බැංකු නම</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="උදා: People's Bank"
+              value={newBankName}
+              onChangeText={setNewBankName}
+            />
+
+            <Text style={styles.modalLabel}>ගිණුම් අංකය</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="1234567890"
+              keyboardType="numeric"
+              value={newBankNumber}
+              onChangeText={setNewBankNumber}
+            />
+
+            <Text style={styles.modalLabel}>වර්ගය</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="ඉතුරුම්"
+              value={newBankType}
+              onChangeText={setNewBankType}
+            />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonCancel]}
+                onPress={() => {
+                  setAddModalVisible(false);
+                  setNewBankName('');
+                  setNewBankNumber('');
+                  setNewBankType('ඉතුරුම්');
+                }}
+              >
+                <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonConfirm]}
+                onPress={handleAddBank}
+              >
+                <Text style={styles.modalButtonText}>එකතු කරන්න</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Deposit Modal */}
+      <Modal
+        visible={depositModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setDepositModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>බැංකු තැන්පතු</Text>
+            
+            {selectedAccount && (
+              <View style={styles.selectedAccountInfo}>
+                <Text style={styles.selectedAccountName}>{selectedAccount.name}</Text>
+                <Text style={styles.selectedAccountBalance}>
+                  වත්මන් ශේෂය: රු {selectedAccount.balance.toLocaleString()}
+                </Text>
+              </View>
+            )}
+
+            <Text style={styles.modalLabel}>මුදල (රු)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="0"
+              keyboardType="numeric"
+              value={amount}
+              onChangeText={setAmount}
+            />
+
+            <Text style={styles.modalLabel}>විස්තරය (විකල්ප)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="උදා: වැටුප්"
+              value={description}
+              onChangeText={setDescription}
+            />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonCancel]}
+                onPress={() => {
+                  setDepositModalVisible(false);
+                  setAmount('');
+                  setDescription('');
+                  setSelectedAccount(null);
+                }}
+              >
+                <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonConfirm]}
+                onPress={handleDeposit}
+              >
+                <Text style={styles.modalButtonText}>තැන්පත් කරන්න</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Withdraw Modal */}
+      <Modal
+        visible={withdrawModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setWithdrawModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>බැංකු මුදල් ගැනීම</Text>
+            
+            {selectedAccount && (
+              <View style={styles.selectedAccountInfo}>
+                <Text style={styles.selectedAccountName}>{selectedAccount.name}</Text>
+                <Text style={styles.selectedAccountBalance}>
+                  වත්මන් ශේෂය: රු {selectedAccount.balance.toLocaleString()}
+                </Text>
+              </View>
+            )}
+
+            <Text style={styles.modalLabel}>මුදල (රු)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="0"
+              keyboardType="numeric"
+              value={amount}
+              onChangeText={setAmount}
+            />
+
+            <Text style={styles.modalLabel}>විස්තරය (විකල්ප)</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="උදා: මුදල් ගැනීම"
+              value={description}
+              onChangeText={setDescription}
+            />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonCancel]}
+                onPress={() => {
+                  setWithdrawModalVisible(false);
+                  setAmount('');
+                  setDescription('');
+                  setSelectedAccount(null);
+                }}
+              >
+                <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonConfirm]}
+                onPress={handleWithdraw}
+              >
+                <Text style={styles.modalButtonText}>ගන්න</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
 
 // Cash Screen
-function CashScreen({ accounts }) {
+function CashScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
+  const [addModalVisible, setAddModalVisible] = useState(false);
+  const [newCashName, setNewCashName] = useState('');
+
+  const totalBalance = accounts.reduce((sum, acc) => sum + acc.balance, 0);
+
+  const handleAddCash = () => {
+    if (!newCashName) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර නමක් ඇතුළත් කරන්න');
+      return;
+    }
+
+    const newCash = {
+      id: Date.now(),
+      name: newCashName,
+      balance: 0
+    };
+
+    setAccounts(prev => ({
+      ...prev,
+      cash: [...prev.cash, newCash]
+    }));
+
+    setNewCashName('');
+    setAddModalVisible(false);
+    Alert.alert('සාර්ථකයි!', 'නව මුදල් ගිණුම එකතු කරන ලදී');
+  };
+
+  const handleDeleteAccount = (accountId) => {
+    Alert.alert(
+      'තහවුරු කරන්න',
+      'මෙම මුදල් ගිණුම මකා දැමීමට අවශ්‍යද?',
+      [
+        { text: 'නැත', style: 'cancel' },
+        {
+          text: 'ඔව්',
+          style: 'destructive',
+          onPress: () => {
+            setAccounts(prev => ({
+              ...prev,
+              cash: prev.cash.filter(acc => acc.id !== accountId)
+            }));
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <ScrollView style={styles.screenContainer}>
       {/* Header */}
@@ -250,12 +1036,15 @@ function CashScreen({ accounts }) {
         {/* Summary Card */}
         <View style={styles.summaryCard}>
           <Text style={styles.summaryLabel}>සම්පූර්ණ මුදල් ශේෂය</Text>
-          <Text style={[styles.summaryAmount, styles.summaryAmountGreen]}>රු 0</Text>
-          <Text style={styles.summarySubtext}>2 ගිනුම් වලින්</Text>
+          <Text style={[styles.summaryAmount, styles.summaryAmountGreen]}>රු {totalBalance.toLocaleString()}</Text>
+          <Text style={styles.summarySubtext}>{accounts.length} ගිනුම් වලින්</Text>
         </View>
 
         {/* Add Button */}
-        <TouchableOpacity style={[styles.addButton, styles.addButtonGreen]}>
+        <TouchableOpacity 
+          style={[styles.addButton, styles.addButtonGreen]}
+          onPress={() => setAddModalVisible(true)}
+        >
           <Text style={styles.addButtonIcon}>➕</Text>
           <Text style={styles.addButtonText}>නව මුදල් ගිනුමි එකතු කරන්න</Text>
         </TouchableOpacity>
@@ -272,26 +1061,105 @@ function CashScreen({ accounts }) {
             <View style={styles.accountHeader}>
               <Text style={styles.accountName}>{account.name}</Text>
               <View style={styles.accountActions}>
-                <TouchableOpacity style={styles.iconButton}>
+                <TouchableOpacity 
+                  style={styles.iconButton}
+                  onPress={() => handleDeleteAccount(account.id)}
+                >
                   <Text>🗑️</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.iconButton}>
-                  <Text>✏️</Text>
                 </TouchableOpacity>
               </View>
             </View>
             <Text style={styles.accountBalance}>
-              ශේෂය: <Text style={[styles.balanceAmount, index === 0 ? styles.balanceYellow : styles.balanceRed]}>රු {account.balance}</Text>
+              ශේෂය: <Text style={[styles.balanceAmount, index === 0 ? styles.balanceYellow : styles.balanceRed]}>රු {account.balance.toLocaleString()}</Text>
             </Text>
           </View>
         ))}
       </View>
+
+      {/* Add Cash Modal */}
+      <Modal
+        visible={addModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setAddModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>නව මුදල් ගිණුම</Text>
+
+            <Text style={styles.modalLabel}>නම</Text>
+            <TextInput
+              style={styles.modalInput}
+              placeholder="උදා: අතේ මුදල්"
+              value={newCashName}
+              onChangeText={setNewCashName}
+            />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonCancel]}
+                onPress={() => {
+                  setAddModalVisible(false);
+                  setNewCashName('');
+                }}
+              >
+                <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonConfirm]}
+                onPress={handleAddCash}
+              >
+                <Text style={styles.modalButtonText}>එකතු කරන්න</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
 
 // Categories Screen
-function CategoriesScreen({ categories }) {
+function CategoriesScreen({ categories, setCategories }) {
+  const [newCategoryName, setNewCategoryName] = useState('');
+  const [newCategoryBudget, setNewCategoryBudget] = useState('');
+
+  const handleAddCategory = () => {
+    if (!newCategoryName) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර කාන්ඩි නමක් ඇතුළත් කරන්න');
+      return;
+    }
+
+    const newCategory = {
+      id: Date.now(),
+      name: newCategoryName,
+      budget: parseFloat(newCategoryBudget) || 0,
+      spent: 0
+    };
+
+    setCategories([...categories, newCategory]);
+    setNewCategoryName('');
+    setNewCategoryBudget('');
+    Alert.alert('සාර්ථකයි!', 'නව කාන්ඩිය එකතු කරන ලදී');
+  };
+
+  const handleDeleteCategory = (categoryId) => {
+    Alert.alert(
+      'තහවුරු කරන්න',
+      'මෙම කාන්ඩිය මකා දැමීමට අවශ්‍යද?',
+      [
+        { text: 'නැත', style: 'cancel' },
+        {
+          text: 'ඔව්',
+          style: 'destructive',
+          onPress: () => {
+            setCategories(categories.filter(cat => cat.id !== categoryId));
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <ScrollView style={styles.screenContainer}>
       {/* Header */}
@@ -310,6 +1178,8 @@ function CategoriesScreen({ categories }) {
               style={styles.input}
               placeholder="උදා: කෑම"
               placeholderTextColor="#9CA3AF"
+              value={newCategoryName}
+              onChangeText={setNewCategoryName}
             />
           </View>
           <View style={styles.formGroup}>
@@ -319,9 +1189,14 @@ function CategoriesScreen({ categories }) {
               placeholder="0"
               keyboardType="numeric"
               placeholderTextColor="#9CA3AF"
+              value={newCategoryBudget}
+              onChangeText={setNewCategoryBudget}
             />
           </View>
-          <TouchableOpacity style={styles.submitButton}>
+          <TouchableOpacity 
+            style={styles.submitButton}
+            onPress={handleAddCategory}
+          >
             <Text style={styles.submitButtonText}>එක් කරන්න</Text>
           </TouchableOpacity>
         </View>
@@ -333,10 +1208,10 @@ function CategoriesScreen({ categories }) {
             <View style={styles.categoryHeader}>
               <Text style={styles.categoryName}>{category.name}</Text>
               <View style={styles.categoryActions}>
-                <TouchableOpacity style={styles.iconButton}>
-                  <Text>✏️</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.iconButton}>
+                <TouchableOpacity 
+                  style={styles.iconButton}
+                  onPress={() => handleDeleteCategory(category.id)}
+                >
                   <Text>🗑️</Text>
                 </TouchableOpacity>
               </View>
@@ -349,7 +1224,7 @@ function CategoriesScreen({ categories }) {
                 <View 
                   style={[
                     styles.progressFill,
-                    { width: `${(category.spent / category.budget) * 100}%` }
+                    { width: `${Math.min((category.spent / category.budget) * 100, 100)}%` }
                   ]}
                 />
               </View>
@@ -411,7 +1286,23 @@ function SettingsScreen() {
           </View>
         </TouchableOpacity>
         
-        <TouchableOpacity style={[styles.settingsCard, styles.settingsCardDanger]}>
+        <TouchableOpacity 
+          style={[styles.settingsCard, styles.settingsCardDanger]}
+          onPress={() => {
+            Alert.alert(
+              'තහවුරු කරන්න',
+              'සියලුම දත්ත මකා දැමීමට අවශ්‍යද? මෙය ආපසු හරවන්න නොහැක!',
+              [
+                { text: 'නැත', style: 'cancel' },
+                {
+                  text: 'ඔව්, මකන්න',
+                  style: 'destructive',
+                  onPress: () => Alert.alert('දත්ත මකා දමන ලදී')
+                }
+              ]
+            );
+          }}
+        >
           <Text style={styles.settingsIcon}>🗑️</Text>
           <View style={styles.settingsContent}>
             <Text style={[styles.settingsTitle, styles.settingsTitleDanger]}>සියලුම දත්ත මකන්න</Text>
@@ -616,6 +1507,70 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600',
+  },
+  transactionsSection: {
+    marginTop: 24,
+  },
+  transactionsList: {
+    gap: 8,
+  },
+  transactionItem: {
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    borderRadius: 12,
+    padding: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  transactionLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+  },
+  transactionIcon: {
+    fontSize: 24,
+    marginRight: 12,
+  },
+  depositIcon: {
+    color: '#10B981',
+  },
+  withdrawalIcon: {
+    color: '#EF4444',
+  },
+  expenseIcon: {
+    color: '#F59E0B',
+  },
+  transactionDetails: {
+    flex: 1,
+  },
+  transactionDescription: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '600',
+    marginBottom: 2,
+  },
+  transactionAccount: {
+    color: 'rgba(255, 255, 255, 0.7)',
+    fontSize: 12,
+    marginBottom: 2,
+  },
+  transactionDate: {
+    color: 'rgba(255, 255, 255, 0.6)',
+    fontSize: 11,
+  },
+  transactionAmount: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginLeft: 8,
+  },
+  depositAmount: {
+    color: '#10B981',
+  },
+  withdrawalAmount: {
+    color: '#EF4444',
+  },
+  expenseAmount: {
+    color: '#F59E0B',
   },
   screenHeader: {
     backgroundColor: '#4F46E5',
@@ -920,5 +1875,119 @@ const styles = StyleSheet.create({
   },
   settingsDescriptionDanger: {
     color: '#EF4444',
+  },
+  modalContainer: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  modalContent: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    padding: 24,
+    width: '100%',
+    maxWidth: 400,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#1F2937',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  modalLabel: {
+    fontSize: 14,
+    color: '#6B7280',
+    marginBottom: 8,
+    fontWeight: '500',
+  },
+  modalInput: {
+    borderWidth: 1,
+    borderColor: '#D1D5DB',
+    borderRadius: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    fontSize: 16,
+    color: '#1F2937',
+    marginBottom: 16,
+  },
+  accountSelector: {
+    marginBottom: 16,
+    gap: 8,
+  },
+  accountOption: {
+    borderWidth: 2,
+    borderColor: '#E5E7EB',
+    borderRadius: 8,
+    padding: 12,
+    backgroundColor: '#F9FAFB',
+  },
+  accountOptionSelected: {
+    borderColor: '#4F46E5',
+    backgroundColor: '#EEF2FF',
+  },
+  accountOptionText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#1F2937',
+    marginBottom: 4,
+  },
+  accountOptionTextSelected: {
+    color: '#4F46E5',
+  },
+  accountOptionBalance: {
+    fontSize: 14,
+    color: '#6B7280',
+  },
+  selectedAccountInfo: {
+    backgroundColor: '#EEF2FF',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 16,
+  },
+  selectedAccountName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#4F46E5',
+    marginBottom: 4,
+  },
+  selectedAccountBalance: {
+    fontSize: 14,
+    color: '#6B7280',
+  },
+  modalButtons: {
+    flexDirection: 'row',
+    gap: 12,
+    marginTop: 8,
+  },
+  modalButton: {
+    flex: 1,
+    paddingVertical: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalButtonCancel: {
+    backgroundColor: '#F3F4F6',
+  },
+  modalButtonConfirm: {
+    backgroundColor: '#4F46E5',
+  },
+  modalButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  modalButtonTextCancel: {
+    color: '#6B7280',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
