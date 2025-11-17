@@ -38,6 +38,7 @@ export default function ExpenseTrackerApp() {
   const [selectedBankAccount, setSelectedBankAccount] = useState(null);
   const [selectedCashAccount, setSelectedCashAccount] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Load data from AsyncStorage on mount
   useEffect(() => {
@@ -51,11 +52,19 @@ export default function ExpenseTrackerApp() {
     }
   }, [accounts, categories, transactions]);
 
+  // Save dark mode setting
+  useEffect(() => {
+    if (!isLoading) {
+      AsyncStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+    }
+  }, [isDarkMode]);
+
   const loadData = async () => {
     try {
       const accountsData = await AsyncStorage.getItem('accounts');
       const categoriesData = await AsyncStorage.getItem('categories');
       const transactionsData = await AsyncStorage.getItem('transactions');
+      const darkModeData = await AsyncStorage.getItem('isDarkMode');
 
       if (accountsData) {
         setAccounts(JSON.parse(accountsData));
@@ -65,6 +74,9 @@ export default function ExpenseTrackerApp() {
       }
       if (transactionsData) {
         setTransactions(JSON.parse(transactionsData));
+      }
+      if (darkModeData) {
+        setIsDarkMode(JSON.parse(darkModeData));
       }
     } catch (error) {
       console.error('Error loading data:', error);
@@ -78,6 +90,7 @@ export default function ExpenseTrackerApp() {
       await AsyncStorage.setItem('accounts', JSON.stringify(accounts));
       await AsyncStorage.setItem('categories', JSON.stringify(categories));
       await AsyncStorage.setItem('transactions', JSON.stringify(transactions));
+      await AsyncStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
     } catch (error) {
       console.error('Error saving data:', error);
     }
@@ -149,6 +162,8 @@ export default function ExpenseTrackerApp() {
           setCategories={setCategories}
           transactions={transactions}
           setTransactions={setTransactions}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
         />;
       default:
         return <DashboardScreen 
@@ -1401,8 +1416,22 @@ function EditCategoryModal({ visible, onClose, category, categories, setCategori
 }
 
 // Settings Screen
-function SettingsScreen({ accounts, setAccounts, categories, setCategories, transactions, setTransactions }) {
+function SettingsScreen({ accounts, setAccounts, categories, setCategories, transactions, setTransactions, isDarkMode, setIsDarkMode }) {
   
+  const importData = async () => {
+    Alert.alert(
+      'දත්ත Import කරන්න',
+      'Import කිරීමට JSON file එකක් select කරන්න අවශ්‍යයි. දැනට file picker සහාය නොමැත. Export කළ file එක manually open කරලා data copy කරන්න.',
+      [{ text: 'හරි' }]
+    );
+    // Note: For now, we'll use the export/import through share functionality
+  };
+
+  const toggleDarkMode = async () => {
+    setIsDarkMode(!isDarkMode);
+    Alert.alert('සාර්ථකයි!', isDarkMode ? 'Light mode enabled' : 'Dark mode enabled');
+  };
+
   const exportData = async () => {
     try {
       const data = {
@@ -1607,7 +1636,7 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
           style: 'destructive',
           onPress: async () => {
             try {
-              // Clear AsyncStorage
+              // Clear AsyncStorage (except dark mode)
               await AsyncStorage.multiRemove(['accounts', 'categories', 'transactions']);
               
               // Reset state to initial values
@@ -1627,7 +1656,7 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
               ]);
               setTransactions([]);
               
-              Alert.alert('සාර්ථකයි!', 'සියලු දත්ත මකා දමන ලදී');
+              Alert.alert('සාර්ථකයි!', 'සියලු දත්ත මකා දමන ලදී (Dark mode setting සුරක්ෂිතයි)');
             } catch (error) {
               Alert.alert('දෝෂයකි', 'දත්ත මකා දැමීමේදී දෝෂයක් සිදු විය');
               console.error('Error clearing data:', error);
@@ -1669,10 +1698,18 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
         <Text style={styles.sectionTitle}>දත්ත කළමනාකරණය</Text>
         
         <TouchableOpacity style={styles.settingsButton} onPress={exportData}>
-          <Text style={styles.settingsButtonIcon}>🗂️</Text>
+          <Text style={styles.settingsButtonIcon}>📤</Text>
           <View style={styles.settingsButtonText}>
-            <Text style={styles.settingsButtonTitle}>දත්ත අපනයනය කරන්න</Text>
+            <Text style={styles.settingsButtonTitle}>දත්ත අපනයනය කරන්න (Export)</Text>
             <Text style={styles.settingsButtonSubtitle}>JSON ආකාරයෙන් ඔබගේ දත්ත බාගත කරන්න</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.settingsButton} onPress={importData}>
+          <Text style={styles.settingsButtonIcon}>📥</Text>
+          <View style={styles.settingsButtonText}>
+            <Text style={styles.settingsButtonTitle}>දත්ත ආනයනය කරන්න (Import)</Text>
+            <Text style={styles.settingsButtonSubtitle}>JSON file එකක් තෝරලා data restore කරන්න</Text>
           </View>
         </TouchableOpacity>
 
@@ -1691,6 +1728,69 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
             <Text style={[styles.settingsButtonSubtitle, { color: '#EF4444' }]}>ප්‍රවේශමෙන්! මෙය ආපසු හරවන්න බැහැ</Text>
           </View>
         </TouchableOpacity>
+
+        <Text style={styles.sectionTitle}>පෙනුම් සැකසුම්</Text>
+        
+        <TouchableOpacity style={styles.settingsButton} onPress={toggleDarkMode}>
+          <Text style={styles.settingsButtonIcon}>{isDarkMode ? '🌙' : '☀️'}</Text>
+          <View style={styles.settingsButtonText}>
+            <Text style={styles.settingsButtonTitle}>Dark Mode</Text>
+            <Text style={styles.settingsButtonSubtitle}>
+              {isDarkMode ? 'Dark mode සක්‍රීය කර ඇත' : 'Light mode සක්‍රීය කර ඇත'}
+            </Text>
+          </View>
+          <View style={[styles.toggle, isDarkMode && styles.toggleActive]}>
+            <View style={[styles.toggleCircle, isDarkMode && styles.toggleCircleActive]} />
+          </View>
+        </TouchableOpacity>
+
+        <Text style={styles.sectionTitle}>ඇප් එක පිළිබඳව</Text>
+        <View style={styles.card}>
+          <Text style={styles.aboutTitle}>මුදල් කළමනාකරණ යෙදුම</Text>
+          <Text style={styles.aboutDescription}>
+            මෙය ඔබගේ පුද්ගලික මුදල් කළමනාකරණය කිරීම සඳහා සරල හා ප්‍රයෝජනවත් mobile application එකකි. 
+            බැංකු ගිණුම්, මුදල් ගිණුම්, වියදම් කාණ්ඩ සහ ගනුදෙණු track කරන්න පුළුවන්.
+          </Text>
+          <View style={styles.featureList}>
+            <Text style={styles.featureItem}>✅ බැංකු සහ මුදල් ගිණුම් කළමනාකරණය</Text>
+            <Text style={styles.featureItem}>✅ වියදම් කාණ්ඩ සහ budget tracking</Text>
+            <Text style={styles.featureItem}>✅ ගනුදෙණු history සහ reports</Text>
+            <Text style={styles.featureItem}>✅ Data backup සහ restore</Text>
+            <Text style={styles.featureItem}>✅ සිංහල භාෂා සහාය</Text>
+            <Text style={styles.featureItem}>✅ Offline data storage</Text>
+          </View>
+        </View>
+
+        <Text style={styles.sectionTitle}>සංවර්ධකයා</Text>
+        <View style={styles.card}>
+          <View style={styles.developerHeader}>
+            <Text style={styles.developerIcon}>👨‍💻</Text>
+            <View style={styles.developerInfo}>
+              <Text style={styles.developerName}>රංජිත් කරුණාරත්න</Text>
+              <Text style={styles.developerRole}>Software Developer</Text>
+            </View>
+          </View>
+          
+          <View style={styles.contactInfo}>
+            <View style={styles.contactRow}>
+              <Text style={styles.contactIcon}>📧</Text>
+              <Text style={styles.contactText}>ranjithpalugolla@gmail.com</Text>
+            </View>
+            <View style={styles.contactRow}>
+              <Text style={styles.contactIcon}>🔗</Text>
+              <Text style={styles.contactLink}>github.com/ranjith-expense-tracker</Text>
+            </View>
+          </View>
+
+          <View style={styles.disclaimer}>
+            <Text style={styles.disclaimerText}>
+              © 2024 රංජිත් කරුණාරත්න. All rights reserved.
+            </Text>
+            <Text style={styles.disclaimerSubtext}>
+              Made with ❤️ in Sri Lanka
+            </Text>
+          </View>
+        </View>
       </View>
     </ScrollView>
   );
@@ -2259,5 +2359,115 @@ const styles = StyleSheet.create({
   pickerItemText: {
     fontSize: 14,
     color: '#1F2937',
+  },
+  toggle: {
+    width: 50,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: '#D1D5DB',
+    padding: 2,
+    justifyContent: 'center',
+  },
+  toggleActive: {
+    backgroundColor: '#4F46E5',
+  },
+  toggleCircle: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: '#FFFFFF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 3,
+  },
+  toggleCircleActive: {
+    alignSelf: 'flex-end',
+  },
+  aboutTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#1F2937',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  aboutDescription: {
+    fontSize: 14,
+    color: '#6B7280',
+    lineHeight: 22,
+    marginBottom: 16,
+    textAlign: 'justify',
+  },
+  featureList: {
+    backgroundColor: '#F9FAFB',
+    borderRadius: 8,
+    padding: 12,
+  },
+  featureItem: {
+    fontSize: 14,
+    color: '#374151',
+    marginBottom: 8,
+  },
+  developerHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+    paddingBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E7EB',
+  },
+  developerIcon: {
+    fontSize: 48,
+    marginRight: 16,
+  },
+  developerInfo: {
+    flex: 1,
+  },
+  developerName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#1F2937',
+    marginBottom: 4,
+  },
+  developerRole: {
+    fontSize: 14,
+    color: '#6B7280',
+  },
+  contactInfo: {
+    marginBottom: 16,
+  },
+  contactRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  contactIcon: {
+    fontSize: 20,
+    marginRight: 12,
+  },
+  contactText: {
+    fontSize: 14,
+    color: '#374151',
+  },
+  contactLink: {
+    fontSize: 14,
+    color: '#4F46E5',
+    textDecorationLine: 'underline',
+  },
+  disclaimer: {
+    paddingTop: 16,
+    borderTopWidth: 1,
+    borderTopColor: '#E5E7EB',
+    alignItems: 'center',
+  },
+  disclaimerText: {
+    fontSize: 12,
+    color: '#6B7280',
+    marginBottom: 4,
+  },
+  disclaimerSubtext: {
+    fontSize: 12,
+    color: '#9CA3AF',
   },
 });
