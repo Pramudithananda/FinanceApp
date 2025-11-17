@@ -22,8 +22,11 @@
         "backgroundColor": "#4F46E5"
       },
       "package": "com.expensetracker.app",
-      "versionCode": 3,
-      "permissions": []
+      "versionCode": 4,
+      "permissions": [
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

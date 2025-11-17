@@ -1404,24 +1404,40 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
         accounts,
         categories,
         transactions,
-        exportDate: new Date().toISOString()
+        exportDate: new Date().toISOString(),
+        appVersion: '3.0.0'
       };
       
       const jsonData = JSON.stringify(data, null, 2);
-      const filename = `mudal_kalmanaakarana_backup_${new Date().getTime()}.json`;
-      const fileUri = FileSystem.documentDirectory + filename;
+      const filename = `mudal_backup_${new Date().getTime()}.json`;
+      const fileUri = FileSystem.cacheDirectory + filename;
       
-      await FileSystem.writeAsStringAsync(fileUri, jsonData);
+      // Write file
+      await FileSystem.writeAsStringAsync(fileUri, jsonData, {
+        encoding: FileSystem.EncodingType.UTF8
+      });
       
-      if (await Sharing.isAvailableAsync()) {
-        await Sharing.shareAsync(fileUri);
-        Alert.alert('සාර්ථකයි!', 'දත්ත export කරන ලදී');
+      // Check if file was created
+      const fileInfo = await FileSystem.getInfoAsync(fileUri);
+      if (!fileInfo.exists) {
+        Alert.alert('දෝෂයකි', 'File create කිරීමේදී දෝෂයක් සිදු විය');
+        return;
+      }
+      
+      // Share the file
+      const isAvailable = await Sharing.isAvailableAsync();
+      if (isAvailable) {
+        await Sharing.shareAsync(fileUri, {
+          mimeType: 'application/json',
+          dialogTitle: 'දත්ත Backup කරන්න',
+          UTI: 'public.json'
+        });
       } else {
-        Alert.alert('දෝෂයකි', 'Sharing ක්‍රියාත්මක නොමැත');
+        Alert.alert('දෝෂයකි', 'Sharing සහාය නොමැත');
       }
     } catch (error) {
-      Alert.alert('දෝෂයකි', 'දත්ත export කිරීමේදී දෝෂයක් සිදු විය');
-      console.error(error);
+      Alert.alert('දෝෂයකි', `Export error: ${error.message}`);
+      console.error('Export error:', error);
     }
   };
 
@@ -1550,20 +1566,35 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
 </body>
 </html>`;
       
-      const filename = `mudal_report_${month}_${year}.html`;
-      const fileUri = FileSystem.documentDirectory + filename;
+      const filename = `mudal_report_${new Date().getTime()}.html`;
+      const fileUri = FileSystem.cacheDirectory + filename;
       
-      await FileSystem.writeAsStringAsync(fileUri, html);
+      // Write HTML file
+      await FileSystem.writeAsStringAsync(fileUri, html, {
+        encoding: FileSystem.EncodingType.UTF8
+      });
       
-      if (await Sharing.isAvailableAsync()) {
-        await Sharing.shareAsync(fileUri);
-        Alert.alert('සාර්ථකයි!', 'මාසික වාර්තාව generate කරන ලදී');
+      // Check if file was created
+      const fileInfo = await FileSystem.getInfoAsync(fileUri);
+      if (!fileInfo.exists) {
+        Alert.alert('දෝෂයකි', 'Report file create කිරීමේදී දෝෂයක් සිදු විය');
+        return;
+      }
+      
+      // Share the file
+      const isAvailable = await Sharing.isAvailableAsync();
+      if (isAvailable) {
+        await Sharing.shareAsync(fileUri, {
+          mimeType: 'text/html',
+          dialogTitle: 'මාසික වාර්තාව',
+          UTI: 'public.html'
+        });
       } else {
-        Alert.alert('දෝෂයකි', 'Sharing ක්‍රියාත්මක නොමැත');
+        Alert.alert('දෝෂයකි', 'Sharing සහාය නොමැත');
       }
     } catch (error) {
-      Alert.alert('දෝෂයකි', 'වාර්තාව generate කිරීමේදී දෝෂයක් සිදු විය');
-      console.error(error);
+      Alert.alert('දෝෂයකි', `Report error: ${error.message}`);
+      console.error('Report error:', error);
     }
   };
 
