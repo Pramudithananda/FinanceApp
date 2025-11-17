@@ -2,7 +2,7 @@
   "expo": {
     "name": "මුදල් කළමනාකරණ",
     "slug": "expense-tracker-app",
-    "version": "3.0.1",
+    "version": "3.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -22,7 +22,7 @@
         "backgroundColor": "#4F46E5"
       },
       "package": "com.expensetracker.app",
-      "versionCode": 5,
+      "versionCode": 6,
       "permissions": [
         "WRITE_EXTERNAL_STORAGE",
         "READ_EXTERNAL_STORAGE"
