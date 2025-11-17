@@ -152,6 +152,7 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
   const [withdrawModalVisible, setWithdrawModalVisible] = useState(false);
   const [expenseModalVisible, setExpenseModalVisible] = useState(false);
   const [selectedBankAccount, setSelectedBankAccount] = useState(null);
+  const [selectedCashAccount, setSelectedCashAccount] = useState(null);
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
 
@@ -191,23 +192,30 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
   };
 
   const handleWithdraw = () => {
-    if (!selectedBankAccount || !amount || parseFloat(amount) <= 0) {
-      Alert.alert('දෝෂයකි', 'කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+    if (!selectedBankAccount || !selectedCashAccount || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර බැංකු ගිණුම, මුදල් ගිණුම සහ වලංගු මුදලක් තෝරන්න');
       return;
     }
 
     const withdrawAmount = parseFloat(amount);
 
     if (selectedBankAccount.balance < withdrawAmount) {
-      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් මුදලක් නොමැත');
+      Alert.alert('දෝෂයකි', 'බැංකු ගිණුමේ ප්‍රමාණවත් මුදලක් නොමැත');
       return;
     }
     
+    // Reduce from bank account
     setAccounts(prev => ({
       ...prev,
       bank: prev.bank.map(acc => 
         acc.id === selectedBankAccount.id 
           ? { ...acc, balance: acc.balance - withdrawAmount }
+          : acc
+      ),
+      // Add to cash account
+      cash: prev.cash.map(acc => 
+        acc.id === selectedCashAccount.id 
+          ? { ...acc, balance: acc.balance + withdrawAmount }
           : acc
       )
     }));
@@ -217,33 +225,35 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
       amount: withdrawAmount,
       accountName: selectedBankAccount.name,
       accountNumber: selectedBankAccount.number,
+      cashAccountName: selectedCashAccount.name,
       description: description || 'බැංකු මුදල් ගැනීම'
     });
 
     setAmount('');
     setDescription('');
     setSelectedBankAccount(null);
+    setSelectedCashAccount(null);
     setWithdrawModalVisible(false);
-    Alert.alert('සාර්ථකයි!', `රු ${withdrawAmount.toLocaleString()} බැංකු ගිණුමෙන් ගෙන ඇත`);
+    Alert.alert('සාර්ථකයි!', `රු ${withdrawAmount.toLocaleString()} බැංකු ගිණුමෙන් ${selectedCashAccount.name} වෙත ගෙන ඇත`);
   };
 
   const handleExpense = () => {
-    if (!amount || parseFloat(amount) <= 0) {
-      Alert.alert('දෝෂයකි', 'කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+    if (!selectedCashAccount || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර මුදල් ගිණුම සහ වලංගු මුදලක් තෝරන්න');
       return;
     }
 
     const expenseAmount = parseFloat(amount);
 
-    if (accounts.cash[0].balance < expenseAmount) {
-      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් මුදලක් නොමැත');
+    if (selectedCashAccount.balance < expenseAmount) {
+      Alert.alert('දෝෂයකි', 'මුදල් ගිණුමේ ප්‍රමාණවත් මුදලක් නොමැත');
       return;
     }
     
     setAccounts(prev => ({
       ...prev,
-      cash: prev.cash.map((acc, index) => 
-        index === 0 
+      cash: prev.cash.map(acc => 
+        acc.id === selectedCashAccount.id 
           ? { ...acc, balance: acc.balance - expenseAmount }
           : acc
       )
@@ -252,12 +262,13 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
     addTransaction({
       type: 'expense',
       amount: expenseAmount,
-      accountName: accounts.cash[0].name,
+      accountName: selectedCashAccount.name,
       description: description || 'වියදම'
     });
 
     setAmount('');
     setDescription('');
+    setSelectedCashAccount(null);
     setExpenseModalVisible(false);
     Alert.alert('සාර්ථකයි!', `රු ${expenseAmount.toLocaleString()} වියදම ලෙස සටහන් කරන ලදී`);
   };
@@ -371,6 +382,9 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
                         <Text style={styles.transactionAccount}>
                           {transaction.accountName}
                           {transaction.accountNumber && ` • ${transaction.accountNumber}`}
+                          {transaction.type === 'withdrawal' && transaction.cashAccountName && 
+                            ` → ${transaction.cashAccountName}`
+                          }
                         </Text>
                       )}
                       <Text style={styles.transactionDate}>{transaction.date}</Text>
@@ -532,6 +546,7 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
                   setAmount('');
                   setDescription('');
                   setSelectedBankAccount(null);
+                  setSelectedCashAccount(null);
                 }}
               >
                 <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
@@ -558,6 +573,33 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>වියදම් කරන්න</Text>
 
+            <Text style={styles.modalLabel}>මුදල් ගිණුම තෝරන්න</Text>
+            <View style={styles.accountSelector}>
+              {accounts.cash.map((account) => (
+                <TouchableOpacity
+                  key={account.id}
+                  style={[
+                    styles.accountOption,
+                    selectedCashAccount?.id === account.id && styles.accountOptionSelected
+                  ]}
+                  onPress={() => setSelectedCashAccount(account)}
+                >
+                  <Text style={[
+                    styles.accountOptionText,
+                    selectedCashAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    {account.name}
+                  </Text>
+                  <Text style={[
+                    styles.accountOptionBalance,
+                    selectedCashAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    රු {account.balance.toLocaleString()}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
             <Text style={styles.modalLabel}>මුදල (රු)</Text>
             <TextInput
               style={styles.modalInput}
@@ -582,6 +624,7 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
                   setExpenseModalVisible(false);
                   setAmount('');
                   setDescription('');
+                  setSelectedCashAccount(null);
                 }}
               >
                 <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
@@ -606,6 +649,7 @@ function BankScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
   const [depositModalVisible, setDepositModalVisible] = useState(false);
   const [withdrawModalVisible, setWithdrawModalVisible] = useState(false);
   const [selectedAccount, setSelectedAccount] = useState(null);
+  const [selectedCashAccount, setSelectedCashAccount] = useState(null);
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [newBankName, setNewBankName] = useState('');
@@ -674,15 +718,15 @@ function BankScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
   };
 
   const handleWithdraw = () => {
-    if (!amount || parseFloat(amount) <= 0) {
-      Alert.alert('දෝෂයකි', 'කරුණාකර වලංගු මුදලක් ඇතුළත් කරන්න');
+    if (!selectedCashAccount || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර මුදල් ගිණුම සහ වලංගු මුදලක් තෝරන්න');
       return;
     }
 
     const withdrawAmount = parseFloat(amount);
 
     if (selectedAccount.balance < withdrawAmount) {
-      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් මුදලක් නොමැත');
+      Alert.alert('දෝෂයකි', 'බැංකු ගිණුමේ ප්‍රමාණවත් මුදලක් නොමැත');
       return;
     }
     
@@ -692,6 +736,11 @@ function BankScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
         acc.id === selectedAccount.id 
           ? { ...acc, balance: acc.balance - withdrawAmount }
           : acc
+      ),
+      cash: prev.cash.map(acc => 
+        acc.id === selectedCashAccount.id 
+          ? { ...acc, balance: acc.balance + withdrawAmount }
+          : acc
       )
     }));
 
@@ -700,14 +749,16 @@ function BankScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
       amount: withdrawAmount,
       accountName: selectedAccount.name,
       accountNumber: selectedAccount.number,
+      cashAccountName: selectedCashAccount.name,
       description: description || 'බැංකු මුදල් ගැනීම'
     });
 
     setAmount('');
     setDescription('');
     setSelectedAccount(null);
+    setSelectedCashAccount(null);
     setWithdrawModalVisible(false);
-    Alert.alert('සාර්ථකයි!', `රු ${withdrawAmount.toLocaleString()} ගෙන ඇත`);
+    Alert.alert('සාර්ථකයි!', `රු ${withdrawAmount.toLocaleString()} බැංකු ගිණුමෙන් ${selectedCashAccount.name} වෙත ගෙන ඇත`);
   };
 
   const handleDeleteAccount = (accountId) => {
@@ -933,6 +984,33 @@ function BankScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
               </View>
             )}
 
+            <Text style={styles.modalLabel}>මුදල් ගිණුම තෝරන්න (මුදල් එකතු වන්නේ)</Text>
+            <View style={styles.accountSelector}>
+              {allAccounts.cash.map((account) => (
+                <TouchableOpacity
+                  key={account.id}
+                  style={[
+                    styles.accountOption,
+                    selectedCashAccount?.id === account.id && styles.accountOptionSelected
+                  ]}
+                  onPress={() => setSelectedCashAccount(account)}
+                >
+                  <Text style={[
+                    styles.accountOptionText,
+                    selectedCashAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    {account.name}
+                  </Text>
+                  <Text style={[
+                    styles.accountOptionBalance,
+                    selectedCashAccount?.id === account.id && styles.accountOptionTextSelected
+                  ]}>
+                    රු {account.balance.toLocaleString()}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
             <Text style={styles.modalLabel}>මුදල (රු)</Text>
             <TextInput
               style={styles.modalInput}
@@ -958,6 +1036,7 @@ function BankScreen({ accounts, allAccounts, setAccounts, addTransaction }) {
                   setAmount('');
                   setDescription('');
                   setSelectedAccount(null);
+                  setSelectedCashAccount(null);
                 }}
               >
                 <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
