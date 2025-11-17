@@ -10,7 +10,10 @@ import {
   SafeAreaView,
   StatusBar,
   Alert,
+  Share,
 } from 'react-native';
+import * as FileSystem from 'expo-file-system';
+import * as Sharing from 'expo-sharing';
 
 // Main App Component
 export default function ExpenseTrackerApp() {
@@ -56,6 +59,8 @@ export default function ExpenseTrackerApp() {
           setAccounts={setAccounts}
           transactions={transactions}
           addTransaction={addTransaction}
+          categories={categories}
+          setCategories={setCategories}
         />;
       case 'bank':
         return <BankScreen 
@@ -74,13 +79,22 @@ export default function ExpenseTrackerApp() {
       case 'categories':
         return <CategoriesScreen categories={categories} setCategories={setCategories} />;
       case 'settings':
-        return <SettingsScreen />;
+        return <SettingsScreen 
+          accounts={accounts}
+          setAccounts={setAccounts}
+          categories={categories}
+          setCategories={setCategories}
+          transactions={transactions}
+          setTransactions={setTransactions}
+        />;
       default:
         return <DashboardScreen 
           accounts={accounts} 
           setAccounts={setAccounts}
           transactions={transactions}
           addTransaction={addTransaction}
+          categories={categories}
+          setCategories={setCategories}
         />;
     }
   };
@@ -147,12 +161,13 @@ function NavButton({ icon, label, active, onPress }) {
 }
 
 // Dashboard Screen
-function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }) {
+function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, categories, setCategories }) {
   const [depositModalVisible, setDepositModalVisible] = useState(false);
   const [withdrawModalVisible, setWithdrawModalVisible] = useState(false);
   const [expenseModalVisible, setExpenseModalVisible] = useState(false);
   const [selectedBankAccount, setSelectedBankAccount] = useState(null);
   const [selectedCashAccount, setSelectedCashAccount] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
 
@@ -238,8 +253,8 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
   };
 
   const handleExpense = () => {
-    if (!selectedCashAccount || !amount || parseFloat(amount) <= 0) {
-      Alert.alert('දෝෂයකි', 'කරුණාකර මුදල් ගිණුම සහ වලංගු මුදලක් තෝරන්න');
+    if (!selectedCashAccount || !selectedCategory || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර මුදල් ගිණුම, කාණ්ඩය සහ වලංගු මුදලක් තෝරන්න');
       return;
     }
 
@@ -250,6 +265,7 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
       return;
     }
     
+    // Update cash account balance
     setAccounts(prev => ({
       ...prev,
       cash: prev.cash.map(acc => 
@@ -259,18 +275,27 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
       )
     }));
 
+    // Update category spent amount
+    setCategories(prev => prev.map(cat =>
+      cat.id === selectedCategory.id
+        ? { ...cat, spent: cat.spent + expenseAmount }
+        : cat
+    ));
+
     addTransaction({
       type: 'expense',
       amount: expenseAmount,
       accountName: selectedCashAccount.name,
-      description: description || 'වියදම'
+      categoryName: selectedCategory.name,
+      description: description || selectedCategory.name
     });
 
     setAmount('');
     setDescription('');
     setSelectedCashAccount(null);
+    setSelectedCategory(null);
     setExpenseModalVisible(false);
-    Alert.alert('සාර්ථකයි!', `රු ${expenseAmount.toLocaleString()} වියදම ලෙස සටහන් කරන ලදී`);
+    Alert.alert('සාර්ථකයි!', `රු ${expenseAmount.toLocaleString()} ${selectedCategory.name} වියදම ලෙස සටහන් කරන ලදී`);
   };
 
   return (
@@ -627,6 +652,33 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
               ))}
             </View>
 
+            <Text style={styles.modalLabel}>වියදම් කාණ්ඩය තෝරන්න</Text>
+            <View style={styles.accountSelector}>
+              {categories.map((category) => (
+                <TouchableOpacity
+                  key={category.id}
+                  style={[
+                    styles.accountOption,
+                    selectedCategory?.id === category.id && styles.accountOptionSelected
+                  ]}
+                  onPress={() => setSelectedCategory(category)}
+                >
+                  <Text style={[
+                    styles.accountOptionText,
+                    selectedCategory?.id === category.id && styles.accountOptionTextSelected
+                  ]}>
+                    {category.name}
+                  </Text>
+                  <Text style={[
+                    styles.accountOptionBalance,
+                    selectedCategory?.id === category.id && styles.accountOptionTextSelected
+                  ]}>
+                    Budget: රු {category.budget.toLocaleString()} • Spent: රු {category.spent.toLocaleString()}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
             <Text style={styles.modalLabel}>මුදල (රු)</Text>
             <TextInput
               style={styles.modalInput}
@@ -652,6 +704,7 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction }
                   setAmount('');
                   setDescription('');
                   setSelectedCashAccount(null);
+                  setSelectedCategory(null);
                 }}
               >
                 <Text style={styles.modalButtonTextCancel}>අවලංගු කරන්න</Text>
@@ -1343,7 +1396,210 @@ function CategoriesScreen({ categories, setCategories }) {
 }
 
 // Settings Screen
-function SettingsScreen() {
+function SettingsScreen({ accounts, setAccounts, categories, setCategories, transactions, setTransactions }) {
+  
+  const exportData = async () => {
+    try {
+      const data = {
+        accounts,
+        categories,
+        transactions,
+        exportDate: new Date().toISOString()
+      };
+      
+      const jsonData = JSON.stringify(data, null, 2);
+      const filename = `mudal_kalmanaakarana_backup_${new Date().getTime()}.json`;
+      const fileUri = FileSystem.documentDirectory + filename;
+      
+      await FileSystem.writeAsStringAsync(fileUri, jsonData);
+      
+      if (await Sharing.isAvailableAsync()) {
+        await Sharing.shareAsync(fileUri);
+        Alert.alert('සාර්ථකයි!', 'දත්ත export කරන ලදී');
+      } else {
+        Alert.alert('දෝෂයකි', 'Sharing ක්‍රියාත්මක නොමැත');
+      }
+    } catch (error) {
+      Alert.alert('දෝෂයකි', 'දත්ත export කිරීමේදී දෝෂයක් සිදු විය');
+      console.error(error);
+    }
+  };
+
+  const generateMonthlyReport = async () => {
+    try {
+      const now = new Date();
+      const month = now.toLocaleString('si-LK', { month: 'long' });
+      const year = now.getFullYear();
+      
+      const totalIncome = transactions
+        .filter(t => t.type === 'deposit')
+        .reduce((sum, t) => sum + t.amount, 0);
+      
+      const totalExpenses = transactions
+        .filter(t => t.type === 'expense')
+        .reduce((sum, t) => sum + t.amount, 0);
+      
+      const totalBankBalance = accounts.bank.reduce((sum, acc) => sum + acc.balance, 0);
+      const totalCashBalance = accounts.cash.reduce((sum, acc) => sum + acc.balance, 0);
+      
+      const html = `
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>මාසික වාර්තාව - ${month} ${year}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; }
+        h1 { color: #4F46E5; text-align: center; }
+        .summary { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .card { background: #f0f9ff; padding: 15px; border-radius: 8px; border-left: 4px solid #4F46E5; }
+        .card.green { background: #f0fdf4; border-left-color: #10B981; }
+        .card.red { background: #fef2f2; border-left-color: #EF4444; }
+        .label { font-size: 14px; color: #666; }
+        .value { font-size: 24px; font-weight: bold; color: #333; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #4F46E5; color: white; }
+        .positive { color: #10B981; }
+        .negative { color: #EF4444; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 මාසික වාර්තාව</h1>
+        <p style="text-align: center; color: #666;">${month} ${year}</p>
+        
+        <div class="summary">
+            <div class="card">
+                <div class="label">බැංකු ශේෂය</div>
+                <div class="value">රු ${totalBankBalance.toLocaleString()}</div>
+            </div>
+            <div class="card">
+                <div class="label">මුදල් ශේෂය</div>
+                <div class="value">රු ${totalCashBalance.toLocaleString()}</div>
+            </div>
+            <div class="card green">
+                <div class="label">මුළු ආදායම</div>
+                <div class="value positive">+රු ${totalIncome.toLocaleString()}</div>
+            </div>
+            <div class="card red">
+                <div class="label">මුළු වියදම්</div>
+                <div class="value negative">-රු ${totalExpenses.toLocaleString()}</div>
+            </div>
+        </div>
+
+        <h2>🏦 බැංකු ගිණුම්</h2>
+        <table>
+            <tr><th>නම</th><th>ගිණුම් අංකය</th><th>ශේෂය</th></tr>
+            ${accounts.bank.map(acc => `
+                <tr>
+                    <td>${acc.name}</td>
+                    <td>${acc.number}</td>
+                    <td>රු ${acc.balance.toLocaleString()}</td>
+                </tr>
+            `).join('')}
+        </table>
+
+        <h2>💰 මුදල් ගිණුම්</h2>
+        <table>
+            <tr><th>නම</th><th>ශේෂය</th></tr>
+            ${accounts.cash.map(acc => `
+                <tr>
+                    <td>${acc.name}</td>
+                    <td>රු ${acc.balance.toLocaleString()}</td>
+                </tr>
+            `).join('')}
+        </table>
+
+        <h2>📁 කාණ්ඩ</h2>
+        <table>
+            <tr><th>කාණ්ඩය</th><th>Budget</th><th>Spent</th><th>ඉතිරි</th></tr>
+            ${categories.map(cat => `
+                <tr>
+                    <td>${cat.name}</td>
+                    <td>රු ${cat.budget.toLocaleString()}</td>
+                    <td class="negative">රු ${cat.spent.toLocaleString()}</td>
+                    <td class="${cat.budget - cat.spent >= 0 ? 'positive' : 'negative'}">
+                        රු ${(cat.budget - cat.spent).toLocaleString()}
+                    </td>
+                </tr>
+            `).join('')}
+        </table>
+
+        <h2>📝 මෑත ගනුදෙනු</h2>
+        <table>
+            <tr><th>දිනය</th><th>විස්තරය</th><th>වර්ගය</th><th>මුදල</th></tr>
+            ${transactions.slice(0, 20).map(t => `
+                <tr>
+                    <td>${t.date}</td>
+                    <td>${t.description}</td>
+                    <td>${t.type === 'deposit' ? 'තැන්පතු' : t.type === 'withdrawal' ? 'ගැනීම' : 'වියදම'}</td>
+                    <td class="${t.type === 'deposit' ? 'positive' : 'negative'}">
+                        ${t.type === 'deposit' ? '+' : '-'}රු ${t.amount.toLocaleString()}
+                    </td>
+                </tr>
+            `).join('')}
+        </table>
+
+        <p style="text-align: center; color: #666; margin-top: 30px;">
+            Generated on ${now.toLocaleString('si-LK')}
+        </p>
+    </div>
+</body>
+</html>`;
+      
+      const filename = `mudal_report_${month}_${year}.html`;
+      const fileUri = FileSystem.documentDirectory + filename;
+      
+      await FileSystem.writeAsStringAsync(fileUri, html);
+      
+      if (await Sharing.isAvailableAsync()) {
+        await Sharing.shareAsync(fileUri);
+        Alert.alert('සාර්ථකයි!', 'මාසික වාර්තාව generate කරන ලදී');
+      } else {
+        Alert.alert('දෝෂයකි', 'Sharing ක්‍රියාත්මක නොමැත');
+      }
+    } catch (error) {
+      Alert.alert('දෝෂයකි', 'වාර්තාව generate කිරීමේදී දෝෂයක් සිදු විය');
+      console.error(error);
+    }
+  };
+
+  const clearAllData = () => {
+    Alert.alert(
+      'තහවුරු කරන්න',
+      'සියලුම දත්ත මකා දැමීමට අවශ්‍යද? මෙය ආපසු හරවන්න නොහැක!',
+      [
+        { text: 'නැත', style: 'cancel' },
+        {
+          text: 'ඔව්, මකන්න',
+          style: 'destructive',
+          onPress: () => {
+            // Reset all data to initial state
+            setAccounts({
+              bank: [
+                { id: 1, name: "People's Bank", number: "1234567890", type: "ඉතුරුම්", balance: 0, category: "පුබාන මුදල්" },
+                { id: 2, name: "Commercial Bank", number: "0987654321", type: "ඉතුරුම්", balance: 0, category: "පුබාන මුදල්" }
+              ],
+              cash: [
+                { id: 1, name: "පුබාන මුදල්", balance: 0 },
+                { id: 2, name: "ඇත්නික්කා මුදල්", balance: 0 }
+              ]
+            });
+            setCategories([
+              { id: 1, name: "පෙන් මලදී ගැනීම", budget: 10000, spent: 0 },
+              { id: 2, name: "කෑම", budget: 0, spent: 0 }
+            ]);
+            setTransactions([]);
+            Alert.alert('සාර්ථකයි!', 'සියලුම දත්ත මකා දමන ලදී');
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <ScrollView style={styles.screenContainer}>
       {/* Header */}
@@ -1372,11 +1628,18 @@ function SettingsScreen() {
             <Text style={styles.infoLabel}>භාෂාව:</Text>
             <Text style={styles.infoValue}>සිංහල</Text>
           </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.infoLabel}>Transactions:</Text>
+            <Text style={styles.infoValue}>{transactions.length}</Text>
+          </View>
         </View>
 
         {/* Data Management */}
         <Text style={styles.listTitle}>දත්ත කළමනාකරණය</Text>
-        <TouchableOpacity style={styles.settingsCard}>
+        <TouchableOpacity 
+          style={styles.settingsCard}
+          onPress={exportData}
+        >
           <Text style={styles.settingsIcon}>🗂️</Text>
           <View style={styles.settingsContent}>
             <Text style={styles.settingsTitle}>දත්ත අපනයනය කරන්න</Text>
@@ -1384,7 +1647,10 @@ function SettingsScreen() {
           </View>
         </TouchableOpacity>
         
-        <TouchableOpacity style={styles.settingsCard}>
+        <TouchableOpacity 
+          style={styles.settingsCard}
+          onPress={generateMonthlyReport}
+        >
           <Text style={styles.settingsIcon}>📊</Text>
           <View style={styles.settingsContent}>
             <Text style={styles.settingsTitle}>මැසික වාර්තාව (HTML)</Text>
@@ -1394,20 +1660,7 @@ function SettingsScreen() {
         
         <TouchableOpacity 
           style={[styles.settingsCard, styles.settingsCardDanger]}
-          onPress={() => {
-            Alert.alert(
-              'තහවුරු කරන්න',
-              'සියලුම දත්ත මකා දැමීමට අවශ්‍යද? මෙය ආපසු හරවන්න නොහැක!',
-              [
-                { text: 'නැත', style: 'cancel' },
-                {
-                  text: 'ඔව්, මකන්න',
-                  style: 'destructive',
-                  onPress: () => Alert.alert('දත්ත මකා දමන ලදී')
-                }
-              ]
-            );
-          }}
+          onPress={clearAllData}
         >
           <Text style={styles.settingsIcon}>🗑️</Text>
           <View style={styles.settingsContent}>
