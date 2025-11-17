@@ -1414,7 +1414,7 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
       
       // Write file
       await FileSystem.writeAsStringAsync(fileUri, jsonData, {
-        encoding: FileSystem.EncodingType.UTF8
+        encoding: 'utf8'
       });
       
       // Check if file was created
@@ -1571,7 +1571,7 @@ function SettingsScreen({ accounts, setAccounts, categories, setCategories, tran
       
       // Write HTML file
       await FileSystem.writeAsStringAsync(fileUri, html, {
-        encoding: FileSystem.EncodingType.UTF8
+        encoding: 'utf8'
       });
       
       // Check if file was created
