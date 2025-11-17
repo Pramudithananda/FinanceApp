@@ -22,7 +22,7 @@
         "backgroundColor": "#4F46E5"
       },
       "package": "com.expensetracker.app",
-      "versionCode": 6,
+      "versionCode": 7,
       "permissions": [
         "WRITE_EXTERNAL_STORAGE",
         "READ_EXTERNAL_STORAGE"

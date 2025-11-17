@@ -183,6 +183,9 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
   const [showAddCashModal, setShowAddCashModal] = useState(false);
   const [showEditTransactionModal, setShowEditTransactionModal] = useState(false);
   const [editingTransaction, setEditingTransaction] = useState(null);
+  const [showDepositModal, setShowDepositModal] = useState(false);
+  const [showWithdrawalModal, setShowWithdrawalModal] = useState(false);
+  const [showExpenseModal, setShowExpenseModal] = useState(false);
   
   const totalBankBalance = accounts.bank.reduce((sum, acc) => sum + acc.balance, 0);
   const totalCashBalance = accounts.cash.reduce((sum, acc) => sum + acc.balance, 0);
@@ -221,6 +224,109 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
         }
       ]
     );
+  };
+
+  const handleDeposit = (amount) => {
+    if (!selectedBankAccount || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර බැංකු ගිණුම සහ වලංගු මුදලක් තෝරන්න');
+      return;
+    }
+
+    const updatedBankAccounts = accounts.bank.map(acc =>
+      acc.id === selectedBankAccount.id
+        ? { ...acc, balance: acc.balance + parseFloat(amount) }
+        : acc
+    );
+
+    setAccounts({ ...accounts, bank: updatedBankAccounts });
+    
+    addTransaction({
+      type: 'deposit',
+      amount: parseFloat(amount),
+      description: `${selectedBankAccount.name} - තැන්පතු`,
+      accountName: selectedBankAccount.name
+    });
+
+    setShowDepositModal(false);
+    Alert.alert('සාර්ථකයි!', 'තැන්පතු සාර්ථකව එකතු කරන ලදී');
+  };
+
+  const handleWithdrawal = (amount) => {
+    if (!selectedBankAccount || !selectedCashAccount || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර බැංකු ගිණුම, මුදල් ගිණුම සහ වලංගු මුදලක් තෝරන්න');
+      return;
+    }
+
+    if (selectedBankAccount.balance < parseFloat(amount)) {
+      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් ශේෂයක් නොමැත');
+      return;
+    }
+
+    const updatedBankAccounts = accounts.bank.map(acc =>
+      acc.id === selectedBankAccount.id
+        ? { ...acc, balance: acc.balance - parseFloat(amount) }
+        : acc
+    );
+
+    const updatedCashAccounts = accounts.cash.map(acc =>
+      acc.id === selectedCashAccount.id
+        ? { ...acc, balance: acc.balance + parseFloat(amount) }
+        : acc
+    );
+
+    setAccounts({
+      bank: updatedBankAccounts,
+      cash: updatedCashAccounts
+    });
+    
+    addTransaction({
+      type: 'withdrawal',
+      amount: parseFloat(amount),
+      description: `${selectedBankAccount.name} → ${selectedCashAccount.name}`,
+      accountName: selectedBankAccount.name,
+      toAccount: selectedCashAccount.name
+    });
+
+    setShowWithdrawalModal(false);
+    Alert.alert('සාර්ථකයි!', 'මුදල් ලබා ගැනීම සාර්ථකයි');
+  };
+
+  const handleExpense = (amount, selectedCategory) => {
+    if (!selectedCashAccount || !selectedCategory || !amount || parseFloat(amount) <= 0) {
+      Alert.alert('දෝෂයකි', 'කරුණාකර මුදල් ගිණුම, කාණ්ඩය සහ වලංගු මුදලක් තෝරන්න');
+      return;
+    }
+
+    if (selectedCashAccount.balance < parseFloat(amount)) {
+      Alert.alert('දෝෂයකි', 'ප්‍රමාණවත් ශේෂයක් නොමැත');
+      return;
+    }
+
+    const updatedCashAccounts = accounts.cash.map(acc =>
+      acc.id === selectedCashAccount.id
+        ? { ...acc, balance: acc.balance - parseFloat(amount) }
+        : acc
+    );
+
+    setAccounts({ ...accounts, cash: updatedCashAccounts });
+    
+    const updatedCategories = categories.map(cat =>
+      cat.id === selectedCategory.id
+        ? { ...cat, spent: cat.spent + parseFloat(amount) }
+        : cat
+    );
+    setCategories(updatedCategories);
+    
+    addTransaction({
+      type: 'expense',
+      amount: parseFloat(amount),
+      description: `${selectedCashAccount.name} - ${selectedCategory.name}`,
+      accountName: selectedCashAccount.name,
+      categoryName: selectedCategory.name
+    });
+
+    setShowExpenseModal(false);
+    Alert.alert('සාර්ථකයි!', 'වියදම සාර්ථකව එකතු කරන ලදී');
   };
 
   return (
@@ -318,6 +424,33 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
           </View>
         </View>
 
+        {/* Main Action Buttons */}
+        <View style={styles.section}>
+          <TouchableOpacity 
+            style={[styles.actionButton, { backgroundColor: '#4F46E5' }]} 
+            onPress={() => setShowDepositModal(true)}
+          >
+            <Text style={styles.actionButtonIcon}>🏦</Text>
+            <Text style={styles.actionButtonText}>බැංකු තැන්පතු</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            style={[styles.actionButton, { backgroundColor: '#10B981' }]} 
+            onPress={() => setShowWithdrawalModal(true)}
+          >
+            <Text style={styles.actionButtonIcon}>💵</Text>
+            <Text style={styles.actionButtonText}>බැංකු Withdraw</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            style={[styles.actionButton, { backgroundColor: '#EF4444' }]} 
+            onPress={() => setShowExpenseModal(true)}
+          >
+            <Text style={styles.actionButtonIcon}>📉</Text>
+            <Text style={styles.actionButtonText}>විදමී කරන්න</Text>
+          </TouchableOpacity>
+        </View>
+
         {/* Recent Transactions */}
         {transactions.length > 0 && (
           <View style={styles.section}>
@@ -378,6 +511,32 @@ function DashboardScreen({ accounts, setAccounts, transactions, addTransaction, 
           onSave={handleUpdateTransaction}
         />
       )}
+
+      {/* Deposit Modal */}
+      <DepositModal
+        visible={showDepositModal}
+        onClose={() => setShowDepositModal(false)}
+        onSave={handleDeposit}
+        selectedAccount={selectedBankAccount}
+      />
+
+      {/* Withdrawal Modal */}
+      <WithdrawalModal
+        visible={showWithdrawalModal}
+        onClose={() => setShowWithdrawalModal(false)}
+        onSave={handleWithdrawal}
+        selectedBankAccount={selectedBankAccount}
+        selectedCashAccount={selectedCashAccount}
+      />
+
+      {/* Expense Modal */}
+      <ExpenseModal
+        visible={showExpenseModal}
+        onClose={() => setShowExpenseModal(false)}
+        onSave={handleExpense}
+        selectedAccount={selectedCashAccount}
+        categories={categories}
+      />
     </ScrollView>
   );
 }
@@ -544,6 +703,180 @@ function EditTransactionModal({ visible, onClose, transaction, onSave }) {
             </TouchableOpacity>
             <TouchableOpacity style={styles.modalButtonSave} onPress={handleSave}>
               <Text style={styles.modalButtonSaveText}>සුරකින්න</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </Modal>
+  );
+}
+
+// Deposit Modal
+function DepositModal({ visible, onClose, onSave, selectedAccount }) {
+  const [amount, setAmount] = useState('');
+
+  const handleSave = () => {
+    onSave(amount);
+    setAmount('');
+  };
+
+  return (
+    <Modal visible={visible} transparent animationType="slide">
+      <View style={styles.modalOverlay}>
+        <View style={styles.modalContent}>
+          <Text style={styles.modalTitle}>බැංකු තැන්පතු</Text>
+          
+          {selectedAccount && (
+            <Text style={styles.modalSubtitle}>
+              ගිණුම: {selectedAccount.name}
+            </Text>
+          )}
+          
+          <TextInput
+            style={styles.input}
+            placeholder="මුදල"
+            value={amount}
+            onChangeText={setAmount}
+            keyboardType="numeric"
+          />
+
+          <View style={styles.modalButtons}>
+            <TouchableOpacity style={styles.modalButtonCancel} onPress={() => {
+              setAmount('');
+              onClose();
+            }}>
+              <Text style={styles.modalButtonCancelText}>අවලංගු කරන්න</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.modalButtonSave} onPress={handleSave}>
+              <Text style={styles.modalButtonSaveText}>තැන්පතු කරන්න</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </Modal>
+  );
+}
+
+// Withdrawal Modal
+function WithdrawalModal({ visible, onClose, onSave, selectedBankAccount, selectedCashAccount }) {
+  const [amount, setAmount] = useState('');
+
+  const handleSave = () => {
+    onSave(amount);
+    setAmount('');
+  };
+
+  return (
+    <Modal visible={visible} transparent animationType="slide">
+      <View style={styles.modalOverlay}>
+        <View style={styles.modalContent}>
+          <Text style={styles.modalTitle}>බැංකු Withdraw</Text>
+          
+          {selectedBankAccount && (
+            <Text style={styles.modalSubtitle}>
+              බැංකු ගිණුම: {selectedBankAccount.name}
+            </Text>
+          )}
+          
+          {selectedCashAccount && (
+            <Text style={styles.modalSubtitle}>
+              මුදල් ගිණුම: {selectedCashAccount.name}
+            </Text>
+          )}
+          
+          <TextInput
+            style={styles.input}
+            placeholder="මුදල"
+            value={amount}
+            onChangeText={setAmount}
+            keyboardType="numeric"
+          />
+
+          <View style={styles.modalButtons}>
+            <TouchableOpacity style={styles.modalButtonCancel} onPress={() => {
+              setAmount('');
+              onClose();
+            }}>
+              <Text style={styles.modalButtonCancelText}>අවලංගු කරන්න</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.modalButtonSave} onPress={handleSave}>
+              <Text style={styles.modalButtonSaveText}>ලබා ගන්න</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </Modal>
+  );
+}
+
+// Expense Modal
+function ExpenseModal({ visible, onClose, onSave, selectedAccount, categories }) {
+  const [amount, setAmount] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [showCategoryPicker, setShowCategoryPicker] = useState(false);
+
+  const handleSave = () => {
+    onSave(amount, selectedCategory);
+    setAmount('');
+    setSelectedCategory(null);
+  };
+
+  return (
+    <Modal visible={visible} transparent animationType="slide">
+      <View style={styles.modalOverlay}>
+        <View style={styles.modalContent}>
+          <Text style={styles.modalTitle}>විදමී කරන්න</Text>
+          
+          {selectedAccount && (
+            <Text style={styles.modalSubtitle}>
+              මුදල් ගිණුම: {selectedAccount.name}
+            </Text>
+          )}
+          
+          <TouchableOpacity 
+            style={styles.pickerButton} 
+            onPress={() => setShowCategoryPicker(!showCategoryPicker)}
+          >
+            <Text style={styles.pickerButtonText}>
+              {selectedCategory ? selectedCategory.name : 'කාණ්ඩය තෝරන්න'}
+            </Text>
+          </TouchableOpacity>
+
+          {showCategoryPicker && (
+            <View style={styles.pickerList}>
+              {categories.map((cat) => (
+                <TouchableOpacity
+                  key={cat.id}
+                  style={styles.pickerItem}
+                  onPress={() => {
+                    setSelectedCategory(cat);
+                    setShowCategoryPicker(false);
+                  }}
+                >
+                  <Text style={styles.pickerItemText}>{cat.name}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+          
+          <TextInput
+            style={styles.input}
+            placeholder="මුදල"
+            value={amount}
+            onChangeText={setAmount}
+            keyboardType="numeric"
+          />
+
+          <View style={styles.modalButtons}>
+            <TouchableOpacity style={styles.modalButtonCancel} onPress={() => {
+              setAmount('');
+              setSelectedCategory(null);
+              onClose();
+            }}>
+              <Text style={styles.modalButtonCancelText}>අවලංගු කරන්න</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.modalButtonSave} onPress={handleSave}>
+              <Text style={styles.modalButtonSaveText}>එකතු කරන්න</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -1784,5 +2117,62 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 14,
     fontWeight: '600',
+  },
+  actionButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  actionButtonIcon: {
+    fontSize: 24,
+    marginRight: 12,
+  },
+  actionButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  modalSubtitle: {
+    fontSize: 14,
+    color: '#6B7280',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  pickerButton: {
+    backgroundColor: '#F9FAFB',
+    borderWidth: 1,
+    borderColor: '#D1D5DB',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 12,
+  },
+  pickerButtonText: {
+    fontSize: 14,
+    color: '#374151',
+  },
+  pickerList: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#D1D5DB',
+    marginBottom: 12,
+    maxHeight: 200,
+  },
+  pickerItem: {
+    padding: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E7EB',
+  },
+  pickerItemText: {
+    fontSize: 14,
+    color: '#1F2937',
   },
 });
